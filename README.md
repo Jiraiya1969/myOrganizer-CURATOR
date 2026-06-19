@@ -6,6 +6,18 @@ The project is not available for download yet.
 
 This repository is a public placeholder for release announcements, licensing information, documentation, and future source-code availability.
 
+## Preview
+
+<p align="center">
+  <img src="CURATOR_official_logo_concept_v2_bordered_reflective.png" alt="CURATOR official logo" width="520">
+</p>
+
+<p align="center">
+  <img src="CURATOR_packaging_cover_concept_v1.png" alt="CURATOR preview artwork" width="520">
+</p>
+
+Marketing artwork and branding shown here are copyright © 2026 Miguel A. Ortiz. All rights reserved until the project license is formally published.
+
 ## Current Status
 
 CURATOR is in private testing and documentation review.
