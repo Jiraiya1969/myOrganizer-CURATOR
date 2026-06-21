@@ -16,7 +16,7 @@ This repository is a public placeholder for release announcements, licensing inf
   <img src="CURATOR_packaging_cover_concept_v1.png" alt="CURATOR preview artwork" width="520">
 </p>
 
-Marketing artwork and branding shown here are copyright © 2026 Miguel A. Ortiz. All rights reserved until the project license is formally published.
+Artwork and branding shown here are copyright © 2026 Miguel A. Ortiz. All rights reserved until the project license is formally published.
 
 ## Current Status
 
