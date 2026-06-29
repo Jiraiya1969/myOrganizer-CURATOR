@@ -20,7 +20,11 @@ Artwork and branding shown here are copyright © 2026 Miguel A. Ortiz. All right
 
 ## Current Status
 
-CURATOR is in private testing and documentation review.
+CURATOR is in active private testing and release preparation.
+
+The core organization pipeline is functional and is being finalized through validation, documentation review, and packaging work. Current focus areas include final output handling, collection reporting, operator guidance, and public-release readiness.
+
+The project is not available for download yet. Source code, documentation, and release packages will be published when they are ready.
 
 ## Planned License
 
