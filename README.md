@@ -13,7 +13,7 @@ This repository is a public placeholder for release announcements, licensing inf
 </p>
 
 <p align="center">
-  <img src="CURATOR_packaging_cover_concept_v1.png" alt="CURATOR preview artwork" width="520">
+  <img src="CURATOR_packaging_cover_concept_v2.png" alt="CURATOR preview artwork" width="520">
 </p>
 
 Artwork and branding shown here are copyright © 2026 Miguel A. Ortiz. All rights reserved until the project license is formally published.
