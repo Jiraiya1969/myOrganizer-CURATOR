@@ -1,6 +1,6 @@
 # myOrganizer-CURATOR
 
-CURATOR is a PowerShell-based collection organization tool currently being prepared for public release.
+CURATOR builds authoritative, reproducible retro game collections from imperfect source material using preservation DATs as the source of truth.
 
 The project is not available for download yet.
 
