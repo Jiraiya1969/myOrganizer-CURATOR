@@ -136,7 +136,8 @@
 
         }
 
-        .why h2 {
+        .why h2,
+        .workflow h2 {
 
             font-size: 2rem;
             margin-bottom: 24px;
@@ -149,6 +150,62 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 20px;
+
+        }
+
+        .workflow {
+
+            width: min(1400px, 92%);
+            margin: 80px auto;
+
+        }
+
+        .workflow-intro {
+
+            color: #d0dce5;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-bottom: 40px;
+
+        }
+
+        .workflow-grid {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+            gap: 40px;
+
+        }
+
+        .workflow-card {
+
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(73, 216, 255, .15);
+            border-radius: 16px;
+            overflow: hidden;
+
+        }
+
+        .workflow-card img {
+
+            width: 100%;
+            display: block;
+
+        }
+
+        .workflow-card h3 {
+
+            font-size: 1.35rem;
+            padding: 24px 24px 12px;
+
+        }
+
+        .workflow-card p {
+
+            color: #d0dce5;
+            line-height: 1.8;
+            padding: 0 24px 28px;
 
         }
 
@@ -199,6 +256,16 @@
             .image {
 
                 order: -1;
+
+            }
+
+        }
+
+        @media(max-width:700px) {
+
+            .workflow-grid {
+
+                grid-template-columns: 1fr;
 
             }
 
@@ -273,6 +340,101 @@
             reconciled as preservation projects continue to evolve.
 
         </p>
+
+    </section>
+
+    <section class="workflow">
+
+        <h2>
+            How CURATOR Works
+        </h2>
+
+        <p class="workflow-intro">
+
+            CURATOR transforms imperfect source material into an authoritative,
+            reproducible collection through a deterministic preservation workflow.
+
+        </p>
+
+        <div class="workflow-grid">
+
+            <article class="workflow-card">
+
+                <img src="01_retro_authority_preparation.png"
+                    alt="Authority Preparation">
+
+                <h3>
+                    1. Authority Preparation
+                </h3>
+
+                <p>
+
+                    CURATOR prepares preservation DATs and supporting authority
+                    metadata before any collection work begins, establishing a
+                    trusted foundation for deterministic processing.
+
+                </p>
+
+            </article>
+
+            <article class="workflow-card">
+
+                <img src="02_retro_deterministic_matching.png"
+                    alt="Deterministic Matching">
+
+                <h3>
+                    2. Deterministic Matching
+                </h3>
+
+                <p>
+
+                    Every user-provided file is evaluated against authoritative
+                    preservation data to identify known content, separate unknown
+                    material, and eliminate guesswork.
+
+                </p>
+
+            </article>
+
+            <article class="workflow-card">
+
+                <img src="03_retro_launchbox_organization.png"
+                    alt="LaunchBox Organization">
+
+                <h3>
+                    3. LaunchBox Organization
+                </h3>
+
+                <p>
+
+                    Verified content is organized into a structured,
+                    LaunchBox-ready library while preserving the relationship
+                    between source material, authority metadata, and final output.
+
+                </p>
+
+            </article>
+
+            <article class="workflow-card">
+
+                <img src="04_retro_reporting_reconciliation.png"
+                    alt="Reporting and Reconciliation">
+
+                <h3>
+                    4. Reporting &amp; Reconciliation
+                </h3>
+
+                <p>
+
+                    Every action is documented, allowing collections to be
+                    reviewed, reproduced, reconciled, and updated as preservation
+                    projects continue to evolve.
+
+                </p>
+
+            </article>
+
+        </div>
 
     </section>
 
