@@ -137,7 +137,8 @@
         }
 
         .why h2,
-        .workflow h2 {
+        .workflow h2,
+        .info h2 {
 
             font-size: 2rem;
             margin-bottom: 24px;
@@ -206,6 +207,58 @@
             color: #d0dce5;
             line-height: 1.8;
             padding: 0 24px 28px;
+
+        }
+
+        .info {
+
+            width: min(1100px, 92%);
+            margin: 80px auto;
+
+        }
+
+        .info-grid {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+
+        }
+
+        .info-card {
+
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(73, 216, 255, .15);
+            border-radius: 16px;
+            padding: 28px;
+
+        }
+
+        .info-card p {
+
+            color: #d0dce5;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            margin-bottom: 18px;
+
+        }
+
+        .info-card p:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+        .info-card a {
+
+            color: #49d8ff;
+            text-decoration: none;
+
+        }
+
+        .info-card a:hover {
+
+            text-decoration: underline;
 
         }
 
@@ -327,17 +380,17 @@
         <p>
 
             Starting with user-provided source files, CURATOR prepares, validates,
-            documents, and organizes every asset using trusted preservation metadata.
-            Unknown, incomplete, and unsupported content is identified and separated
-            so every decision remains transparent.
+            documents, and organizes every asset using trusted preservation
+            metadata. Unknown, incomplete, and unsupported content is identified
+            and separated so every decision remains transparent.
 
         </p>
 
         <p>
 
-            The result is a clean collection with a complete audit trail, making it
-            easy to review, maintain, and update as preservation projects continue
-            to evolve.
+            The result is a clean collection with a complete audit trail, making
+            it easy to review, maintain, and update as preservation projects
+            continue to evolve.
 
         </p>
 
@@ -428,6 +481,70 @@
                     Every action is documented, allowing collections to be
                     reviewed, reproduced, reconciled, and updated as preservation
                     projects continue to evolve.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="info">
+
+        <div class="info-grid">
+
+            <article class="info-card">
+
+                <h2>
+                    Free &amp; Open Source
+                </h2>
+
+                <p>
+
+                    CURATOR is being prepared for public release as free,
+                    open-source software under the GNU General Public License
+                    v3.0 or later.
+
+                </p>
+
+                <p>
+
+                    Source code, documentation, and release packages will be
+                    published when the project is ready.
+
+                </p>
+
+            </article>
+
+            <article class="info-card">
+
+                <h2>
+                    Contact
+                </h2>
+
+                <p>
+
+                    Questions, feedback, bug reports, and project discussions
+                    are welcome.
+
+                </p>
+
+                <p>
+
+                    Email:
+                    <a href="mailto:contact@myorganizerhq.com">
+                        contact@myorganizerhq.com
+                    </a>
+
+                </p>
+
+                <p>
+
+                    GitHub:
+                    <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR">
+                        myOrganizer-CURATOR
+                    </a>
 
                 </p>
 
