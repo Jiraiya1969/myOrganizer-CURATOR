@@ -93,20 +93,47 @@
 
         }
 
-        .coming {
+        .hero-actions {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+
+        }
+
+        .coming,
+        .download-link {
 
             display: inline-block;
+            padding: 14px 28px;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-weight: 600;
+            text-decoration: none;
+
+        }
+
+        .coming {
 
             border: 2px solid #33cfff;
             color: #33cfff;
 
-            padding: 14px 28px;
+        }
 
-            border-radius: 40px;
+        .download-link {
 
-            text-transform: uppercase;
-            letter-spacing: .12em;
-            font-weight: 600;
+            border: 2px solid #eef6ff;
+            background: #eef6ff;
+            color: #08131c;
+
+        }
+
+        .download-link:hover {
+
+            background: transparent;
+            color: #eef6ff;
 
         }
 
@@ -335,7 +362,7 @@
         <section>
 
             <div class="eyebrow">
-                myOrganizer v.5
+                CURATOR v1.0.0-beta.1
             </div>
 
             <h1>
@@ -344,14 +371,22 @@
 
             <div class="tagline">
 
-                CURATOR builds authoritative, reproducible retro game collections
-                from imperfect source material using preservation DATs as the
-                source of truth.
+                A Windows PowerShell application for analyzing, validating,
+                reconstructing, and organizing emulation collections using
+                DAT-based authority data.
 
             </div>
 
-            <div class="coming">
-                Coming Soon
+            <div class="hero-actions">
+
+                <div class="coming">
+                    BETA
+                </div>
+
+                <a class="download-link" href="releases.html">
+                    Download Beta
+                </a>
+
             </div>
 
         </section>
