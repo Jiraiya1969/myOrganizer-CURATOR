@@ -1,15 +1,15 @@
 # myOrganizer: CURATOR
 
-CURATOR is an authoritative platform for building reproducible retro game collections using preservation DATs as the source of truth—not just another ROM manager.
+CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The project is currently in active private testing and is **not yet available for download**.
+The current public release is **CURATOR v1.0.0-beta.1**.
 
 <p align="center">
-  <img src="CURATOR_official_logo_concept_v2_bordered_reflective.png" alt="CURATOR official logo" width="520">
+  <img src="assets/images/branding/CURATOR_official_logo_concept_v2_bordered_reflective.png" alt="CURATOR official logo" width="520">
 </p>
 
 <p align="center">
-  <img src="CURATOR_packaging_cover_concept_v2.png" alt="CURATOR preview artwork" width="720">
+  <img src="assets/images/branding/CURATOR_packaging_cover_concept_v2.png" alt="CURATOR preview artwork" width="720">
 </p>
 
 Artwork and branding shown here are copyright © 2026 Miguel A. Ortiz. All rights reserved until the project license is formally published.
@@ -31,7 +31,7 @@ The result is a clean collection with a complete audit trail, making it easy to 
 Prepare preservation DATs and supporting reference metadata before any collection work begins.
 
 <p align="center">
-  <img src="01_retro_authority_preparation.png" alt="Authority Preparation" width="900">
+  <img src="assets/images/workflow/01_retro_authority_preparation.png" alt="Authority Preparation" width="900">
 </p>
 
 ### 2. Deterministic Matching
@@ -39,7 +39,7 @@ Prepare preservation DATs and supporting reference metadata before any collectio
 Evaluate every user-provided file against trusted preservation metadata to identify known content and separate unknown material.
 
 <p align="center">
-  <img src="02_retro_deterministic_matching.png" alt="Deterministic Matching" width="900">
+  <img src="assets/images/workflow/02_retro_deterministic_matching.png" alt="Deterministic Matching" width="900">
 </p>
 
 ### 3. LaunchBox Organization
@@ -47,7 +47,7 @@ Evaluate every user-provided file against trusted preservation metadata to ident
 Organize verified content into a structured, LaunchBox-ready library while preserving relationships between source material, metadata, and output.
 
 <p align="center">
-  <img src="03_retro_launchbox_organization.png" alt="LaunchBox Organization" width="900">
+  <img src="assets/images/workflow/03_retro_launchbox_organization.png" alt="LaunchBox Organization" width="900">
 </p>
 
 ### 4. Reporting & Reconciliation
@@ -55,24 +55,24 @@ Organize verified content into a structured, LaunchBox-ready library while prese
 Document every action so collections can be reviewed, reconciled, and maintained as preservation projects evolve.
 
 <p align="center">
-  <img src="04_retro_reporting_reconciliation.png" alt="Reporting & Reconciliation" width="900">
+  <img src="assets/images/workflow/04_retro_reporting_reconciliation.png" alt="Reporting & Reconciliation" width="900">
 </p>
 
 ---
 
 ## Current Status
 
-CURATOR is in active private testing and release preparation.
+CURATOR is currently available as **v1.0.0-beta.1**.
 
-The core organization pipeline is functional and is currently being refined through validation, reporting, documentation, and release packaging.
+The application is a mature deterministic ten-stage pipeline. This public beta supports DAT authority processing, validation, assembly, completeness analysis, organization, durable reporting, recovery, and generated documentation.
 
-Source code, documentation, and release packages will be published when the project is ready.
+Download the current beta and verify its published SHA-256 checksum on the [release page](releases.html).
 
 ---
 
 ## Free & Open Source
 
-CURATOR is being prepared for public release as free, open-source software under the **GNU General Public License v3.0 or later**.
+CURATOR is free, open-source software licensed under the **GNU General Public License v3.0 or later**.
 
 ---
 
