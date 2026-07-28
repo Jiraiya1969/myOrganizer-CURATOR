@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURATOR Changelog</title>
+    <meta name="description"
+        content="Review the improvements, fixes, and known limitations in every CURATOR release.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: radial-gradient(circle at top, #17364d 0%, #08131c 45%, #020508 100%);
+            color: #eef6ff;
+        }
+        main { width: min(920px, 92%); margin: auto; padding: 70px 0; }
+        .eyebrow {
+            color: #49d8ff;
+            text-transform: uppercase;
+            letter-spacing: .22em;
+            font-size: .9rem;
+            margin-bottom: 18px;
+        }
+        h1 {
+            font-size: clamp(2.7rem, 7vw, 4.8rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+        .intro { color: #dbe7ef; font-size: 1.2rem; line-height: 1.7; margin-bottom: 38px; }
+        article {
+            background: rgba(255, 255, 255, .025);
+            border: 1px solid rgba(73, 216, 255, .18);
+            border-radius: 18px;
+            padding: clamp(24px, 5vw, 40px);
+            margin-bottom: 30px;
+        }
+        article.current { border-color: rgba(73, 216, 255, .48); }
+        h2 { font-size: 2rem; margin-bottom: 10px; }
+        h3 { color: #49d8ff; font-size: 1.25rem; margin: 28px 0 12px; }
+        p, li { color: #d0dce5; font-size: 1.03rem; line-height: 1.75; }
+        ul { padding-left: 24px; }
+        li { margin-bottom: 9px; }
+        code { color: #c9f5ff; font-family: Consolas, "Courier New", monospace; }
+        .date { color: #8da3b5; margin-bottom: 22px; }
+        .links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 34px; }
+        a { color: #49d8ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="eyebrow">CURATOR Release History</div>
+        <h1>Changelog</h1>
+        <p class="intro">
+            A complete end-user record of improvements, fixes, and known
+            limitations in every public CURATOR release.
+        </p>
+
+        <article class="current">
+            <h2>v1.0.0-beta.2</h2>
+            <p class="date">July 28, 2026</p>
+            <p>
+                This beta focuses on faster preparation of large collections,
+                safer recovery, clearer progress reporting, and documentation
+                that is easier to use and keep with the application.
+            </p>
+
+            <h3>Added</h3>
+            <ul>
+                <li>Added a changelog to the application folder so each release clearly explains what changed.</li>
+                <li>Added stronger release-package checks against the approved application inventory, excluding development, temporary, and operator-owned files.</li>
+                <li>Added CURATOR-owned Atari 8-Bit and Atari ST routing definitions for a ready-to-use installation. Operator-supplied platform and DAT files remain outside the package.</li>
+            </ul>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Large Stage 5 preparation jobs now copy ordinary files and process archives in controlled parallel groups for substantially faster, predictably ordered preparation.</li>
+                <li>Stage 5 recovery records are written more efficiently, reducing repeated bookkeeping for collections containing thousands of files.</li>
+                <li>Archive progress is smoother and less noisy, with one continuous display covering the complete workload.</li>
+                <li>Matching passes the exact verified game data forward when supported normalization was needed to establish the match.</li>
+                <li>The Admin Guide, End User Manual, Quick Start Guide, and Core API Developer Handbook are now supplied as PDF files.</li>
+                <li>The developer handbook now documents all 144 current Core programming interfaces.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Fixed Stage 5 archive preparation when the selected Workspace folder is outside the CURATOR application folder.</li>
+                <li>Fixed interrupted archive recovery so unfinished results are removed before retrying while already committed files remain protected.</li>
+                <li>Fixed empty or unusable archives so they can be reported and skipped without ending the entire preparation stage.</li>
+                <li>Fixed Stage 5 error reporting so the original problem remains visible even after logging services close.</li>
+                <li>Fixed supported disc matching when cue-sheet and track evidence is required.</li>
+                <li>Fixed later stages receiving the original file instead of the normalized data that established an authoritative match.</li>
+                <li>Added a clear, safe cancellation path to both advanced Nuclear cleanup confirmations; only the exact phrase performs cleanup.</li>
+                <li>Fixed the completion screen shown after generating the Core API handbook.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>In a pause-enabled multi-stage Gateway run, the final selected stage may not show its promised acknowledgement before the separate overall timing summary. Both results are still produced.</li>
+                <li>A very large interrupted Stage 5 recovery record can delay Gateway startup while CURATOR validates saved work before showing the main menu.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>v1.0.0-beta.1</h2>
+            <p class="date">July 26, 2026</p>
+
+            <h3>Added</h3>
+            <ul>
+                <li>Published the first public beta of CURATOR.</li>
+                <li>Added guided <code>Prepare DAR</code>, <code>Organize</code>, and <code>Reporting</code> workflows for LaunchBox-compatible collections.</li>
+                <li>Added platform and DAT discovery, authority preparation, source discovery, staging, matching, DAT validation, assembly, completeness analysis, physical organization, and reporting.</li>
+                <li>Added authority-based processing of loose files and supported archive and disc-image workflows.</li>
+                <li>Added recoverable staging and output transactions that can resume from valid committed progress.</li>
+                <li>Added <code>Clear</code> and <code>Append</code> destination choices.</li>
+                <li>Added visible progress, structured logs, validation evidence, and final collection reports.</li>
+                <li>Included an Admin Guide, End User Manual, Quick Start Guide, and Core API Developer Handbook.</li>
+                <li>Added path safeguards separating source, output, working, and application folders.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>In pause-enabled Gateway sequences, the final selected stage may not show its promised acknowledgement before the separate Gateway timing summary. The timing summary is still produced.</li>
+            </ul>
+        </article>
+
+        <div class="links">
+            <a href="index.html">Return to CURATOR</a>
+            <a href="releases.html">Download releases</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/blob/main/CHANGELOG.md">Changelog on GitHub</a>
+        </div>
+    </main>
+</body>
+
+</html>

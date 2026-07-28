@@ -2,7 +2,7 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v1.0.0-beta.1**.
+The current public release is **CURATOR v1.0.0-beta.2**.
 
 <p align="center">
   <img src="assets/images/branding/CURATOR_official_logo_concept_v2_bordered_reflective.png" alt="CURATOR official logo" width="520">
@@ -62,11 +62,15 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v1.0.0-beta.1**.
+CURATOR is currently available as **v1.0.0-beta.2**.
 
 The application is a mature deterministic ten-stage pipeline. This public beta supports DAT authority processing, validation, assembly, completeness analysis, organization, durable reporting, recovery, and generated documentation.
 
 Download the current beta and verify its published SHA-256 checksum on the [release page](releases.html).
+
+Every published version remains available in the release archive. See the
+[project changelog](CHANGELOG.md) for improvements, fixes, and known limitations
+in each release.
 
 ---
 
