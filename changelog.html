@@ -62,6 +62,41 @@
         </p>
 
         <article class="current">
+            <h2>v1.0.0-beta.3</h2>
+            <p class="date">July 30, 2026</p>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Added a standalone <code>LICENSE</code> file containing the complete GNU General Public License version 3 text.</li>
+                <li>Stage 5 now reports exact, visible progress while classifying and verifying large source inventories.</li>
+                <li>Stage 6 now reports exact counts while hashing, preparing results, serializing records, and verifying output, with less unnecessary console rendering.</li>
+                <li>Stage 7 removes repeated validation scans and reports exact progress through validation and publication.</li>
+                <li>Stage 8 reuses validated authority membership data, removes repeated scans, and reports exact progress through assembly and publication.</li>
+                <li>Large Stage 8 assembly runs now complete substantially faster while preserving the same normalized result.</li>
+                <li>Stage 9 reports exact progress while avoiding redundant routing, receipt, and source-path preparation.</li>
+                <li>Stage 10 validates planned sources beneath authorized roots and leaves missing-source detection to the physical operation that consumes each source.</li>
+                <li>The End User Manual and Quick Start Guide now recommend current <code>clrmame</code> for complete MAME-native ROM-set management while noting that legacy <code>clrmamepro</code> remains available.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Fixed long Stage 8 intervals that previously had no visible console reporting.</li>
+                <li>Fixed Stage 8 final JSON progress so it reflects selected membership and review records before output verification.</li>
+                <li>Added the missing blank line above the final stage resource-release message.</li>
+                <li>Adjusted selected pause-enabled Gateway options 4, 6, and 8 to suppress a redundant post-summary pause while retaining their summary and final Gateway acknowledgement.</li>
+                <li>Regenerated the Core API Developer Handbook so headings and emphasis render normally.</li>
+                <li>Corrected the End User Manual cover version and document-update date.</li>
+                <li>Removed Stage 10 planning-time source existence probes and the large source-tree preflight without changing output planning or destination safety checks.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>Binmerge build provenance and redistribution evidence for eleven cue/GDI ZIP packages remain unresolved under <code>DEFERRED-038</code>.</li>
+                <li>The complete <code>DEFERRED-046</code> acknowledgement-order matrix remains unproven across all paused, non-paused, failure, cancellation, and noninteractive paths.</li>
+            </ul>
+        </article>
+
+        <article>
             <h2>v1.0.0-beta.2</h2>
             <p class="date">July 28, 2026</p>
             <p>
