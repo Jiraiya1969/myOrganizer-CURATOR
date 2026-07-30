@@ -1,9 +1,72 @@
-# CURATOR / myOrganizer v1.0.0-beta.2 Changelog
+# CURATOR / myOrganizer v1.0.0-beta.3 Changelog
 
-Last updated: July 28, 2026 at 11:23 AM EST
+Last updated: July 30, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## Unreleased
+
+No changes recorded yet.
+
+## v1.0.0-beta.3 - 2026-07-30
+
+### Changed
+
+- Added a standalone `LICENSE` file containing the complete GNU General Public
+  License version 3 text.
+- Stage 5 now reports exact, visible progress while classifying and verifying
+  large source inventories before preparation begins.
+- Stage 6 now reports exact file counts while hashing, preparing matching
+  results, serializing records, and verifying output bytes.
+- Stage 6 reduces unnecessary console rendering during large matching runs
+  while preserving matching results, integrity verification, recovery
+  behavior, and atomic JSON publication.
+- Stage 7 removes repeated validation scans and reports exact progress while
+  validating authority files and publishing its six output collections.
+- Stage 8 reuses validated authority membership data instead of rebuilding it,
+  removes repeated assembly scans, and reports exact progress through source
+  preparation, collection assembly, review routing, and final publication.
+- Large Stage 8 assembly runs now complete substantially faster while
+  preserving the same normalized collection result.
+- Stage 9 reports exact progress across decision planning and final
+  publication while avoiding redundant routing, receipt, and source-path
+  preparation.
+- Stage 10 trusts the accepted Stage 9 inventory, validates planned sources
+  lexically beneath authorized roots, and leaves missing-source detection to
+  the physical operation that consumes each source.
+- The End User Manual and Quick Start Guide now explain that CURATOR does not
+  provide complete MAME-native ROM-set management and recommend current
+  `clrmame` for that work. The established legacy `clrmamepro` remains
+  available.
+
+### Fixed
+
+- Fixed long Stage 8 intervals that previously had no visible console
+  reporting.
+- Fixed the Stage 8 final JSON progress display so it reflects the stage's
+  selected membership and review records before verifying output bytes.
+- Added the missing blank line above the final stage resource-release message.
+- Adjusted selected pause-enabled Gateway options 4, 6, and 8 to suppress a
+  redundant post-summary pause while retaining their summary and final Gateway
+  acknowledgement.
+- Regenerated the Core API Developer Handbook so its opening safety notice
+  renders headings and emphasis normally.
+- Corrected the End User Manual cover to identify `v1.0.0-beta.3` and the
+  current document-update date.
+- Removed Stage 10 planning-time source existence probes and the large
+  source-tree preflight without changing the accepted output plan or
+  destination safety checks.
+
+### Known limitations
+
+- Dependency integrity hashes do not complete provenance or redistribution
+  review. The exact bundled Binmerge build and redistribution evidence for
+  eleven cue/GDI ZIP packages remain unresolved under `DEFERRED-038`.
+- The selected-run pause correction is implemented, but the complete
+  `DEFERRED-046` acknowledgement-order matrix remains unproven across paused
+  and non-paused Full Run, single-stage, Run From Stage, Run Through Stage,
+  failure, cancellation, and noninteractive paths.
 
 ## v1.0.0-beta.2 - 2026-07-28
 
