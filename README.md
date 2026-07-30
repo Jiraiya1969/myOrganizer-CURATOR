@@ -76,7 +76,8 @@ in each release.
 
 ## Free & Open Source
 
-CURATOR is free, open-source software licensed under the **GNU General Public License v3.0 or later**.
+CURATOR is free, open-source software licensed under the
+[GNU General Public License v3.0 or later](LICENSE).
 
 ---
 
