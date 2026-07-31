@@ -165,6 +165,7 @@
         }
 
         .why h2,
+        .video-showcase h2,
         .workflow h2,
         .info h2 {
 
@@ -179,6 +180,68 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 20px;
+
+        }
+
+        .video-showcase {
+
+            width: min(1200px, 92%);
+            margin: 80px auto;
+            text-align: center;
+
+        }
+
+        .video-showcase > p {
+
+            color: #d0dce5;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 760px;
+            margin: 0 auto 32px;
+
+        }
+
+        .video-frame {
+
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border: 1px solid rgba(73, 216, 255, .35);
+            border-radius: 18px;
+            background: #020508;
+            box-shadow:
+                0 0 70px rgba(0, 170, 255, .18),
+                0 24px 80px rgba(0, 0, 0, .55);
+
+        }
+
+        .video-frame iframe {
+
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+
+        }
+
+        .video-fallback {
+
+            margin-top: 20px;
+            font-size: 1rem;
+
+        }
+
+        .video-fallback a {
+
+            color: #49d8ff;
+            text-decoration: none;
+
+        }
+
+        .video-fallback a:hover {
+
+            text-decoration: underline;
 
         }
 
@@ -428,6 +491,41 @@
             The result is a clean collection with a complete audit trail, making
             it easy to review, maintain, and update as preservation projects
             continue to evolve.
+
+        </p>
+
+    </section>
+
+    <section class="video-showcase" aria-labelledby="curator-video-title">
+
+        <h2 id="curator-video-title">
+            See CURATOR in Motion
+        </h2>
+
+        <p>
+
+            Discover how CURATOR turns source material and trusted preservation
+            data into a validated, organized collection with a clear audit trail.
+
+        </p>
+
+        <div class="video-frame">
+
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/p0TorUc-xYU?rel=0"
+                title="CURATOR overview video"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <p class="video-fallback">
+
+            Prefer to watch on YouTube?
+            <a href="https://youtu.be/p0TorUc-xYU">Open the CURATOR video</a>.
 
         </p>
 
