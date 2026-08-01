@@ -66,11 +66,13 @@ CURATOR is currently available as **v1.0.0-beta.4**.
 
 The application is a mature deterministic ten-stage pipeline. This public beta supports DAT authority processing, validation, assembly, completeness analysis, organization, durable reporting, recovery, and generated documentation.
 
-Download the current beta and verify its published SHA-256 checksum on the [release page](releases.html).
+Download the current beta and verify its published SHA-256 checksum on the
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v1.0.0-beta.4).
 
-Every published version remains available in the release archive. See the
-[project changelog](CHANGELOG.md) for improvements, fixes, and known limitations
-in each release.
+Every published version remains available in the
+[public release archive](https://myorganizerhq.com/releases.html). See the
+[project changelog](CHANGELOG.md) for improvements, fixes, and known
+limitations in each release.
 
 ---
 
