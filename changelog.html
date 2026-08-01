@@ -44,7 +44,7 @@
         p, li { color: #d0dce5; font-size: 1.03rem; line-height: 1.75; }
         ul { padding-left: 24px; }
         li { margin-bottom: 9px; }
-        code { color: #c9f5ff; font-family: Consolas, "Courier New", monospace; }
+        code { color: #c9f5ff; font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere; }
         .date { color: #8da3b5; margin-bottom: 22px; }
         .links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 34px; }
         a { color: #49d8ff; text-decoration: none; }
@@ -62,6 +62,25 @@
         </p>
 
         <article class="current">
+            <h2>v1.0.0-beta.4</h2>
+            <p class="date">July 31, 2026</p>
+
+            <h3>Added</h3>
+            <ul>
+                <li>Added <code>END_USER_LICENSE_AND_LEGAL_NOTICE.md</code> as a required release deliverable with CURATOR-specific safety and legal notices that preserve all GPL-granted rights.</li>
+                <li>Added schema-v2 company manifests with final-artifact SHA-256 evidence and immutable existing-record behavior during Append.</li>
+                <li>Added Gateway option <code>V</code> for an explicit full physical SHA-256 collection audit with operator-reviewed manifest reconciliation.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Suppressed internal <code>latest_status.json</code> read messages so refreshed Gateway menus and confirmation screens start with a clean application header.</li>
+                <li>Corrected Stage 7 validation of contextual CHD/CUE authority matches so current <code>AuthorityProvenance</code> DAT evidence is accepted without weakening missing-evidence or authority-integrity checks.</li>
+                <li>Closed the selected-run pause correction after operator confirmation of the remaining acknowledgement-order paths.</li>
+            </ul>
+        </article>
+
+        <article>
             <h2>v1.0.0-beta.3</h2>
             <p class="date">July 30, 2026</p>
 
@@ -92,7 +111,6 @@
             <h3>Known limitations</h3>
             <ul>
                 <li>Binmerge build provenance and redistribution evidence for eleven cue/GDI ZIP packages remain unresolved under <code>DEFERRED-038</code>.</li>
-                <li>The complete <code>DEFERRED-046</code> acknowledgement-order matrix remains unproven across all paused, non-paused, failure, cancellation, and noninteractive paths.</li>
             </ul>
         </article>
 
