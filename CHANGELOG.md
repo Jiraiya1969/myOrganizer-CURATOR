@@ -1,13 +1,33 @@
-# CURATOR / myOrganizer v1.0.0-beta.3 Changelog
+# CURATOR / myOrganizer v1.0.0-beta.4 Changelog
 
-Last updated: July 30, 2026
+Last updated: July 31, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
 
-## Unreleased
+## v1.0.0-beta.4 - 2026-07-31
 
-No changes recorded yet.
+### Added
+
+- Added `END_USER_LICENSE_AND_LEGAL_NOTICE.md` as a required release
+  deliverable. It supplements the GNU GPL with CURATOR-specific no-warranty,
+  assumption-of-risk, limitation-of-liability, backup, content-responsibility,
+  third-party, trademark, modified-release, and support notices without
+  restricting GPL-granted rights.
+- Added schema-v2 company manifests with final-artifact SHA-256 evidence and
+  immutable existing-record behavior during Append.
+- Added Gateway option `V` for an explicit full physical SHA-256 collection
+  audit with operator-reviewed manifest reconciliation.
+
+### Fixed
+
+- Suppressed internal `latest_status.json` read messages so refreshed Gateway
+  menus and confirmation screens start with a clean application header.
+- Corrected Stage 7 validation of contextual CHD/CUE authority matches so
+  current `AuthorityProvenance` DAT evidence is accepted without weakening
+  missing-evidence or authority-integrity checks.
+- Closed the selected-run pause correction after operator confirmation of the
+  remaining acknowledgement-order paths.
 
 ## v1.0.0-beta.3 - 2026-07-30
 
@@ -63,10 +83,6 @@ No changes recorded yet.
 - Dependency integrity hashes do not complete provenance or redistribution
   review. The exact bundled Binmerge build and redistribution evidence for
   eleven cue/GDI ZIP packages remain unresolved under `DEFERRED-038`.
-- The selected-run pause correction is implemented, but the complete
-  `DEFERRED-046` acknowledgement-order matrix remains unproven across paused
-  and non-paused Full Run, single-stage, Run From Stage, Run Through Stage,
-  failure, cancellation, and noninteractive paths.
 
 ## v1.0.0-beta.2 - 2026-07-28
 
