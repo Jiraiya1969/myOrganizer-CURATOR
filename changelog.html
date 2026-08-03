@@ -63,6 +63,30 @@
         </p>
 
         <article class="current">
+            <h2>v1.0.0-beta.5</h2>
+            <p class="date">August 3, 2026</p>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Reporting now keeps operator-facing output concise while recording detailed milestones in DEBUG logs.</li>
+                <li>Physical-audit reconciliation now uses bounded summary and individual-review panels with <code>Approve All</code>, <code>Review Each</code>, <code>Make No Changes</code>, and <code>Cancel</code>; only approved findings alter manifests.</li>
+                <li>The guides now distinguish the intended boundary from beta.5 behavior: official and unofficial physical output is authoritative truth, while <code>needs_attention</code> is intended to be a separate review queue.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Preserved original and immediate Reporting publication provenance through repeated transitive reuse.</li>
+                <li>Preserved complete multi-member DAR sets across multiple source containers during Stage 9 planning.</li>
+                <li>Corrected Core API handbook metadata so the application version is not presented as the component build.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li><code>Reporting_DEV_49</code> in beta.5 still processes <code>needs_attention</code> filesystem content and <code>NeedsAttention</code> manifest rows through classification, counting, summaries, and presentation. Full exclusion remains unresolved under <code>DEFERRED-051</code>.</li>
+            </ul>
+        </article>
+
+        <article>
             <h2>v1.0.0-beta.4</h2>
             <p class="date">July 31, 2026</p>
 

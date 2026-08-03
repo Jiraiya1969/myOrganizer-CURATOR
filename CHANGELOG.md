@@ -1,9 +1,38 @@
-# CURATOR / myOrganizer v1.0.0-beta.4 Changelog
+# CURATOR / myOrganizer v1.0.0-beta.5 Changelog
 
-Last updated: July 31, 2026
+Last updated: August 3, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v1.0.0-beta.5 - 2026-08-03
+
+### Changed
+
+- Reporting now keeps operator-facing output concise while recording detailed
+  milestones in DEBUG logs.
+- Physical-audit reconciliation now uses bounded summary and individual-review
+  panels with `Approve All`, `Review Each`, `Make No Changes`, and `Cancel`;
+  only approved findings alter manifests.
+- The guides now distinguish the intended boundary from beta.5 behavior:
+  official and unofficial physical output is authoritative truth, while
+  `needs_attention` is intended to be a separate review queue.
+
+### Fixed
+
+- Preserved original and immediate Reporting publication provenance through
+  repeated transitive reuse.
+- Preserved complete multi-member DAR sets across multiple source containers
+  during Stage 9 planning.
+- Corrected Core API handbook metadata so the application version is not
+  presented as the component build.
+
+### Known limitations
+
+- `Reporting_DEV_49` in beta.5 still processes `needs_attention` filesystem
+  content and `NeedsAttention` manifest rows through classification, counting,
+  summaries, and presentation. Full exclusion remains unresolved under
+  `DEFERRED-051`.
 
 ## v1.0.0-beta.4 - 2026-07-31
 
