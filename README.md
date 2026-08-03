@@ -12,7 +12,10 @@ The current public release is **CURATOR v1.0.0-beta.4**.
   <img src="assets/images/branding/CURATOR_packaging_cover_concept_v2.png" alt="CURATOR preview artwork" width="720">
 </p>
 
-Artwork and branding shown here are copyright © 2026 Miguel A. Ortiz.
+Copyright © 2026 Miguel A. Ortiz.
+
+This notice covers the CURATOR project and its original artwork and branding;
+the software remains available under the license described below.
 
 ---
 
