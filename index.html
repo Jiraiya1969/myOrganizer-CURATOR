@@ -83,6 +83,42 @@
 
         }
 
+        .vanity-card {
+
+            max-width: 420px;
+            margin-bottom: 24px;
+            padding: 12px 15px;
+            border-left: 2px solid rgba(73, 216, 255, .72);
+            border-radius: 0 8px 8px 0;
+            background: rgba(255, 255, 255, .035);
+            color: #b8c9d5;
+            font-size: .82rem;
+            line-height: 1.55;
+
+        }
+
+        .vanity-card-label {
+
+            display: block;
+            margin-bottom: 5px;
+            color: #49d8ff;
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+
+        }
+
+        .vanity-card-time {
+
+            display: block;
+            margin-top: 7px;
+            color: #7f98aa;
+            font-size: .68rem;
+            letter-spacing: .04em;
+
+        }
+
         h1 {
 
             font-size: 5rem;
@@ -399,6 +435,14 @@
 
             }
 
+            .vanity-card {
+
+                margin-right: auto;
+                margin-left: auto;
+                text-align: left;
+
+            }
+
             h1 {
 
                 font-size: 4rem;
@@ -432,6 +476,15 @@
     <div class="container">
 
         <section>
+
+            <aside class="vanity-card" aria-label="Vanity card number 1">
+                <span class="vanity-card-label">Vanity Card #001</span>
+                More than three months of constant development and I need a
+                short break. Gonna play the latest Dave the Diver add-on!
+                <time class="vanity-card-time" datetime="2026-08-04T15:11:00-04:00">
+                    August 4, 2026 · 3:11 PM EDT
+                </time>
+            </aside>
 
             <div class="eyebrow">
                 CURATOR v1.0.0-beta.6
