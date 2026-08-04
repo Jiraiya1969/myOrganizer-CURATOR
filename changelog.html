@@ -63,6 +63,38 @@
         </p>
 
         <article class="current">
+            <h2>v1.0.0-beta.6</h2>
+            <p class="date">August 4, 2026</p>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Complete Atari Jaguar CD authority sets now publish as ZIP, while complete optical authority sets for every other platform publish as CHD. Source container type no longer determines final optical format.</li>
+                <li>CUE normalization now occurs universally after final DAR membership and authoritative naming are resolved. Organizer consumes that resolved contract without repairing or reinterpreting it.</li>
+                <li>Successful ZIP and CHD creation is accepted from the owning creation operation. Production stages no longer reopen successful output for verification.</li>
+                <li>Reporting remains focused on manifests, physical paths, sizes, and requested fingerprints; archive formats, CUE contracts, and CHD structure remain owned by producing stages.</li>
+            </ul>
+
+            <h3>Maintenance</h3>
+            <ul>
+                <li>Removed 14 proven-unreachable private functions and 566 stale implementation and comment lines.</li>
+                <li>Shortened 15 private functions and 31 private/local variables to CURATOR's established concise internal naming convention without changing public APIs, contracts, schemas, component builds, or runtime behavior.</li>
+            </ul>
+
+            <h3>Validation</h3>
+            <ul>
+                <li>Completed Stages 1 through 10 individually and completed Reporting through the visible execution path.</li>
+                <li>Organizer produced 7,334 of 7,334 outputs with zero failures.</li>
+                <li>Reporting matched all 4,775 authoritative manifest fingerprints, and an independent physical audit matched all 4,785 authoritative payload entries to exact DAR membership, case-sensitive names, sizes, CRC32, and SHA-1.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li><code>Reporting_DEV_53</code> still processes <code>needs_attention</code> filesystem content and <code>NeedsAttention</code> manifest rows. Complete exclusion remains unresolved under <code>DEFERRED-051</code>.</li>
+                <li>Dependency provenance and redistribution-policy validation remain open under <code>DEFERRED-038</code>.</li>
+            </ul>
+        </article>
+
+        <article>
             <h2>v1.0.0-beta.5</h2>
             <p class="date">August 3, 2026</p>
 
