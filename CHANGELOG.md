@@ -1,9 +1,51 @@
-# CURATOR / myOrganizer v1.0.0-beta.5 Changelog
+# CURATOR / myOrganizer v1.0.0-beta.6 Changelog
 
-Last updated: August 3, 2026
+Last updated: August 4, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v1.0.0-beta.6 - 2026-08-04
+
+### Changed
+
+- Complete Atari Jaguar CD authority sets now publish as ZIP, while complete
+  optical authority sets for every other platform publish as CHD. Source
+  container type no longer determines final optical format.
+- CUE normalization now occurs universally after final DAR membership and
+  authoritative naming are resolved. Organizer consumes that resolved contract
+  without repairing or reinterpreting it.
+- Successful ZIP and CHD creation is accepted from the owning creation
+  operation. Production stages no longer reopen successful output for
+  verification.
+- Reporting remains focused on manifests, physical paths, sizes, and requested
+  fingerprints; archive formats, CUE contracts, and CHD structure remain owned
+  by producing stages.
+
+### Maintenance
+
+- Removed 14 proven-unreachable private functions and 566 stale implementation
+  and comment lines.
+- Shortened 15 private functions and 31 private/local variables to CURATOR's
+  established concise internal naming convention without changing public APIs,
+  contracts, schemas, component builds, or runtime behavior.
+
+### Validation
+
+- Completed Stages 1 through 10 individually and completed Reporting through
+  the visible execution path.
+- Organizer produced 7,334 of 7,334 outputs with zero failures.
+- Reporting matched all 4,775 authoritative manifest fingerprints, and an
+  independent physical audit matched all 4,785 authoritative payload entries
+  to exact DAR membership, case-sensitive names, sizes, CRC32, and SHA-1.
+
+### Known limitations
+
+- `Reporting_DEV_53` still processes `needs_attention` filesystem content and
+  `NeedsAttention` manifest rows. Complete exclusion remains unresolved under
+  `DEFERRED-051`.
+- Dependency provenance and redistribution-policy validation remain open under
+  `DEFERRED-038`.
 
 ## v1.0.0-beta.5 - 2026-08-03
 
