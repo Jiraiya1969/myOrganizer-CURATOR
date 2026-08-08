@@ -1,9 +1,60 @@
-# CURATOR / myOrganizer v1.0.0-beta.6 Changelog
+# CURATOR / myOrganizer v1.0.0-beta.7 Changelog
 
-Last updated: August 4, 2026
+Last updated: August 8, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v1.0.0-beta.7 - 2026-08-08
+
+### Changed
+
+- Stage 3 reuses its already-computed incoming company summary after a
+  conflict-free merge only when platform, DAT, membership, and merge-accounting
+  checks prove that it exactly describes the complete published company DAR.
+  Every non-equivalent or conflicting case retains the full fail-closed summary
+  reconstruction path.
+- Stage 9 now publishes the complete ordered schema-1 physical-output
+  execution contract, including stable identities, exact destinations,
+  packaging, source relationships, cleanup ownership, and manifest authority.
+- Stage 10 now consumes the Stage 9 execution contract directly and no longer
+  reconstructs naming, routing, grouping, ordering, collision, or manifest
+  decisions from historical records.
+- Append now requires a valid output-wide receipt manifest and matching
+  physical size/SHA-256 evidence before an existing target may be skipped.
+- Stage 10 publishes a deterministic output-wide receipt manifest.
+
+- DependencyIntegrity now validates the manifest-level redistribution policy
+  and every entry's redistribution metadata.
+- Completed `DEFERRED-038`: confirmed the bundled Binmerge executable as the
+  publisher's exact 1.0.3 Windows release asset and identified the eleven
+  Redump cue/GDI metadata archives as public-domain metadata. The manifest
+  preserves the retired historical-endpoint limitation for three GDI archives.
+- The Core API handbook now documents 146 current interfaces, including the
+  Core.Primary dependency-path resolver used by DependencyIntegrity.
+
+### Fixed
+
+- Removed superseded Stage 10 planning and authority-reconstruction paths.
+- Completed a fresh live Stages 1-11 validation. Organizer produced 24,269 of
+  24,269 planned unique outputs with zero failures. Independent receipt checks
+  found zero missing paths, size mismatches, or SHA-256 mismatches, and every
+  output-wide and company-manifest fingerprint validated.
+
+- Completed `DEFERRED-051`: Reporting now excludes `needs_attention`
+  filesystem content and NeedsAttention manifest rows from every authoritative
+  collection boundary, including reconciliation, audits, caches, ledgers,
+  diagnostics, viewers, and publication.
+- Reconciled current operator guides, component build indexes, source module
+  identity, and the release inventory with the validated August 7 workspace
+  baseline.
+
+### Known limitations
+
+- Reporting classifies the administrative root receipt manifest
+  `00_Manifest\CURATOR_Output_Manifest.json` as unmanifested collection
+  content. Collection paths, sizes, hashes, and fingerprints remain valid;
+  the reporting-boundary investigation is tracked as `DEFERRED-053`.
 
 ## v1.0.0-beta.6 - 2026-08-04
 
