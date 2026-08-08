@@ -63,6 +63,36 @@
         </p>
 
         <article class="current">
+            <h2>v1.0.0-beta.7</h2>
+            <p class="date">August 8, 2026</p>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Stage 3 reuses its already-computed incoming company summary after a conflict-free merge only when platform, DAT, membership, and merge-accounting checks prove that it exactly describes the complete published company DAR. Every non-equivalent or conflicting case retains the full fail-closed summary reconstruction path.</li>
+                <li>Stage 9 now publishes the complete ordered schema-1 physical-output execution contract, including stable identities, exact destinations, packaging, source relationships, cleanup ownership, and manifest authority.</li>
+                <li>Stage 10 now consumes the Stage 9 execution contract directly and no longer reconstructs naming, routing, grouping, ordering, collision, or manifest decisions from historical records.</li>
+                <li>Append now requires a valid output-wide receipt manifest and matching physical size/SHA-256 evidence before an existing target may be skipped.</li>
+                <li>Stage 10 publishes a deterministic output-wide receipt manifest.</li>
+                <li>DependencyIntegrity now validates the manifest-level redistribution policy and every entry's redistribution metadata.</li>
+                <li>Completed <code>DEFERRED-038</code>: confirmed the bundled Binmerge executable as the publisher's exact 1.0.3 Windows release asset and identified the eleven Redump cue/GDI metadata archives as public-domain metadata. The manifest preserves the retired historical-endpoint limitation for three GDI archives.</li>
+                <li>The Core API handbook now documents 146 current interfaces, including the Core.Primary dependency-path resolver used by DependencyIntegrity.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Removed superseded Stage 10 planning and authority-reconstruction paths.</li>
+                <li>Completed a fresh live Stages 1-11 validation. Organizer produced 24,269 of 24,269 planned unique outputs with zero failures. Independent receipt checks found zero missing paths, size mismatches, or SHA-256 mismatches, and every output-wide and company-manifest fingerprint validated.</li>
+                <li>Completed <code>DEFERRED-051</code>: Reporting now excludes <code>needs_attention</code> filesystem content and <code>NeedsAttention</code> manifest rows from every authoritative collection boundary, including reconciliation, audits, caches, ledgers, diagnostics, viewers, and publication.</li>
+                <li>Reconciled current operator guides, component build indexes, source module identity, and the release inventory with the validated August 7 workspace baseline.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>Reporting classifies the administrative root receipt manifest <code>00_Manifest\CURATOR_Output_Manifest.json</code> as unmanifested collection content. Collection paths, sizes, hashes, and fingerprints remain valid; the reporting-boundary investigation is tracked as <code>DEFERRED-053</code>.</li>
+            </ul>
+        </article>
+
+        <article>
             <h2>v1.0.0-beta.6</h2>
             <p class="date">August 4, 2026</p>
 
