@@ -73,7 +73,7 @@ Download the current beta and verify its published SHA-256 checksum on the
 [authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v1.0.0-beta.7).
 
 Every published version remains available in the
-[public release archive](https://myorganizerhq.com/releases.html). See the
+[public release archive](https://myorganizerhq.com/releases). See the
 [project changelog](CHANGELOG.md) for improvements, fixes, and known
 limitations in each release.
 
