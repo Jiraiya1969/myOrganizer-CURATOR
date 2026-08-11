@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planned Changes for Next Release — CURATOR</title>
+    <meta name="description"
+        content="Possible changes being considered for a future CURATOR release. These plans are not live, released, promised, or guaranteed.">
+    <link rel="canonical" href="https://myorganizerhq.com/upcoming">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: radial-gradient(circle at top, #17364d 0%, #08131c 45%, #020508 100%);
+            color: #eef6ff;
+        }
+        main { width: min(1000px, 92%); margin: auto; padding: 70px 0; }
+        .eyebrow {
+            color: #49d8ff;
+            text-transform: uppercase;
+            letter-spacing: .22em;
+            font-size: .9rem;
+            margin-bottom: 18px;
+        }
+        h1 {
+            font-size: clamp(2.7rem, 7vw, 4.8rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 28px;
+        }
+        .planning-notice, .change-section {
+            background: rgba(255, 255, 255, .025);
+            border: 1px solid rgba(73, 216, 255, .18);
+            border-radius: 18px;
+            padding: 32px;
+            margin-bottom: 30px;
+        }
+        .planning-notice { border-color: rgba(73, 216, 255, .48); }
+        .planning-notice h2, .change-section h2 {
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+        }
+        .planning-notice p {
+            color: #dbe7ef;
+            font-size: 1.12rem;
+            line-height: 1.8;
+        }
+        .change-section ul { padding-left: 24px; }
+        .change-section li {
+            color: #d0dce5;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            margin-bottom: 13px;
+        }
+        .change-section li:last-child { margin-bottom: 0; }
+        .links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 34px; }
+        a { color: #49d8ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer { color: #8da3b5; margin-top: 34px; }
+        @media(max-width:650px) {
+            main { padding-top: 45px; }
+            .planning-notice, .change-section { padding: 24px; }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="eyebrow">CURATOR Planning Announcement</div>
+        <h1>Planned Changes for Next Release</h1>
+
+        <section class="planning-notice" aria-labelledby="planning-notice-title">
+            <h2 id="planning-notice-title">Planning Record Only</h2>
+            <p>
+                These are possible upcoming changes for a future CURATOR release. They are not
+                live, released, promised, or guaranteed. Inclusion here must not be interpreted
+                as evidence that any item is completed, approved for release, or certain to be
+                included in the next release. Final release contents must be established from
+                the implementation, validation evidence, authorized release scope, and release
+                package actually published at that time.
+            </p>
+        </section>
+
+        <section class="change-section">
+            <h2>Adding</h2>
+            <ul>
+                <li>Adding support for decoding CDI, NRG, and MDF/MDS images through bundled Aaru libraries while preserving original sources.</li>
+                <li>Adding content-authoritative Redump CUE resolution for supported optical sets.</li>
+                <li>Adding exact collector-facing routing for Sega CD 32X sets without changing DAT platform authority.</li>
+                <li>Adding a Stage 10 output-wide receipt manifest and deterministic Append verification.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Changing</h2>
+            <ul>
+                <li>Changing Stage 5 to record Size, CRC32, SHA-1, and CUE custody for prepared files.</li>
+                <li>Changing Stage 5 to perform bounded parallel CHD extraction.</li>
+                <li>Changing Stage 6 to reuse prepared hashes and resolve optical authority strictly from content.</li>
+                <li>Changing Stage 3 to use cached hashes, batched comparison serialization, indexed reconciliation, and guarded company-summary reuse.</li>
+                <li>Changing Stage 9 to publish the complete physical-output execution contract and Stage 10 to consume it directly.</li>
+                <li>Changing TaskBars to use deterministic numeric progress and suppress stale or regressive frames.</li>
+                <li>Changing the Core API handbook to document 148 interfaces.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Fixing</h2>
+            <ul>
+                <li>Fixing duplicate sources satisfying multiple optical memberships.</li>
+                <li>Fixing ZIP- and loose-origin CUE repair.</li>
+                <li>Fixing filename-based CHD authority scoring.</li>
+                <li>Fixing configured non-set files (<code>.txt</code>, <code>.exe</code>, <code>.dll</code>, and <code>.bat</code>) entering Needs Attention output.</li>
+                <li>Fixing authoritative Jaguar CD CUE handling.</li>
+                <li>Fixing Gateway folder-path presentation.</li>
+                <li>Fixing Core build identities and stale project documentation.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Continuing Limitations</h2>
+            <ul>
+                <li>Continuing investigation of Reporting classifying the root receipt manifest as unmanifested content (<code>DEFERRED-053</code>).</li>
+                <li>Continuing the deferred Stage 3 and Stage 5 progress-presentation trace audit (<code>DEFERRED-055</code>).</li>
+            </ul>
+        </section>
+
+        <div class="links">
+            <a href="/">Return to CURATOR</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/26">Discuss on GitHub</a>
+            <a href="/releases">Current and historical releases</a>
+        </div>
+        <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
+    </main>
+</body>
+
+</html>
