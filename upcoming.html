@@ -93,9 +93,10 @@
         <section class="change-section">
             <h2>Changing</h2>
             <ul>
-                <li>Changing Stage 5 to record Size, CRC32, SHA-1, and CUE custody for prepared files.</li>
+                <li>Changing Stage 5 to capture Size, CRC32, and SHA-1 while archive members are extracted and loose files are copied, reuse persisted stream evidence while retaining fallback rereads, and check archive recovery residue once per resumed run.</li>
                 <li>Changing Stage 5 to perform bounded parallel CHD extraction.</li>
-                <li>Changing Stage 6 to reuse prepared hashes and resolve optical authority strictly from content.</li>
+                <li>Changing Stage 6 to reuse prepared hashes, report checked, reused, normalization-read, and special-disc identity counts accurately to the end user, preserve Stage 7 compatibility, and resolve optical authority strictly from content.</li>
+                <li>Changing Stage 6 to trust the completed Stage 5 prepared-file contract, remove its redundant existence-only preflight, reuse immutable matching evidence, and reduce repeated output-record construction.</li>
                 <li>Changing Stage 3 to use cached hashes, batched comparison serialization, indexed reconciliation, and guarded company-summary reuse.</li>
                 <li>Changing Stage 9 to publish the complete physical-output execution contract and Stage 10 to consume it directly.</li>
                 <li>Changing TaskBars to use deterministic numeric progress and suppress stale or regressive frames.</li>
@@ -106,6 +107,7 @@
         <section class="change-section">
             <h2>Fixing</h2>
             <ul>
+                <li>Fixing publication sets whose distinct authority entry names intentionally share exact physical content, while retaining strict non-publication and optical membership handling.</li>
                 <li>Fixing duplicate sources satisfying multiple optical memberships.</li>
                 <li>Fixing ZIP- and loose-origin CUE repair.</li>
                 <li>Fixing filename-based CHD authority scoring.</li>
@@ -121,6 +123,7 @@
             <ul>
                 <li>Continuing investigation of Reporting classifying the root receipt manifest as unmanifested content (<code>DEFERRED-053</code>).</li>
                 <li>Continuing the deferred Stage 3 and Stage 5 progress-presentation trace audit (<code>DEFERRED-055</code>).</li>
+                <li>Continuing Stage 6 DAR-index and large-output construction/publication investigation (<code>DEFERRED-045</code> and <code>DEFERRED-057</code>).</li>
             </ul>
         </section>
 
