@@ -1,9 +1,71 @@
-# CURATOR / myOrganizer v1.0.0-beta.7 Changelog
+# CURATOR / myOrganizer v1.0.0-beta.8 Changelog
 
-Last updated: August 8, 2026
+Last updated: August 13, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v1.0.0-beta.8 - 2026-08-13
+
+### Added
+
+- Added the six managed Aaru libraries used for in-process CDI, NRG, and
+  MDF/MDS decoding while preserving original source custody and continuing
+  unsupported images through the normal review path.
+- Added exact content-authoritative Redump CUE resolution for configured
+  optical platforms, including Atari Jaguar CD authority data.
+- Added exact `AuthoritySetId` collector-platform overlays, including Sega CD
+  32X presentation, without changing DAT platform authority.
+- Added the output-wide receipt manifest used to validate deterministic Stage
+  10 Append reuse by destination, size, SHA-256, record fingerprint, and
+  complete manifest fingerprint.
+
+### Changed
+
+- Stage 1 now uses Core-owned bounded DAT leading-text reads and throttled
+  progress rendering. Stage 2 reuses its fail-closed platform association.
+  Stages 3 and 4 use indexed, batched, and single-pass construction paths that
+  preserve their established output contracts.
+- Stage 5 captures Size, CRC32, and SHA-1 during extraction or copying, reuses
+  complete persisted identity evidence, performs bounded CHD extraction, and
+  retains Core-owned fallback reads when trustworthy evidence is unavailable.
+- Stage 6 trusts the completed Stage 5 handoff, reports checked and reused
+  identities accurately, and reuses immutable matching evidence without
+  weakening content-only authority.
+- Stage 7 validates immutable upstream identity through keyed authority
+  lookups without rehashing. Stage 8 uses a per-set keyed lookup for exact
+  shared-source evidence. Stage 9 uses keyed destination collections while
+  preserving collision handling and exact Stage 10 instruction order.
+- Optical CUE correction is now last resort after ordinary prepared-hash,
+  normalization, sibling, and exact/profile-compatible repository workflows.
+  Complete optical sets with one safely derived structural CUE remain eligible
+  for Official output only when every non-CUE membership is present and exact;
+  the descriptor discrepancy remains explicit evidence.
+- Core API documentation now covers 149 interfaces. Current operator guides
+  describe the Stage 9 execution contract, output-wide receipt, company
+  manifests, structural-CUE eligibility, and current component identities.
+
+### Fixed
+
+- Fixed non-Redump structural CUE handling so a missing same-named Redump
+  member falls through instead of aborting Matching; ambiguity and conflicting
+  repository evidence still fail closed.
+- Fixed a concurrent Core.Progress queue race that could terminate otherwise
+  valid stage work while preserving TaskBar ordering and caller contracts.
+- Fixed publication packages whose distinct authority entry names share exact
+  physical content, while retaining strict non-publication and optical
+  membership rules.
+- Fixed configured non-set files (`.txt`, `.exe`, `.dll`, and `.bat`) entering
+  Needs Attention output and corrected authoritative Jaguar CD CUE handling.
+
+### Known Limitations
+
+- Reporting can classify the root receipt manifest as unmanifested content;
+  investigation remains deferred under `DEFERRED-053`.
+- Stage 3/5 progress-presentation tracing, the Stage 6 prebuilt DAR index and
+  output-publication investigation, and the distinction between upstream
+  content identity and final copied-artifact evidence remain deferred under
+  `DEFERRED-055`, `DEFERRED-045`, `DEFERRED-057`, and `DEFERRED-059`.
 
 ## v1.0.0-beta.7 - 2026-08-08
 
