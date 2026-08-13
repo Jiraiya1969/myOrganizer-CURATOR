@@ -63,7 +63,44 @@
             limitations in every public CURATOR release.
         </p>
 
-        <article class="current">
+        <article class="current" id="v1-0-0-beta-8">
+            <h2>v1.0.0-beta.8</h2>
+            <p class="date">August 13, 2026</p>
+
+            <h3>Added</h3>
+            <ul>
+                <li>Added the six managed Aaru libraries used for in-process CDI, NRG, and MDF/MDS decoding while preserving original source custody and continuing unsupported images through the normal review path.</li>
+                <li>Added exact content-authoritative Redump CUE resolution for configured optical platforms, including Atari Jaguar CD authority data.</li>
+                <li>Added exact <code>AuthoritySetId</code> collector-platform overlays, including Sega CD 32X presentation, without changing DAT platform authority.</li>
+                <li>Added the output-wide receipt manifest used to validate deterministic Stage 10 Append reuse by destination, size, SHA-256, record fingerprint, and complete manifest fingerprint.</li>
+            </ul>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Stage 1 now uses Core-owned bounded DAT leading-text reads and throttled progress rendering. Stage 2 reuses its fail-closed platform association. Stages 3 and 4 use indexed, batched, and single-pass construction paths that preserve their established output contracts.</li>
+                <li>Stage 5 captures Size, CRC32, and SHA-1 during extraction or copying, reuses complete persisted identity evidence, performs bounded CHD extraction, and retains Core-owned fallback reads when trustworthy evidence is unavailable.</li>
+                <li>Stage 6 trusts the completed Stage 5 handoff, reports checked and reused identities accurately, and reuses immutable matching evidence without weakening content-only authority.</li>
+                <li>Stage 7 validates immutable upstream identity through keyed authority lookups without rehashing. Stage 8 uses a per-set keyed lookup for exact shared-source evidence. Stage 9 uses keyed destination collections while preserving collision handling and exact Stage 10 instruction order.</li>
+                <li>Optical CUE correction is now last resort after ordinary prepared-hash, normalization, sibling, and exact/profile-compatible repository workflows. Complete optical sets with one safely derived structural CUE remain eligible for Official output only when every non-CUE membership is present and exact; the descriptor discrepancy remains explicit evidence.</li>
+                <li>Core API documentation now covers 149 interfaces. Current operator guides describe the Stage 9 execution contract, output-wide receipt, company manifests, structural-CUE eligibility, and current component identities.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Fixed non-Redump structural CUE handling so a missing same-named Redump member falls through instead of aborting Matching; ambiguity and conflicting repository evidence still fail closed.</li>
+                <li>Fixed a concurrent Core.Progress queue race that could terminate otherwise valid stage work while preserving TaskBar ordering and caller contracts.</li>
+                <li>Fixed publication packages whose distinct authority entry names share exact physical content, while retaining strict non-publication and optical membership rules.</li>
+                <li>Fixed configured non-set files (<code>.txt</code>, <code>.exe</code>, <code>.dll</code>, and <code>.bat</code>) entering Needs Attention output and corrected authoritative Jaguar CD CUE handling.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>Reporting can classify the root receipt manifest as unmanifested content; investigation remains deferred under <code>DEFERRED-053</code>.</li>
+                <li>Stage 3/5 progress-presentation tracing, the Stage 6 prebuilt DAR index and output-publication investigation, and the distinction between upstream content identity and final copied-artifact evidence remain deferred under <code>DEFERRED-055</code>, <code>DEFERRED-045</code>, <code>DEFERRED-057</code>, and <code>DEFERRED-059</code>.</li>
+            </ul>
+        </article>
+
+        <article>
             <h2>v1.0.0-beta.7</h2>
             <p class="date">August 8, 2026</p>
 

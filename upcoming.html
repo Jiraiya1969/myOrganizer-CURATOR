@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="Possible changes being considered for a future CURATOR release. These plans are not live, released, promised, or guaranteed.">
+        content="Current planning status for the next CURATOR release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -73,69 +73,16 @@
         <h1>Planned Changes for Next Release</h1>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">What We're Working On</h2>
+            <h2 id="planning-notice-title">No New Plans Announced</h2>
             <p>
-                These are the improvements currently planned for the next CURATOR release.
-                Development is still underway, so the final list may change before release.
+                The previously announced work is now available in CURATOR v1.0.0-beta.8.
+                No additional changes have been announced for a later release yet.
             </p>
-        </section>
-
-        <section class="change-section">
-            <h2>Adding</h2>
-            <ul>
-                <li>Adding support for decoding CDI, NRG, and MDF/MDS images through bundled Aaru libraries while preserving original sources.</li>
-                <li>Adding content-authoritative Redump CUE resolution for supported optical sets.</li>
-                <li>Adding exact collector-facing routing for Sega CD 32X sets without changing DAT platform authority.</li>
-                <li>Adding a Stage 10 output-wide receipt manifest and deterministic Append verification.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Changing</h2>
-            <ul>
-                <li>Changing Stage 9 to index execution-contract destinations once while preserving collision handling and exact downstream instruction order.</li>
-                <li>Changing Stage 8 to resolve previously selected exact shared physical sources through a per-set keyed lookup while preserving grouping, selection, and output order.</li>
-                <li>Changing Stage 1 to use Core-owned bounded DAT leading-text reads and time-throttled progress rendering while preserving exact platform authority.</li>
-                <li>Changing Stage 4 to construct its ordered inventory and summary accounting in one pass while retaining Core-owned enumeration and publication.</li>
-                <li>Changing Stage 2 to reuse each DAT's fail-closed platform association instead of replaying a second verification and progress-render pass.</li>
-                <li>Changing Stage 5 to capture Size, CRC32, and SHA-1 while archive members are extracted and loose files are copied, reuse persisted stream evidence while retaining Core-owned fallback rereads, skip redundant filesystem queries for complete immutable prepared identities, and check archive recovery residue once per resumed run.</li>
-                <li>Changing Stage 5 to perform bounded parallel CHD extraction.</li>
-                <li>Changing Stage 6 to reuse prepared hashes, report checked, reused, normalization-read, and special-disc identity counts accurately to the end user, preserve Stage 7 compatibility, and resolve optical authority strictly from content.</li>
-                <li>Changing Stage 6 to trust the completed Stage 5 prepared-file contract, remove its redundant existence-only preflight, reuse immutable matching evidence, and reduce repeated output-record construction.</li>
-                <li>Changing Stage 7 to validate immutable upstream identities without rehashing files and to resolve DAR member evidence through direct keyed lookups while preserving exact validation output, including a dedicated contextual lookup only for records that require contextual CUE authority.</li>
-                <li>Changing Stage 3 to use cached and Core-owned batch identity hashes, batched comparison serialization, indexed reconciliation, and guarded company-summary reuse.</li>
-                <li>Changing Stage 9 to publish the complete physical-output execution contract and Stage 10 to consume it directly.</li>
-                <li>Changing TaskBars to use deterministic numeric progress and suppress stale or regressive frames.</li>
-                <li>Changing the Core API handbook to document 149 interfaces.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Fixing</h2>
-            <ul>
-                <li>Fixing publication sets whose distinct authority entry names intentionally share exact physical content, while retaining strict non-publication and optical membership handling.</li>
-                <li>Fixing duplicate sources satisfying multiple optical memberships.</li>
-                <li>Fixing ZIP- and loose-origin CUE repair.</li>
-                <li>Fixing filename-based CHD authority scoring.</li>
-                <li>Fixing configured non-set files (<code>.txt</code>, <code>.exe</code>, <code>.dll</code>, and <code>.bat</code>) entering Needs Attention output.</li>
-                <li>Fixing authoritative Jaguar CD CUE handling.</li>
-                <li>Fixing Gateway folder-path presentation.</li>
-                <li>Fixing Core build identities and stale project documentation.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Continuing Limitations</h2>
-            <ul>
-                <li>Continuing investigation of Reporting classifying the root receipt manifest as unmanifested content (<code>DEFERRED-053</code>).</li>
-                <li>Continuing the deferred Stage 3 and Stage 5 progress-presentation trace audit (<code>DEFERRED-055</code>).</li>
-                <li>Continuing Stage 6 DAR-index and large-output construction/publication investigation (<code>DEFERRED-045</code> and <code>DEFERRED-057</code>).</li>
-            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/26">Discuss on GitHub</a>
+            <a href="/changelog#v1-0-0-beta-8">Read the beta.8 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
