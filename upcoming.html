@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="Current planning status for the next CURATOR release.">
+        content="Improvements currently planned for the next CURATOR release. The final list may change during development.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -73,16 +73,32 @@
         <h1>Planned Changes for Next Release</h1>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">No New Plans Announced</h2>
+            <h2 id="planning-notice-title">What We're Working On</h2>
             <p>
-                The previously announced work is now available in CURATOR v1.0.0-beta.8.
-                No additional changes have been announced for a later release yet.
+                These are the improvements currently planned for the next CURATOR release.
+                Development is still underway, so the final list may change before release.
             </p>
+        </section>
+
+        <section class="change-section">
+            <h2>Changing</h2>
+            <ul>
+                <li>Preserving distinct Redump and TOSEC authority sets when identical content appears in both sources.</li>
+                <li>Selecting Redump cue authority by authoritative DAT SHA-256 and pinning each configured cue archive by SHA-256.</li>
+                <li>Refreshing the bundled Redump cue and GDI metadata archives and expanding configured platform coverage.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Fixing</h2>
+            <ul>
+                <li>Retaining existing authority memberships when optical-container refinement adds deterministic set-scoped evidence.</li>
+            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="/changelog#v1-0-0-beta-8">Read the beta.8 changelog</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/33">Discuss on GitHub</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
