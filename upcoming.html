@@ -81,8 +81,18 @@
         </section>
 
         <section class="change-section">
+            <h2>Adding</h2>
+            <ul>
+                <li>Adding content-validated MAME <code>-listxml</code> ingestion for Arcade ROM and CHD authority.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
             <h2>Changing</h2>
             <ul>
+                <li>Changing MAME Arcade output to split-set structure with clone-owned ROM membership and separate dependency sets.</li>
+                <li>Prioritizing MAME internal CHD SHA-1 authority over Redump-derived optical-track evidence.</li>
+                <li>Changing complete authoritative-set publication so applicable optical transformation requires one CUE while complete sets without usable CUE evidence publish as ZIP sets.</li>
                 <li>Preserving distinct Redump and TOSEC authority sets when identical content appears in both sources.</li>
                 <li>Selecting Redump cue authority by authoritative DAT SHA-256 and pinning each configured cue archive by SHA-256.</li>
                 <li>Refreshing the bundled Redump cue and GDI metadata archives and expanding configured platform coverage.</li>
@@ -92,7 +102,9 @@
         <section class="change-section">
             <h2>Fixing</h2>
             <ul>
+                <li>Fixing resolved candidate destination collisions remaining as blocking readiness failures after final artifact routing produces distinct destinations.</li>
                 <li>Retaining existing authority memberships when optical-container refinement adds deterministic set-scoped evidence.</li>
+                <li>Collapsing exact duplicate records within one authority membership before DAR publication while preserving distinct Redump and TOSEC memberships.</li>
             </ul>
         </section>
 
