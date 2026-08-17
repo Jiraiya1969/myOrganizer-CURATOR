@@ -75,22 +75,35 @@
         <section class="planning-notice" aria-labelledby="planning-notice-title">
             <h2 id="planning-notice-title">What We're Working On</h2>
             <p>
-                These are the improvements currently planned for the next CURATOR release.
-                Development is still underway, so the final list may change before release.
+                CURATOR is now on the <code>v2.xx.xx</code> development track. This is the
+                sole current application-version track, but no public <code>v2.xx.xx</code>
+                release has been packaged or published. The candidate changes below remain
+                possible future work and may change before release.
             </p>
         </section>
 
         <section class="change-section">
             <h2>Adding</h2>
             <ul>
-                <li>Adding content-validated MAME <code>-listxml</code> ingestion for Arcade ROM and CHD authority.</li>
+                <li>Adding capability-based Bootstrap initialization through strict, validated static JSON call sheets for Gateway, numbered stages, and utilities.</li>
+                <li>Adding the relational Core.Database runtime and coordinated persistent and disposable stage-state contracts.</li>
+                <li>Adding the pinned Microsoft.Data.Sqlite, SQLitePCLRaw, and native e_sqlite3 runtime dependencies required by Core.Database.</li>
+                <li>Adding limited, preliminary ingestion of content-validated MAME <code>-listxml</code> exports for coin-operated Arcade ROM and CHD authority without relying on an <code>mame*.xml</code> filename.</li>
             </ul>
         </section>
 
         <section class="change-section">
             <h2>Changing</h2>
             <ul>
-                <li>Changing MAME Arcade output to split-set structure with clone-owned ROM membership and separate dependency sets.</li>
+                <li>Changing Gateway base startup so it requires no database capability and activates additional capabilities only for the selected action.</li>
+                <li>Changing Gateway startup ordering so the safety agreement precedes requested Core activation.</li>
+                <li>Changing Stages 1-10 to use the promoted relational authority and frozen execution-plan pathway proven by the successful Test_Bed Full Run.</li>
+                <li>Changing the sole current application identifier to CURATOR and the current development version to <code>v2.xx.xx</code> across source, configuration, templates, memory, inventory, and user documentation.</li>
+                <li>Changing current Core and stage component provenance from historical <code>v.5-dev_###</code> and <code>v.5-New_###</code> forms to concise <code>DEV_###</code> labels while retaining old identifiers only as explicitly historical evidence.</li>
+                <li>Refreshing all current guides to the CURATOR <code>v2.xx.xx</code> identity with verified pre-change backups, 2026-08-17 filenames, relational-runtime guidance, and complete rendered-page inspection.</li>
+                <li>Documenting the 149-interface general Core API registry while identifying Core.Database's separate application-internal relational contract.</li>
+                <li>Changing Stage 3 authority-set identity to include the canonical DAT key and publishing that key through DAR provenance so physical DAT filenames do not define or collapse authoritative set identity.</li>
+                <li>Changing MAME Arcade output to split-set structure with machine-owned ROM membership and separate parent, BIOS, and device dependency sets.</li>
                 <li>Prioritizing MAME internal CHD SHA-1 authority over Redump-derived optical-track evidence.</li>
                 <li>Changing complete authoritative-set publication so applicable optical transformation requires one CUE while complete sets without usable CUE evidence publish as ZIP sets.</li>
                 <li>Preserving distinct Redump and TOSEC authority sets when identical content appears in both sources.</li>
@@ -105,6 +118,13 @@
                 <li>Fixing resolved candidate destination collisions remaining as blocking readiness failures after final artifact routing produces distinct destinations.</li>
                 <li>Retaining existing authority memberships when optical-container refinement adds deterministic set-scoped evidence.</li>
                 <li>Collapsing exact duplicate records within one authority membership before DAR publication while preserving distinct Redump and TOSEC memberships.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Continuing Limitations</h2>
+            <ul>
+                <li>Continuing to treat MAME support as limited and preliminary: excluding <code>nodump</code>, routing incomplete authority sets to NeedsAttention, and not providing merged, non-merged, standalone, software-list, or general non-Arcade MAME management.</li>
             </ul>
         </section>
 
