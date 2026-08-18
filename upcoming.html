@@ -97,14 +97,18 @@
             <ul>
                 <li>Changing Gateway base startup so it requires no database capability and activates additional capabilities only for the selected action.</li>
                 <li>Changing Gateway startup ordering so the safety agreement precedes requested Core activation.</li>
+                <li>Changing Gateway prerequisite handling so Stages 2-10 and Reporting display an end-user notice and close normally when Stage 1 has not initialized the database authority.</li>
                 <li>Changing Stages 1-10 to use the promoted relational authority and frozen execution-plan pathway proven by the successful Test_Bed Full Run.</li>
-                <li>Changing the sole current application identifier to CURATOR and the current development version to <code>v2.xx.xx</code> across source, configuration, templates, memory, inventory, and user documentation.</li>
+                <li>Changing Stage 10 execution to retain one Core-owned SQLite connection, atomically pipeline the next InFlight checkpoint with each completed receipt, and use WAL with <code>synchronous=FULL</code> for faster durable publication.</li>
+                <li>Changing Stage 3 subsequent runs to retain the active DAR revision without rebuilding or republishing authority when Stage 1 and Stage 2 inputs are unchanged.</li>
+                <li>Changing Stage 2 and Stage 3 relational publication to reuse prepared SQLite commands within their existing atomic transactions.</li>
+                <li>Changing the sole current application identifier to <code>CURATOR</code> and the current development version to <code>v2.xx.xx</code> across source, configuration, templates, memory, inventory, and user documentation.</li>
                 <li>Changing current Core and stage component provenance from historical <code>v.5-dev_###</code> and <code>v.5-New_###</code> forms to concise <code>DEV_###</code> labels while retaining old identifiers only as explicitly historical evidence.</li>
-                <li>Refreshing all current guides to the CURATOR <code>v2.xx.xx</code> identity with verified pre-change backups, 2026-08-17 filenames, relational-runtime guidance, and complete rendered-page inspection.</li>
+                <li>Refreshing current guides to the <code>CURATOR v2.xx.xx</code> identity with verified pre-change backups, actual-update-date filenames, relational-runtime guidance, and complete rendered-page inspection.</li>
                 <li>Documenting the 149-interface general Core API registry while identifying Core.Database's separate application-internal relational contract.</li>
                 <li>Changing Stage 3 authority-set identity to include the canonical DAT key and publishing that key through DAR provenance so physical DAT filenames do not define or collapse authoritative set identity.</li>
                 <li>Changing MAME Arcade output to split-set structure with machine-owned ROM membership and separate parent, BIOS, and device dependency sets.</li>
-                <li>Prioritizing MAME internal CHD SHA-1 authority over Redump-derived optical-track evidence.</li>
+                <li>Prioritizing MAME internal CHD SHA-1 authority over Redump-derived optical-track evidence on the MAME path.</li>
                 <li>Changing complete authoritative-set publication so applicable optical transformation requires one CUE while complete sets without usable CUE evidence publish as ZIP sets.</li>
                 <li>Preserving distinct Redump and TOSEC authority sets when identical content appears in both sources.</li>
                 <li>Selecting Redump cue authority by authoritative DAT SHA-256 and pinning each configured cue archive by SHA-256.</li>
@@ -115,6 +119,8 @@
         <section class="change-section">
             <h2>Fixing</h2>
             <ul>
+                <li>Fixing relational Matching input reconstruction so persisted CUE references, CUE scope, and complete members of positively identified authority sets remain available for deterministic optical-set correction.</li>
+                <li>Fixing safety-notice presentation so the locked canonical README content is rendered as readable console text without changing its source.</li>
                 <li>Fixing resolved candidate destination collisions remaining as blocking readiness failures after final artifact routing produces distinct destinations.</li>
                 <li>Retaining existing authority memberships when optical-container refinement adds deterministic set-scoped evidence.</li>
                 <li>Collapsing exact duplicate records within one authority membership before DAR publication while preserving distinct Redump and TOSEC memberships.</li>
