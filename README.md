@@ -2,7 +2,13 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v1.0.0-beta.8**.
+The current public release is **CURATOR v2.0.0-beta.1**.
+
+CURATOR v2 is a major architectural overhaul. It replaces the principal
+in-memory processing paths with persistent, indexed SQLite authority,
+execution, recovery, and audit workflows across Stages 1–10 and Reporting.
+The v1 release line is closed and preserved as immutable release history; all
+continuing development now proceeds exclusively under v2.
 
 <p align="center">
   <img src="assets/images/branding/CURATOR_official_logo_concept_v2_bordered_reflective.png" alt="CURATOR official logo" width="520">
@@ -65,12 +71,19 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v1.0.0-beta.8**.
+CURATOR is currently available as **v2.0.0-beta.1**.
 
-The application is a mature deterministic eleven-stage pipeline. This public beta supports DAT authority processing, validation, assembly, completeness analysis, organization, durable reporting, recovery, and generated documentation.
+This first v2 public beta is a major architectural overhaul of CURATOR's
+deterministic eleven-stage pipeline. Persistent SQLite-backed authority and
+relational contracts now coordinate Stages 1–10 and Reporting, while durable
+receipts, recovery state, and frozen publication plans strengthen large-scale
+processing and interrupted-run recovery.
+
+The closed v1 release line remains permanently available and will receive no
+further development or release changes.
 
 Download the current beta and verify its published SHA-256 checksum on the
-[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v1.0.0-beta.8).
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.1).
 
 Every published version remains available in the
 [public release archive](https://myorganizerhq.com/releases). See the

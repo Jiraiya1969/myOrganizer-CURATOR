@@ -60,10 +60,51 @@
         <h1>Changelog</h1>
         <p class="intro">
             A complete end-user record of improvements, fixes, and known
-            limitations in every public CURATOR release.
+            limitations in every public CURATOR release. CURATOR v2 begins a
+            major SQLite-based architectural overhaul; the closed v1 line
+            remains preserved below as immutable release history.
         </p>
 
-        <article class="current" id="v1-0-0-beta-8">
+        <article class="current" id="v2-0-0-beta-1">
+            <h2>v2.0.0-beta.1</h2>
+            <p class="date">August 21, 2026</p>
+
+            <p>This first v2 release is a major architectural overhaul of CURATOR's authority, processing, recovery, and audit pathways. Persistent SQLite contracts now coordinate Stages 1–10 and Reporting while the v1 release line remains closed and preserved.</p>
+
+            <h3>Added</h3>
+            <ul>
+                <li>Added capability-based Bootstrap initialization through validated static call sheets and on-request Core activation.</li>
+                <li>Added the persistent SQLite authority database and relational contracts used by Stages 1–10 and Reporting.</li>
+                <li>Added pinned Microsoft.Data.Sqlite, SQLitePCLRaw, and native SQLite runtime dependencies, together with integrity and provenance records.</li>
+                <li>Added complete output receipts, company manifests, placement evidence, recovery state, and collection-audit workflows.</li>
+            </ul>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Replaced the heavy in-memory crunching paths in Stages 6–9 with indexed, set-based SQLite operations while retaining physical file work in Core-owned services.</li>
+                <li>Changed Stage 10 to execute a frozen relational plan with durable receipt checkpoints, resumable publication, verified Append reuse, and optimized final cleanup.</li>
+                <li>Changed Gateway startup to draw the console header before Core initialization, present Core readiness as numbered steps, and request only the capabilities needed by the selected action.</li>
+                <li>Improved end-user announcements and truthful progress across Gateway, numbered stages, Reporting, cleanup, database loading, and publication.</li>
+                <li>Updated all current guides, legal notices, attribution, dependency records, component identities, and public-release protections for CURATOR <code>v2.0.0-beta.1</code>.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Fixed Gateway option 8 so pause-enabled runs pause after each successful stage summary without changing the established behavior of options 4 and 6.</li>
+                <li>Fixed unresolved archive review output to retain top-level source lineage and preserve nested member paths without collisions.</li>
+                <li>Fixed Stage 5 missing-source handling, Stage 7 relational validation scaling, optical CUE membership reconstruction, and several silent console intervals.</li>
+                <li>Fixed authorized cleanup and Stage 10 workspace cleanup to avoid redundant enumeration while preserving failure evidence and required folder surfaces.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>MAME support remains limited and preliminary and does not replace a dedicated MAME ROM manager.</li>
+                <li>Some otherwise valid Alcohol MDF/MDS images may be incompatible with the bundled decoder; CURATOR preserves those sources and routes them for review.</li>
+                <li>This is a beta release. Operators should use copied input, retain backups, and verify curated output before replacing original material.</li>
+            </ul>
+        </article>
+
+        <article id="v1-0-0-beta-8">
             <h2>v1.0.0-beta.8</h2>
             <p class="date">August 13, 2026</p>
 

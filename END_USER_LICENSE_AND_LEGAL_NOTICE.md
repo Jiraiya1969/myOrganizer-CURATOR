@@ -1,10 +1,10 @@
 # CURATOR End User License and Legal Notice
 
-Last updated: July 31, 2026
+Last updated: August 19, 2026
 
 ## 1. GNU General Public License
 
-CURATOR / myOrganizer-CURATOR ("CURATOR") is free software licensed under the
+CURATOR ("CURATOR") is free software licensed under the
 GNU General Public License as published by the Free Software Foundation,
 either version 3 of the License or, at your option, any later version.
 
@@ -88,6 +88,15 @@ their own licenses, notices, warranties, availability, and terms. Their
 inclusion or mention does not create a warranty, endorsement, sponsorship, or
 assumption of liability by CURATOR's author or contributors. See
 `documentation/THIRD_PARTY_NOTICES.md` for packaged dependency notices.
+
+CURATOR packages eleven Redump cue/GDI metadata archives whose exact identities
+are recorded in `config/dependency-manifest.json`. Redump identifies its stored
+metadata as public domain and available for unrestricted use. Eight CUE archives
+map to Redump's current publisher download surface. Three GDI archives map to
+historical Redump publisher endpoints whose original archive hashes are no
+longer exposed; CURATOR preserves their filenames, sizes, SHA-256 identities,
+and this evidence limitation. These metadata terms do not grant rights to any
+referenced game content, names, or trademarks.
 
 ## 7. Names, Trademarks, and Project Identity
 
