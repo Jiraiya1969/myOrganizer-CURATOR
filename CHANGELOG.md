@@ -1,14 +1,67 @@
-# CURATOR / myOrganizer v1.0.0-beta.8 Changelog
+# CURATOR v2.0.0-beta.1 Changelog
 
-Last updated: August 13, 2026
+Last updated: August 21, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v2.0.0-beta.1 - 2026-08-21
+
+### Added
+
+- Added capability-based Bootstrap initialization through validated static call
+  sheets and on-request Core activation.
+- Added the persistent SQLite authority database and relational contracts used
+  by Stages 1-10 and Reporting.
+- Added pinned Microsoft.Data.Sqlite, SQLitePCLRaw, and native SQLite runtime
+  dependencies, together with integrity and provenance records.
+- Added complete output receipts, company manifests, placement evidence,
+  recovery state, and collection-audit workflows.
+
+### Changed
+
+- Replaced the heavy in-memory crunching paths in Stages 6-9 with indexed,
+  set-based SQLite operations while retaining physical file work in Core-owned
+  services.
+- Changed Stage 10 to execute a frozen relational plan with durable receipt
+  checkpoints, resumable publication, verified Append reuse, and optimized
+  final cleanup.
+- Changed Gateway startup to draw the console header before Core initialization,
+  present Core readiness as numbered steps, and request only the capabilities
+  needed by the selected action.
+- Improved end-user announcements and truthful progress across Gateway,
+  numbered stages, Reporting, cleanup, database loading, and publication.
+- Updated all current guides, legal notices, attribution, dependency records,
+  component identities, and public-release protections for CURATOR
+  `v2.0.0-beta.1`.
+
+### Fixed
+
+- Fixed Gateway option 8 so pause-enabled runs pause after each successful stage
+  summary without changing the established behavior of options 4 and 6.
+- Fixed unresolved archive review output to retain top-level source lineage and
+  preserve nested member paths without collisions.
+- Fixed Stage 5 missing-source handling, Stage 7 relational validation scaling,
+  optical CUE membership reconstruction, and several silent console intervals.
+- Fixed authorized cleanup and Stage 10 workspace cleanup to avoid redundant
+  enumeration while preserving failure evidence and required folder surfaces.
+
+### Known Limitations
+
+- MAME support remains limited and preliminary and does not replace a dedicated
+  MAME ROM manager.
+- Some otherwise valid Alcohol MDF/MDS images may be incompatible with the
+  bundled decoder; CURATOR preserves those sources and routes them for review.
+- This is a beta release. Operators should use copied input, retain backups, and
+  verify curated output before replacing original material.
 
 ## v1.0.0-beta.8 - 2026-08-13
 
 ### Added
 
+- Added limited, preliminary ingestion of content-validated MAME `-listxml`
+  exports for coin-operated Arcade ROM and CHD authority. Recognition uses the
+  MAME XML contract rather than requiring a filename prefix.
 - Added the six managed Aaru libraries used for in-process CDI, NRG, and
   MDF/MDS decoding while preserving original source custody and continuing
   unsupported images through the normal review path.
@@ -22,6 +75,13 @@ limitations in each CURATOR release.
 
 ### Changed
 
+- Stage 3 authority-set identity now includes the canonical DAT key rather than
+  relying on a physical DAT filename. DAR publishes that key through provenance
+  and keeps distinct authoritative DAT identities stable across file renames.
+- MAME Arcade publication now uses split-set membership: machine-owned ROMs
+  remain with each machine while parent, BIOS, and device dependencies remain
+  separate sets. MAME internal CHD SHA-1 authority takes precedence over
+  Redump-derived optical-track evidence on the MAME path.
 - Stage 1 now uses Core-owned bounded DAT leading-text reads and throttled
   progress rendering. Stage 2 reuses its fail-closed platform association.
   Stages 3 and 4 use indexed, batched, and single-pass construction paths that
@@ -60,6 +120,11 @@ limitations in each CURATOR release.
 
 ### Known Limitations
 
+- MAME support is limited and preliminary. It covers coin-operated Arcade
+  entries from validated `-listxml`, excludes `nodump`, and routes incomplete
+  authority sets to NeedsAttention. It does not provide merged, non-merged,
+  standalone, software-list, or general non-Arcade MAME management; validate
+  results with the intended MAME release or current `clrmame`.
 - Reporting can classify the root receipt manifest as unmanifested content;
   investigation remains deferred under `DEFERRED-053`.
 - Stage 3/5 progress-presentation tracing, the Stage 6 prebuilt DAR index and
@@ -69,8 +134,68 @@ limitations in each CURATOR release.
 
 ## v1.0.0-beta.7 - 2026-08-08
 
+### Added
+
+- Stage 5 now attempts in-process decoding of supported CDI, NRG, and MDF/MDS
+  optical images into deterministic raw long-sector track members for ordinary
+  exact-hash matching. Original sources remain intact; decoder failures are
+  logged and continue through the standard review workflow.
+- CURATOR now bundles the six managed Aaru libraries required by that optical
+  decoding boundary. No separate Aaru executable, configuration, database, or
+  PATH setup is required.
+- Stage 5 now records Size, CRC32, and SHA-1 for every prepared file and
+  publishes deterministic CUE-reference custody evidence for ZIP, loose-file,
+  and CHD-derived media.
+- Stage 6 reuses the Stage 5 content identity where normalization is not
+  required. Optical authority selection remains content-only in the strict
+  Size, CRC32, SHA-1 sequence; filenames never select DAT authority.
+- CUE reference repair now works across prepared optical media. Physical
+  references bind by FileID where possible, deterministic same-scope order is
+  used only under complete unanimous set evidence, and rewritten CUE files
+  receive authority only when their final content identity exactly matches the
+  DAT member.
+- Stages 7–9 now preserve a corrected but non-authoritative CUE as a structural
+  descriptor, keep incomplete optical sets incomplete, and emit one complete
+  Needs Attention set without duplicating the CUE.
+
+### Fixed
+
+- Prevented duplicate physical sources from satisfying multiple authority
+  memberships in an optical set.
+- Removed filename-based CHD member and set scoring that could override
+  content identity.
+- Corrected ZIP-origin and loose-file-origin CUE handling so mismatched track
+  references are repaired deterministically without promoting an inexact CUE
+  to DAT authority.
+
 ### Changed
 
+- TaskBars now default to numeric counts, preserve genuinely empty detail,
+  coalesce superseded queued frames, and suppress regressive display updates
+  without interrupting stage work. Per-item and per-phase row generations keep
+  legitimate transitions monotonic. Stage 2 no longer presents an unknown XML
+  set total as complete, and Stage 9 retains continuous progress through final
+  publication.
+
+- Stage 6 now obtains an authoritative optical CUE only after BIN content
+  uniquely resolves the DAT set. It copies the exact DAT-named CUE from the
+  configured Redump archive, verifies Size, CRC32, and SHA-1, and proves the
+  source archive unchanged by pre/post SHA-256. The slower VerifyDump path and
+  prior CUE-repair path are disabled by default. Repeated TestBed Stages 5-10
+  matched 33 of 33 members and produced 11 official CHDs with zero Needs
+  Attention records in 40-42 seconds for Matching.
+
+- Stage 3 company-DAR reconciliation now batches Core-owned deterministic JSON
+  comparisons and replaces matched metadata records by their indexed saved
+  position instead of repeatedly scanning the complete saved DAT. A forced
+  6,931-entry merge improved from 15 minutes 16 seconds to 16 seconds, and
+  full 83-DAT validation preserved the pre-optimization 99.4 MB company DAR
+  byte-for-byte while retaining all authoritative and context-lineage records.
+- Stage 3 now caches repeated authoritative set hashes, while Core.Secondary
+  reuses synchronized provider-owned text-hash state. Repeated TestBed runs
+  improved from 101 seconds to 87 seconds with exact normalized DAR output;
+  the complete Stage 2-10 and Reporting chain passed without hash or
+  publication failures.
 - Stage 3 reuses its already-computed incoming company summary after a
   conflict-free merge only when platform, DAT, membership, and merge-accounting
   checks prove that it exactly describes the complete published company DAR.
@@ -85,6 +210,11 @@ limitations in each CURATOR release.
 - Append now requires a valid output-wide receipt manifest and matching
   physical size/SHA-256 evidence before an existing target may be skipped.
 - Stage 10 publishes a deterministic output-wide receipt manifest.
+- All four published guides now identify the root output receipt and company
+  manifests at the appropriate audience level. They warn that deleting or
+  changing the root receipt breaks trusted Append continuity, while deleting
+  or changing a company manifest compromises Reporting coverage for that
+  company until valid evidence is restored.
 
 - DependencyIntegrity now validates the manifest-level redistribution policy
   and every entry's redistribution metadata.
@@ -92,11 +222,15 @@ limitations in each CURATOR release.
   publisher's exact 1.0.3 Windows release asset and identified the eleven
   Redump cue/GDI metadata archives as public-domain metadata. The manifest
   preserves the retired historical-endpoint limitation for three GDI archives.
-- The Core API handbook now documents 146 current interfaces, including the
-  Core.Primary dependency-path resolver used by DependencyIntegrity.
+- The Core API handbook now documents 148 current interfaces, including the
+  Core.Secondary deterministic comparison batch API used by Stage 3 and the
+  managed proprietary optical-image decoding boundary used by Stage 5.
 
 ### Fixed
 
+- Gateway collection-folder paths now display only the path root and final
+  folder name, such as `C:\...\workspace`, instead of truncating arbitrary
+  characters from the middle of the full path.
 - Removed superseded Stage 10 planning and authority-reconstruction paths.
 - Completed a fresh live Stages 1-11 validation. Organizer produced 24,269 of
   24,269 planned unique outputs with zero failures. Independent receipt checks
@@ -154,39 +288,40 @@ limitations in each CURATOR release.
 
 ### Known limitations
 
-- `Reporting_DEV_53` still processes `needs_attention` filesystem content and
-  `NeedsAttention` manifest rows. Complete exclusion remains unresolved under
+- Reporting_DEV_53 still processes `needs_attention` filesystem content and
+  NeedsAttention manifest rows. Complete exclusion remains unresolved under
   `DEFERRED-051`.
-- Dependency provenance and redistribution-policy validation remain open under
-  `DEFERRED-038`.
+- Dependency provenance remains open under `DEFERRED-038`; redistribution-
+  policy validation was completed after the beta.6 release.
 
 ## v1.0.0-beta.5 - 2026-08-03
 
 ### Changed
 
-- Reporting now keeps operator-facing output concise while recording detailed
-  milestones in DEBUG logs.
-- Physical-audit reconciliation now uses bounded summary and individual-review
-  panels with `Approve All`, `Review Each`, `Make No Changes`, and `Cancel`;
-  only approved findings alter manifests.
-- The guides now distinguish the intended boundary from beta.5 behavior:
-  official and unofficial physical output is authoritative truth, while
-  `needs_attention` is intended to be a separate review queue.
+- Reporting now presents collection work as concise operator-facing phases
+  while retaining detailed technical milestones in DEBUG logs.
+- Full physical-audit reconciliation now uses bounded summary and individual
+  review panels with explicit Approve All, Review Each, Make No Changes, and
+  Cancel consequences. Only approved findings alter authoritative manifests.
+- Published guides now distinguish the intended collection boundary from
+  beta.5 behavior: authoritative collection truth is official plus unofficial
+  physical output, while `needs_attention` is intended to remain a separate
+  review queue.
 
 ### Fixed
 
-- Preserved original and immediate Reporting publication provenance through
-  repeated transitive reuse.
-- Preserved complete multi-member DAR sets across multiple source containers
-  during Stage 9 planning.
+- Preserved original and immediate Reporting publication provenance across
+  repeated transitive reuse so valid unchanged reports remain current.
+- Preserved complete multi-member DAR sets spanning multiple source containers
+  during Stage 9 set planning.
 - Corrected Core API handbook metadata so the application version is not
-  presented as the component build.
+  presented as the Core.ApiDocumentation component build.
 
 ### Known limitations
 
-- `Reporting_DEV_49` in beta.5 still processes `needs_attention` filesystem
-  content and `NeedsAttention` manifest rows through classification, counting,
-  summaries, and presentation. Full exclusion remains unresolved under
+- Reporting_DEV_49 in beta.5 still processes `needs_attention` filesystem
+  content and NeedsAttention manifest rows through classification, counting,
+  summaries, and presentation. Complete exclusion remains unresolved under
   `DEFERRED-051`.
 
 ## v1.0.0-beta.4 - 2026-07-31
@@ -267,6 +402,11 @@ limitations in each CURATOR release.
 - Dependency integrity hashes do not complete provenance or redistribution
   review. The exact bundled Binmerge build and redistribution evidence for
   eleven cue/GDI ZIP packages remain unresolved under `DEFERRED-038`.
+- The eleven cue/GDI ZIP packages remain included under an explicit unresolved
+  redistribution policy. Their manifest records retain unresolved licenses
+  while adding `LicenseAssertion: NOASSERTION` and
+  `RedistributionStatus: Unverified`; the legal and third-party notices state
+  that inclusion does not establish redistribution permission.
 
 ## v1.0.0-beta.2 - 2026-07-28
 

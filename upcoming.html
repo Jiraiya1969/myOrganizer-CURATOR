@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planned Changes for Next Release — CURATOR</title>
+    <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Improvements currently planned for the next CURATOR release. The final list may change during development.">
+        content="Current CURATOR post-release planning status and links to the published v2.0.0-beta.1 release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -69,93 +69,22 @@
 
 <body>
     <main>
-        <div class="eyebrow">CURATOR Planning Announcement</div>
-        <h1>Planned Changes for Next Release</h1>
+        <div class="eyebrow">CURATOR Planning Record</div>
+        <h1>Upcoming Changes</h1>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">What We're Working On</h2>
+            <h2 id="planning-notice-title">v2.0.0-beta.1 Is Now Available</h2>
             <p>
-                CURATOR is now on the <code>v2.xx.xx</code> development track. This is the
-                sole current application-version track, but no public <code>v2.xx.xx</code>
-                release has been packaged or published. The candidate changes below remain
-                possible future work and may change before release.
+                The previously announced v2 overhaul has shipped as
+                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.1"><code>v2.0.0-beta.1</code></a>.
+                The v1 line is closed and preserved as immutable release history. No
+                additional post-release changes are currently announced for v2.
             </p>
-        </section>
-
-        <section class="change-section">
-            <h2>Adding</h2>
-            <ul>
-                <li>Adding clear end-user announcements around longer database loads, publication work, collection-plan finalization, archive review outcomes, and successful Reporting reconciliation.</li>
-                <li>Adding capability-based Bootstrap initialization through strict, validated static JSON call sheets for Gateway, numbered stages, and utilities.</li>
-                <li>Adding the relational Core.Database runtime and coordinated persistent and disposable stage-state contracts.</li>
-                <li>Adding the pinned Microsoft.Data.Sqlite, SQLitePCLRaw, and native e_sqlite3 runtime dependencies required by Core.Database.</li>
-                <li>Adding limited, preliminary ingestion of content-validated MAME <code>-listxml</code> exports for coin-operated Arcade ROM and CHD authority without relying on an <code>mame*.xml</code> filename.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Changing</h2>
-            <ul>
-                <li>Changing current documentation and project records to match the committed <code>CURATOR v2.xx.xx</code> component baselines, relational authority contracts, capability-gated startup, and generated-document validation evidence.</li>
-                <li>Changing DOCX guide generation and maintenance to require pinned Microsoft Open XML schema validation in addition to complete LibreOffice/Poppler visual validation, and correcting the current guides and API handbook generator to emit schema-valid WordprocessingML.</li>
-                <li>Changing every current guide to carry complete creator, contributor, assistance, packaged-component, license, authority-source, trademark, and non-affiliation attribution, with the central third-party notice reconciled to the complete dependency manifest.</li>
-                <li>Changing public release packaging to prohibit every DOCX file unconditionally, retain DOCX artifacts only as protected source/support, and fail closed if a DOCX appears in application inventory or a proposed archive.</li>
-                <li>Removing traced unreachable private and exposed code, stale Gateway call sheets and capability activation, obsolete Organizer recovery templates and mappings, and retired generated API metadata while retaining required <code>7z.exe</code> and <code>binmerge.exe</code> tools.</li>
-                <li>Changing application progress to use truthful workload totals, readable completion frames, concise completion announcements, and durable final-state telemetry across Core and the affected stages.</li>
-                <li>Changing Stage 1 platform and DAT-source progress, Stage 2 DAT analysis, Stage 3 authority review and selection, Stage 6 relational-authority loading, Stage 9 planning, and Stage 10 publication presentation so visible progress reflects work that is actually advancing.</li>
-                <li>Changing startup workspace cleanup to suppress its redundant generic progress completion line while preserving cleanup execution and evidence.</li>
-                <li>Changing authorized directory-content cleanup to use direct Core-owned AlphaFS deletion with preserved roots, preserve-name filtering, failure evidence, final verification, and reduced progress overhead across temporary, workspace, collection, maintenance, and run-state targets.</li>
-                <li>Changing Stage 10 final workspace cleanup to consume Core's authoritative cleanup result instead of repeating before-and-after directory inventories.</li>
-                <li>Changing Stage 9 candidate routing to cache repeated authoritative DAT category parsing while preserving exact relational decision and plan output.</li>
-                <li>Changing Stage 9 Assembly-contract hydration to use ordered set-based Core.Database reads while preserving the exact established output contract.</li>
-                <li>Changing Gateway base startup so it requires no database capability and activates additional capabilities only for the selected action.</li>
-                <li>Changing Gateway startup ordering so the safety agreement precedes requested Core activation.</li>
-                <li>Changing Gateway prerequisite handling so Stages 2-10 and Reporting display an end-user notice and close normally when Stage 1 has not initialized the database authority.</li>
-                <li>Changing Stages 1-10 to use the promoted relational authority and frozen execution-plan pathway proven by the successful Test_Bed Full Run.</li>
-                <li>Changing Stage 10 execution to retain one Core-owned SQLite connection, atomically pipeline the next InFlight checkpoint with each completed receipt, and use WAL with <code>synchronous=FULL</code> for faster durable publication.</li>
-                <li>Changing Stage 10 Append to freeze the pre-run target set and batch new ordinary ZIP outputs through the bounded Clear pathway while retaining receipt-backed fail-closed reuse.</li>
-                <li>Changing Stage 3 subsequent runs to retain the active DAR revision without rebuilding or republishing authority when Stage 1 and Stage 2 inputs are unchanged.</li>
-                <li>Changing Stage 2 and Stage 3 relational publication to reuse prepared SQLite commands within their existing atomic transactions.</li>
-                <li>Changing the sole current application identifier to <code>CURATOR</code> and the current development version to <code>v2.xx.xx</code> across source, configuration, templates, memory, inventory, and user documentation.</li>
-                <li>Changing current Core and stage component provenance from historical <code>v.5-dev_###</code> and <code>v.5-New_###</code> forms to concise <code>DEV_###</code> labels while retaining old identifiers only as explicitly historical evidence.</li>
-                <li>Refreshing current guides to the <code>CURATOR v2.xx.xx</code> identity with verified pre-change backups, actual-update-date filenames, relational-runtime guidance, 12-point Normal text, 9-point table text, and complete rendered-page inspection.</li>
-                <li>Changing API documentation generation to include only functions exposed by each owning Core module while retaining exposed internal and provisional interfaces and identifying Core.Database's separate application-internal relational contract.</li>
-                <li>Changing Stage 3 authority-set identity to include the canonical DAT key and publishing that key through DAR provenance so physical DAT filenames do not define or collapse authoritative set identity.</li>
-                <li>Changing MAME Arcade output to split-set structure with machine-owned ROM membership and separate parent, BIOS, and device dependency sets.</li>
-                <li>Prioritizing MAME internal CHD SHA-1 authority over Redump-derived optical-track evidence on the MAME path.</li>
-                <li>Changing complete authoritative-set publication so applicable optical transformation requires one CUE while complete sets without usable CUE evidence publish as ZIP sets.</li>
-                <li>Preserving distinct Redump and TOSEC authority sets when identical content appears in both sources.</li>
-                <li>Selecting Redump cue authority by authoritative DAT SHA-256 and pinning each configured cue archive by SHA-256.</li>
-                <li>Refreshing the bundled Redump cue and GDI metadata archives and expanding configured platform coverage.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Fixing</h2>
-            <ul>
-                <li>Fixing all four current guides so each title page is standalone, operational guidance begins on page 2, and every page follows the established Arial typography with 12-point body text and 9-point table text.</li>
-                <li>Fixing single-company Reporting progress so collection comparison displays one meaningful company row instead of duplicate collection and company rows, while retaining hierarchical progress for multi-company reporting and adding an explicit successful-reconciliation announcement.</li>
-                <li>Fixing interrupted Stage 10 Append recovery so uncommitted ordinary ZIPs are physically proven against their planned entry name and source content before their durable receipts are accepted.</li>
-                <li>Fixing relational Assembly set discovery so every eligible validation membership contributes its complete authority set.</li>
-                <li>Fixing relational Matching reconstruction so normalized physical workspace paths remain distinct from immutable Scan Preparation lineage.</li>
-                <li>Fixing relational Matching input reconstruction so persisted CUE references, CUE scope, and complete members of positively identified authority sets remain available for deterministic optical-set correction.</li>
-                <li>Fixing safety-notice presentation so the locked canonical README content is rendered as readable console text without changing its source.</li>
-                <li>Fixing resolved candidate destination collisions remaining as blocking readiness failures after final artifact routing produces distinct destinations.</li>
-                <li>Retaining existing authority memberships when optical-container refinement adds deterministic set-scoped evidence.</li>
-                <li>Collapsing exact duplicate records within one authority membership before DAR publication while preserving distinct Redump and TOSEC memberships.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Continuing Limitations</h2>
-            <ul>
-                <li>Continuing to treat MAME support as limited and preliminary: excluding <code>nodump</code>, routing incomplete authority sets to NeedsAttention, and not providing merged, non-merged, standalone, software-list, or general non-Arcade MAME management.</li>
-            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/33">Discuss on GitHub</a>
+            <a href="/changelog#v2-0-0-beta-1">Read the v2.0.0-beta.1 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
