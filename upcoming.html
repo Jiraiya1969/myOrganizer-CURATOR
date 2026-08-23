@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Current CURATOR post-release planning status and links to the published v2.0.0-beta.1 release.">
+        content="Possible CURATOR changes currently being considered after the v2.0.0-beta.1 public release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -69,22 +69,53 @@
 
 <body>
     <main>
-        <div class="eyebrow">CURATOR Planning Record</div>
-        <h1>Upcoming Changes</h1>
+        <div class="eyebrow">CURATOR Planning Announcement</div>
+        <h1>Planned Changes for a Future Release</h1>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">v2.0.0-beta.1 Is Now Available</h2>
+            <h2 id="planning-notice-title">What We're Working On</h2>
             <p>
-                The previously announced v2 overhaul has shipped as
-                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.1"><code>v2.0.0-beta.1</code></a>.
-                The v1 line is closed and preserved as immutable release history. No
-                additional post-release changes are currently announced for v2.
+                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.1"><code>v2.0.0-beta.1</code></a>
+                is the current public release. These are possible changes after that
+                release. They are not live, released, promised, or guaranteed, and
+                inclusion here is not evidence that an item is completed or approved
+                for a future release.
             </p>
+        </section>
+
+        <section class="change-section">
+            <h2>Adding</h2>
+            <ul>
+                <li>Adding a verified supplemental Atari Lynx Dragnet DAT with Fujiology, independent-header, and headerless identities.</li>
+                <li>Adding database-backed permanent collection manifests and retained reporting history.</li>
+                <li>Adding explicit Standard, Full Audit, Reconcile, and Detailed Export reporting actions.</li>
+                <li>Adding Reporting console announcements for new permanent collection items in the latest Organizer generation, including a platform breakdown.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Changing</h2>
+            <ul>
+                <li>Changing cartridge-header normalization to support signatures at explicit byte offsets.</li>
+                <li>Changing Reporting to derive current collection results from the permanent database record.</li>
+                <li>Changing Stage 10 and Reporting console messages to explain long-running work clearly.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Fixing</h2>
+            <ul>
+                <li>Fixing Atari Lynx and Atari 7800 matching by validating their platform-specific headers before removing them.</li>
+                <li>Fixing silent console periods during output preparation, manifest publication, and reporting reconciliation.</li>
+                <li>Fixing Stage 5 database publication for CUE descriptors whose referenced files are absent while retaining strict foreign-key protection for bound references.</li>
+                <li>Fixing Stage 5 loose-file SHA-1 identities by initializing incremental copy-hash providers before processing bytes.</li>
+                <li>Fixing zero-new-item collection manifests so Organizer and Reporting return an empty platform breakdown without failing.</li>
+            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="/changelog#v2-0-0-beta-1">Read the v2.0.0-beta.1 changelog</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/42">Discuss on GitHub</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
