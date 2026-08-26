@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Possible CURATOR changes currently being considered after the v2.0.0-beta.1 public release.">
+        content="Current CURATOR post-release planning status and links to the published v2.0.0-beta.2 release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -69,68 +69,21 @@
 
 <body>
     <main>
-        <div class="eyebrow">CURATOR Planning Announcement</div>
-        <h1>Planned Changes for a Future Release</h1>
+        <div class="eyebrow">CURATOR Planning Record</div>
+        <h1>Upcoming Changes</h1>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">What We're Working On</h2>
+            <h2 id="planning-notice-title">v2.0.0-beta.2 Is Now Available</h2>
             <p>
-                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.1"><code>v2.0.0-beta.1</code></a>
-                is the current public release. These are possible changes after that
-                release. They are not live, released, promised, or guaranteed, and
-                inclusion here is not evidence that an item is completed or approved
-                for a future release.
+                The previously announced work has shipped as
+                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.2"><code>v2.0.0-beta.2</code></a>.
+                No additional post-release changes are currently announced.
             </p>
-        </section>
-
-        <section class="change-section">
-            <h2>Adding</h2>
-            <ul>
-                <li>Adding content-based Atari 8-bit Preservation and Atarimania GameBase authority profiles through the existing relational DAT contract.</li>
-                <li>Adding shared, verified Redump CUE recovery through Core.Secondary.</li>
-                <li>Adding official MAME software-list XML authority with matching-release DTD validation and Core-owned XML reading.</li>
-                <li>Adding a verified supplemental Atari Lynx Dragnet DAT with Fujiology, independent-header, and headerless identities.</li>
-                <li>Adding database-backed permanent collection manifests and retained reporting history.</li>
-                <li>Adding explicit Standard, Full Audit, Reconcile, and Detailed Export reporting actions.</li>
-                <li>Adding Reporting console announcements for new permanent collection items in the latest Organizer generation, including a platform breakdown.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Changing</h2>
-            <ul>
-                <li>Changing Stage 6 database planning to refresh bounded SQLite planner statistics immediately before set-based matching.</li>
-                <li>Changing Completeness multi-member classification to use authoritative set identity metadata.</li>
-                <li>Changing exact raw cross-platform hash collisions to publish every authoritative platform membership while retaining normalized ambiguity and existing duplicate preference.</li>
-                <li>Changing cartridge-header normalization to support signatures at explicit byte offsets.</li>
-                <li>Changing Reporting to derive current collection results from the permanent database record.</li>
-                <li>Changing Stage 10 and Reporting console messages to explain long-running work clearly.</li>
-            </ul>
-        </section>
-
-        <section class="change-section">
-            <h2>Fixing</h2>
-            <ul>
-                <li>Fixing DAR publication for case-distinct set names and repeated same-name member occurrences.</li>
-                <li>Fixing otherwise-complete authoritative sets by materializing their one exact missing CUE descriptor through the shared Core operation.</li>
-                <li>Fixing MAME software-list size canonicalization and changed-authority replacement so hexadecimal XML sizes share exact identities with decimal DAT records and superseded DAR rows cannot remain active.</li>
-                <li>Fixing Stage 9 completion messaging so it confirms relational collection-plan commitment without claiming that an unwritten compatibility JSON file was saved.</li>
-                <li>Fixing incomplete authoritative CUE sets so exact DAR-matched pieces can complete one verified set regardless of their original source provenance.</li>
-                <li>Fixing unresolved NeedsAttention archives so original source provenance never contributes destination directory segments.</li>
-                <li>Fixing Atari Lynx and Atari 7800 matching by validating their platform-specific headers before removing them.</li>
-                <li>Fixing silent console periods during output preparation, manifest publication, and reporting reconciliation.</li>
-                <li>Fixing Stage 5 database publication for CUE descriptors whose referenced files are absent while retaining strict foreign-key protection for bound references.</li>
-                <li>Fixing Stage 5 loose-file SHA-1 identities by initializing incremental copy-hash providers before processing bytes.</li>
-                <li>Fixing zero-new-item collection manifests so Organizer and Reporting return an empty platform breakdown without failing.</li>
-                <li>Fixing Organizer Append totals so matching existing targets are counted as duplicates instead of newly written outputs while preserving their Official, Unofficial, or NeedsAttention classifications.</li>
-                <li>Fixing duplicate NeedsAttention payloads so one physical archive is planned per content identity while retaining every source occurrence as database evidence.</li>
-                <li>Fixing authority-matched output so DAR identity and set membership determine classification and packaging regardless of source provenance.</li>
-            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/42">Discuss on GitHub</a>
+            <a href="/changelog#v2-0-0-beta-2">Read the v2.0.0-beta.2 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>

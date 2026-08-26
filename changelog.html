@@ -65,7 +65,47 @@
             remains preserved below as immutable release history.
         </p>
 
-        <article class="current" id="v2-0-0-beta-1">
+        <article class="current" id="v2-0-0-beta-2">
+            <h2>v2.0.0-beta.2</h2>
+            <p class="date">August 25, 2026</p>
+
+            <h3>Added</h3>
+            <ul>
+                <li>Added content-based Atari 8-bit Preservation and Atarimania GameBase authority profiles, plus the verified Atari Lynx Dragnet supplemental DAT.</li>
+                <li>Added shared Core-owned Redump CUE recovery and official MAME software-list XML authority with matching-release DTD validation.</li>
+                <li>Added database-backed permanent collection manifests, retained reporting history, and explicit Standard, Full Audit, Reconcile, and Detailed Export reporting actions.</li>
+                <li>Added Reporting announcements for new permanent collection items, including platform breakdowns.</li>
+            </ul>
+
+            <h3>Changed</h3>
+            <ul>
+                <li>Added the three individually allowlisted CURATOR-created authority DATs to every public release while retaining empty operator-managed DAT surfaces.</li>
+                <li>Replaced supported VerifyDump execution with CURATOR's faster deterministic unanimous native CHD/CUE resolver while retaining compatibility database structure and the protected dormant executable.</li>
+                <li>Reused unchanged relational DAT authority through content-bound SHA-256 fingerprints and fail-closed Core.Database transactions.</li>
+                <li>Retained permanent authority-first Matching and set-first Assembly indexes, refreshed bounded SQLite planner statistics, and used authoritative set identity for multi-member completeness classification.</li>
+                <li>Routed stage path handling and bounded leading-text reads through Core.Secondary, clarified NeedsAttention counts and source-identity vocabulary, and optimized Organizer Append verification using complete Core-owned physical-output evidence.</li>
+                <li>Published every authoritative platform membership for exact raw cross-platform hash collisions and added offset-aware cartridge-header normalization.</li>
+                <li>Derived Reporting results from permanent database records and clarified long-running Organizer and Reporting console operations.</li>
+                <li>Clarified README and Developer Handbook MAME scope language: supported software-list XML supplies exact ROM/CHD authority, while complete dependency-aware MAME collection management remains outside CURATOR's scope.</li>
+            </ul>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li>Fixed exact authority-ID reconciliation, CUE-source existence validation, case-distinct DAR sets, repeated member occurrences, and recovery of one exact missing authoritative CUE descriptor.</li>
+                <li>Fixed MAME hexadecimal size canonicalization and changed-authority replacement, incomplete CUE-set completion, and unresolved NeedsAttention archive destination routing.</li>
+                <li>Fixed Atari Lynx and Atari 7800 header validation, Stage 5 missing-CUE publication and loose-file SHA-1 initialization, and zero-new-item manifest reporting.</li>
+                <li>Fixed Organizer Append duplicate totals, duplicate NeedsAttention physical planning, and authority-driven output classification independent of source provenance.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <ul>
+                <li>MAME support remains limited and preliminary and does not replace a dedicated MAME ROM manager.</li>
+                <li>Some otherwise valid Alcohol MDF/MDS images may be incompatible with the bundled decoder; CURATOR preserves those sources and routes them for review.</li>
+                <li>This is a beta release. Operators should use copied input, retain backups, and verify curated output before replacing original material.</li>
+            </ul>
+        </article>
+
+        <article id="v2-0-0-beta-1">
             <h2>v2.0.0-beta.1</h2>
             <p class="date">August 21, 2026</p>
 

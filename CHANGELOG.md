@@ -1,9 +1,72 @@
-# CURATOR v2.0.0-beta.1 Changelog
+# CURATOR v2.0.0-beta.2 Changelog
 
-Last updated: August 21, 2026
+Last updated: August 25, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v2.0.0-beta.2 - 2026-08-25
+
+### Added
+
+- Added content-based Atari 8-bit Preservation and Atarimania GameBase
+  authority profiles, plus the verified Atari Lynx Dragnet supplemental DAT.
+- Added shared Core-owned Redump CUE recovery and official MAME software-list
+  XML authority with matching-release DTD validation.
+- Added database-backed permanent collection manifests, retained reporting
+  history, and explicit Standard, Full Audit, Reconcile, and Detailed Export
+  reporting actions.
+- Added Reporting announcements for new permanent collection items, including
+  platform breakdowns.
+
+### Changed
+
+- Added the three individually allowlisted CURATOR-created authority DATs to
+  every public release while retaining empty operator-managed DAT surfaces.
+- Replaced supported VerifyDump execution with CURATOR's faster deterministic
+  unanimous native CHD/CUE resolver while retaining compatibility database
+  structure and the protected dormant executable.
+- Reused unchanged relational DAT authority through content-bound SHA-256
+  fingerprints and fail-closed Core.Database transactions.
+- Retained permanent authority-first Matching and set-first Assembly indexes,
+  refreshed bounded SQLite planner statistics, and used authoritative set
+  identity for multi-member completeness classification.
+- Routed stage path handling and bounded leading-text reads through
+  Core.Secondary, clarified NeedsAttention counts and source-identity
+  vocabulary, and optimized Organizer Append verification using complete
+  Core-owned physical-output evidence.
+- Published every authoritative platform membership for exact raw
+  cross-platform hash collisions and added offset-aware cartridge-header
+  normalization.
+- Derived Reporting results from permanent database records and clarified
+  long-running Organizer and Reporting console operations.
+- Clarified README and Developer Handbook MAME scope language: supported
+  software-list XML supplies exact ROM/CHD authority, while complete
+  dependency-aware MAME collection management remains outside CURATOR's scope.
+
+### Fixed
+
+- Fixed exact authority-ID reconciliation, CUE-source existence validation,
+  case-distinct DAR sets, repeated member occurrences, and recovery of one exact
+  missing authoritative CUE descriptor.
+- Fixed MAME hexadecimal size canonicalization and changed-authority
+  replacement, incomplete CUE-set completion, and unresolved NeedsAttention
+  archive destination routing.
+- Fixed Atari Lynx and Atari 7800 header validation, Stage 5 missing-CUE
+  publication and loose-file SHA-1 initialization, and zero-new-item manifest
+  reporting.
+- Fixed Organizer Append duplicate totals, duplicate NeedsAttention physical
+  planning, and authority-driven output classification independent of source
+  provenance.
+
+### Known Limitations
+
+- MAME support remains limited and preliminary and does not replace a dedicated
+  MAME ROM manager.
+- Some otherwise valid Alcohol MDF/MDS images may be incompatible with the
+  bundled decoder; CURATOR preserves those sources and routes them for review.
+- This is a beta release. Operators should use copied input, retain backups, and
+  verify curated output before replacing original material.
 
 ## v2.0.0-beta.1 - 2026-08-21
 
