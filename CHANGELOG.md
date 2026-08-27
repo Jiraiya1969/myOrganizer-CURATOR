@@ -1,9 +1,45 @@
-# CURATOR v2.0.0-beta.2 Changelog
+# CURATOR v2.0.0-beta.3 Changelog
 
-Last updated: August 25, 2026
+Last updated: August 27, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v2.0.0-beta.3 - 2026-08-27
+
+### Added
+
+- Added five CURATOR-created Atarimania GameBase authority DATs for Atari 2600,
+  Atari 5200, Atari 7800, Atari Lynx, and Atari Jaguar.
+
+### Changed
+
+- Added explicit nested-archive lineage and content-only DAT freshness.
+- Changed matching to universal raw-first authority selection without filename
+  or extension inference.
+- Routed NeedsAttention output by authoritative media category and improved
+  truthful Assembly, Matching, recovery, publication, and manifest progress.
+- Changed Stage 10 plan loading and permanent publication to bounded, set-based
+  database operations.
+
+### Fixed
+
+- Fixed Windows-invalid A8P filenames without changing content identity.
+- Fixed Stage 9 NO-GO sequencing and direct Stage 10 rejection.
+- Fixed structural CUE materialization at the published authority-provenance
+  boundary.
+- Fixed full-run Append by retaining generation-owned physical-output evidence
+  and allowing new plan entries while verifying every prior output by size and
+  SHA-256.
+
+### Known Limitations
+
+- MAME support remains limited and preliminary and does not replace a dedicated
+  MAME ROM manager.
+- Some otherwise valid Alcohol MDF/MDS images may be incompatible with the
+  bundled decoder; CURATOR preserves those sources and routes them for review.
+- This is a beta release. Operators should use copied input, retain backups, and
+  verify curated output before replacing original material.
 
 ## v2.0.0-beta.2 - 2026-08-25
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Possible improvements currently planned after the CURATOR v2.0.0-beta.2 release.">
+        content="Current CURATOR post-release planning status and links to the published v2.0.0-beta.3 release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -79,45 +79,21 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-08-26T19:30:08-04:00">August 26, 2026 at 7:30 PM EDT</time>
+            <time datetime="2026-08-27T10:13:37-04:00">August 27, 2026 at 10:13 AM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">What We're Working On</h2>
+            <h2 id="planning-notice-title">v2.0.0-beta.3 Is Now Available</h2>
             <p>
-                These are the improvements currently planned for the next
-                CURATOR release. Development is still underway, so the final
-                list may change before release.
+                The previously announced work has shipped as
+                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.3"><code>v2.0.0-beta.3</code></a>.
+                No additional post-release changes are currently announced.
             </p>
-        </section>
-
-        <section class="change-section" aria-labelledby="changing-title">
-            <h2 id="changing-title">Changing</h2>
-            <ul>
-                <li>Changing deterministic matching to test the prepared raw size, CRC32, and SHA-1 identity first and perform content-structural normalization only after an exact raw authority miss, without filename or extension selection.</li>
-                <li>Separating NeedsAttention review output into cartridge, disk-image, optical-media, and unresolved-media branches using authoritative platform media categories without filename or extension inference.</li>
-                <li>Presenting Matching phase, refinement-subset, and final totals with distinct end-user labels that agree with the authoritative completion summary.</li>
-                <li>Presenting Assembly processing in end-user language without exposing its internal database implementation.</li>
-                <li>Changing Stage 10 frozen-plan loading and permanent collection publication to bounded, set-based database operations so Organizer remains an output stage at collection scale.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="fixing-title">
-            <h2 id="fixing-title">Fixing</h2>
-            <ul>
-                <li>Honoring caller-supplied Core JSON progress labels and reporting collection manifest serialization against its exact record count.</li>
-                <li>Announcing successful completion of Organizer recovery safeguards before physical output begins when no determinate taskbar is available.</li>
-                <li>Starting Organizer physical-output progress only when physical writing begins, with the correct resumed-output count and output-specific status.</li>
-                <li>Announcing the start and completion of permanent collection commit and current-manifest loading as distinct Stage 10 operations.</li>
-                <li>Preventing a completed Stage 9 <code>NO_GO</code> result from continuing into Stage 10, while preserving complete Stage 9 publication, reporting, and cleanup.</li>
-                <li>Blocking a direct Stage 10 launch against a Stage 9 <code>NO_GO</code> receipt before destination clearing or physical output begins.</li>
-                <li>Replacing Windows-invalid filename characters in the CURATOR A8P originals DAT without changing its content identity metadata.</li>
-            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/51">Follow the planning record on GitHub</a>
+            <a href="/changelog#v2-0-0-beta-3">Read the v2.0.0-beta.3 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
