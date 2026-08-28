@@ -41,6 +41,34 @@
         }
         article.current { border-color: rgba(73, 216, 255, .48); }
         h2 { font-size: 2rem; margin-bottom: 10px; }
+        details > summary {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 20px;
+            color: #eef6ff;
+            cursor: pointer;
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker { display: none; }
+        details > summary::after {
+            content: "+";
+            flex: 0 0 auto;
+            color: #49d8ff;
+            font-size: 2rem;
+            line-height: 1;
+        }
+        details[open] > summary::after { content: "−"; }
+        details > summary:hover .release-title,
+        details > summary:focus-visible .release-title { color: #49d8ff; }
+        details > summary:focus-visible {
+            outline: 2px solid #49d8ff;
+            outline-offset: 8px;
+            border-radius: 4px;
+        }
+        .release-title { font-size: 2rem; font-weight: 700; }
+        .release-date { color: #8da3b5; margin-left: auto; white-space: nowrap; }
+        .release-details { padding-top: 4px; }
         h3 { color: #49d8ff; font-size: 1.25rem; margin: 28px 0 12px; }
         p, li { color: #d0dce5; font-size: 1.03rem; line-height: 1.75; }
         ul { padding-left: 24px; }
@@ -51,6 +79,10 @@
         a { color: #49d8ff; text-decoration: none; }
         a:hover { text-decoration: underline; }
         footer { color: #8da3b5; margin-top: 34px; }
+        @media (max-width: 560px) {
+            details > summary { align-items: flex-start; flex-wrap: wrap; gap: 8px 14px; }
+            .release-date { width: 100%; margin-left: 0; }
+        }
     </style>
 </head>
 
@@ -99,8 +131,12 @@
         </article>
 
         <article id="v2-0-0-beta-2">
-            <h2>v2.0.0-beta.2</h2>
-            <p class="date">August 25, 2026</p>
+            <details>
+                <summary>
+                    <span class="release-title">v2.0.0-beta.2</span>
+                    <span class="release-date">August 25, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Added</h3>
             <ul>
@@ -136,11 +172,17 @@
                 <li>Some otherwise valid Alcohol MDF/MDS images may be incompatible with the bundled decoder; CURATOR preserves those sources and routes them for review.</li>
                 <li>This is a beta release. Operators should use copied input, retain backups, and verify curated output before replacing original material.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
         <article id="v2-0-0-beta-1">
-            <h2>v2.0.0-beta.1</h2>
-            <p class="date">August 21, 2026</p>
+            <details>
+                <summary>
+                    <span class="release-title">v2.0.0-beta.1</span>
+                    <span class="release-date">August 21, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <p>This first v2 release is a major architectural overhaul of CURATOR's authority, processing, recovery, and audit pathways. Persistent SQLite contracts now coordinate Stages 1–10 and Reporting while the v1 release line remains closed and preserved.</p>
 
@@ -175,11 +217,17 @@
                 <li>Some otherwise valid Alcohol MDF/MDS images may be incompatible with the bundled decoder; CURATOR preserves those sources and routes them for review.</li>
                 <li>This is a beta release. Operators should use copied input, retain backups, and verify curated output before replacing original material.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
         <article id="v1-0-0-beta-8">
-            <h2>v1.0.0-beta.8</h2>
-            <p class="date">August 13, 2026</p>
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.8</span>
+                    <span class="release-date">August 13, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Added</h3>
             <ul>
@@ -212,11 +260,17 @@
                 <li>Reporting can classify the root receipt manifest as unmanifested content; investigation remains deferred under <code>DEFERRED-053</code>.</li>
                 <li>Stage 3/5 progress-presentation tracing, the Stage 6 prebuilt DAR index and output-publication investigation, and the distinction between upstream content identity and final copied-artifact evidence remain deferred under <code>DEFERRED-055</code>, <code>DEFERRED-045</code>, <code>DEFERRED-057</code>, and <code>DEFERRED-059</code>.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.7</h2>
-            <p class="date">August 8, 2026</p>
+        <article id="v1-0-0-beta-7">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.7</span>
+                    <span class="release-date">August 8, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Changed</h3>
             <ul>
@@ -242,11 +296,17 @@
             <ul>
                 <li>Reporting classifies the administrative root receipt manifest <code>00_Manifest\CURATOR_Output_Manifest.json</code> as unmanifested collection content. Collection paths, sizes, hashes, and fingerprints remain valid; the reporting-boundary investigation is tracked as <code>DEFERRED-053</code>.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.6</h2>
-            <p class="date">August 4, 2026</p>
+        <article id="v1-0-0-beta-6">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.6</span>
+                    <span class="release-date">August 4, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Changed</h3>
             <ul>
@@ -274,11 +334,17 @@
                 <li><code>Reporting_DEV_53</code> still processes <code>needs_attention</code> filesystem content and <code>NeedsAttention</code> manifest rows. Complete exclusion remains unresolved under <code>DEFERRED-051</code>.</li>
                 <li>Dependency provenance and redistribution-policy validation remain open under <code>DEFERRED-038</code>.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.5</h2>
-            <p class="date">August 3, 2026</p>
+        <article id="v1-0-0-beta-5">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.5</span>
+                    <span class="release-date">August 3, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Changed</h3>
             <ul>
@@ -298,11 +364,17 @@
             <ul>
                 <li><code>Reporting_DEV_49</code> in beta.5 still processes <code>needs_attention</code> filesystem content and <code>NeedsAttention</code> manifest rows through classification, counting, summaries, and presentation. Full exclusion remains unresolved under <code>DEFERRED-051</code>.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.4</h2>
-            <p class="date">July 31, 2026</p>
+        <article id="v1-0-0-beta-4">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.4</span>
+                    <span class="release-date">July 31, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Added</h3>
             <ul>
@@ -317,11 +389,17 @@
                 <li>Corrected Stage 7 validation of contextual CHD/CUE authority matches so current <code>AuthorityProvenance</code> DAT evidence is accepted without weakening missing-evidence or authority-integrity checks.</li>
                 <li>Closed the selected-run pause correction after operator confirmation of the remaining acknowledgement-order paths.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.3</h2>
-            <p class="date">July 30, 2026</p>
+        <article id="v1-0-0-beta-3">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.3</span>
+                    <span class="release-date">July 30, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Changed</h3>
             <ul>
@@ -351,11 +429,17 @@
             <ul>
                 <li>Binmerge build provenance and redistribution evidence for eleven cue/GDI ZIP packages remain unresolved under <code>DEFERRED-038</code>.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.2</h2>
-            <p class="date">July 28, 2026</p>
+        <article id="v1-0-0-beta-2">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.2</span>
+                    <span class="release-date">July 28, 2026</span>
+                </summary>
+                <div class="release-details">
             <p>
                 This beta focuses on faster preparation of large collections,
                 safer recovery, clearer progress reporting, and documentation
@@ -396,11 +480,17 @@
                 <li>In a pause-enabled multi-stage Gateway run, the final selected stage may not show its promised acknowledgement before the separate overall timing summary. Both results are still produced.</li>
                 <li>A very large interrupted Stage 5 recovery record can delay Gateway startup while CURATOR validates saved work before showing the main menu.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
-        <article>
-            <h2>v1.0.0-beta.1</h2>
-            <p class="date">July 26, 2026</p>
+        <article id="v1-0-0-beta-1">
+            <details>
+                <summary>
+                    <span class="release-title">v1.0.0-beta.1</span>
+                    <span class="release-date">July 26, 2026</span>
+                </summary>
+                <div class="release-details">
 
             <h3>Added</h3>
             <ul>
@@ -419,6 +509,8 @@
             <ul>
                 <li>In pause-enabled Gateway sequences, the final selected stage may not show its promised acknowledgement before the separate Gateway timing summary. The timing summary is still produced.</li>
             </ul>
+                </div>
+            </details>
         </article>
 
         <div class="links">
