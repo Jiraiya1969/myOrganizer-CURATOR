@@ -79,7 +79,7 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-08-28T09:46:50-04:00">August 28, 2026 at 9:46 AM EDT</time>
+            <time datetime="2026-08-29T22:32:53-04:00">August 29, 2026 at 10:32 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
@@ -94,14 +94,34 @@
         <section class="change-section" aria-labelledby="adding-title">
             <h2 id="adding-title">Adding</h2>
             <ul>
+                <li>Adding durable Stage 2 per-file DAT/XML fingerprints and physical-source-to-authority lineage for incremental ingestion and additive absent-source retention.</li>
+                <li>Adding persistent Stage 1 per-source authority ledgers with stable identity, content fingerprints, source-name lineage, and additive absent-source retention.</li>
                 <li>Adding direct HyperList menu XML ingestion with complete catalog retention and deterministic CRC identity enrichment.</li>
                 <li>Adding the CURATOR-created Atari ST Atarimania GameBase authority DAT to the required application authority set.</li>
+            </ul>
+        </section>
+
+        <section class="change-section" aria-labelledby="changing-title">
+            <h2 id="changing-title">Changing</h2>
+            <ul>
+                <li>Changing Stage 2 so unchanged sources parse zero files, one added or changed source parses one file, absence parses zero files while retaining authority, and all execution paths report reconciled source-ledger counters.</li>
+                <li>Changing Stage 1 so it remains rerunnable after Stage 4 and later collection state exists, while preserving all later-stage state and authority.</li>
+                <li>Changing Stage 1 MAME <code>-listxml</code> recognition to use bounded root evidence and stable <code>Arcade</code> authority without parsing machine records.</li>
+                <li>Changing Stage 3 DAT-contract acquisition to use one ordinally ordered relational reader while preserving the existing Core.Database contract and deterministic authority results.</li>
+                <li>Changing Stage 5 extracted-file CRC32/SHA-1 hashing to use the configured <code>7z.dll</code> native hash service while preserving the established one-pass file stream, optional SHA-256, normalization, progress, and output contracts.</li>
             </ul>
         </section>
 
         <section class="change-section" aria-labelledby="fixing-title">
             <h2 id="fixing-title">Fixing</h2>
             <ul>
+                <li>Fixing operator-guide explanations so the approved Stage 10 direct-CHD copy exception, configured-Input path verification, source preservation, and Input-availability requirement are clear to end users.</li>
+                <li>Fixing Stage 9 candidate identity and carry-forward path checks so post-Stage 4 planning reads only the configured workspace or CURATOR-owned temporary material and never reuses the Stage 4 input source as a working authority.</li>
+                <li>Fixing collection-manifest branding to publish the official application name <code>myOrganizer: CURATOR</code>.</li>
+                <li>Fixing interrupted collection-run recovery so completed database and workspace checkpoints are preserved, the owning stage is revalidated and restarted explicitly, later completed-stage progression remains valid, and missing upstream state fails closed. The committed attempt is not accepted as safe and remains operator-halted.</li>
+                <li>Fixing Redump DAT replacement safety by validating stable publisher identity, pinned DAT/CUE identities, complete CUE membership, and exact CUE content before Stage 2 ingestion or reuse.</li>
+                <li>Fixing official MAME software-list recognition to accept W3C-valid XML 1.0 declaration quoting and optional encoding while preserving required DOCTYPE, root, DTD, and full validation checks.</li>
+                <li>Fixing otherwise-complete non-Redump optical sets with a missing CUE so one unambiguous track-identical recovered Redump descriptor can enter the established universal CUE rewrite and generation pipeline, with provisional source readiness reconciled only after proven final materialization.</li>
                 <li>Fixing direct CHD handling so already-valid source CHDs are preserved by copy instead of being routed through CUE-led reconstruction.</li>
                 <li>Fixing menu-driven Stage 9 NO-GO handling so the Gateway exits directly to PowerShell, and restoring the Organize preset's final Stage 10 pre-summary acknowledgement without adding pauses between earlier stages or after the Stage 10 summary.</li>
                 <li>Fixing Atari 2600 HyperList authority names to use <code>game/@name</code> instead of description text containing Windows-invalid characters.</li>
