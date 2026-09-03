@@ -1,9 +1,63 @@
-# CURATOR v2.0.0-beta.3 Changelog
+# CURATOR v2.0.0-beta.4 Changelog
 
-Last updated: August 27, 2026
+Last updated: September 3, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v2.0.0-beta.4 - 2026-09-03
+
+### Added
+
+- Added the officially identified CURATOR-modified MAME chdman build with
+  `hashcd`, extraction-time logical-track evidence, preserved standard commands,
+  full attribution, GPL-2.0-or-later notices, and explicit unofficial and
+  non-affiliation identification.
+- Added the required version-matched complete corresponding-source release
+  asset and checksum, plus permanent GitHub publication instructions.
+- Added persistent incremental Stage 1 and Stage 2 source ledgers, direct
+  HyperList menu XML ingestion, and the CURATOR-created Atari ST Atarimania
+  GameBase authority DAT.
+
+### Changed
+
+- Changed Stages 1-3 to reuse unchanged established authority, process only
+  added or changed sources, retain absent-source authority additively, and
+  preserve later collection state when authority is refreshed.
+- Changed Stage 5 to use compact hash-addressed workspace roots, extract each
+  CHD once, and consume exact emitted-track hashes from that extraction pass.
+- Improved indexed relational hydration and bounded progress across Stages 1-3,
+  Assembly, Completeness, and Reporting without changing authority results.
+- Changed populated-output Full Runs to default to Append while retaining an
+  explicit, doubly confirmed Clear choice.
+
+### Fixed
+
+- Fixed modified chdman hashing so Size, CRC32, and SHA-1 describe exactly the
+  emitted split-track bytes and exclude non-emitted virtual pregap sectors.
+- Fixed repeated Organizer-recovery prompts by retiring the exact discarded
+  execution attempt transactionally.
+- Fixed authoritative recovered-CUE reconciliation so obsolete unmatched-CUE
+  review records are suppressed only after complete non-CUE identity proof,
+  while genuinely unresolved sources remain for review.
+- Fixed the Atari 8-bit Atarimania GameBase authority DAT by removing inherited
+  archive-directory prefixes from ROM names while retaining valid catalogued
+  non-ROM members and their exact identities.
+- Fixed Stage 10 `Output Totals` ordering so `Unofficial` appears directly below
+  `Official`, without changing any totals or execution behavior.
+- Fixed configuration authority, clean database initialization, Nuclear Option
+  documentation protection, run-state locking, legacy CHD classification,
+  direct valid-CHD copying, collection lifecycle gating, and several authority,
+  CUE, NeedsAttention, and reporting edge cases.
+- Corrected all current operator guides to match the application’s actual path,
+  source-preservation, recovery, configuration, and Stage 10 behavior.
+
+### Known Limitations
+
+- Some otherwise valid Alcohol MDF/MDS images may be incompatible with the
+  bundled decoder; CURATOR preserves those sources and routes them for review.
+- This is a beta release. Operators should use copied input, retain backups, and
+  verify curated output before replacing original material.
 
 ## v2.0.0-beta.3 - 2026-08-27
 

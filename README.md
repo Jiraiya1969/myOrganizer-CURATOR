@@ -2,7 +2,7 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v2.0.0-beta.3**.
+The current public release is **CURATOR v2.0.0-beta.4**.
 
 CURATOR v2 is a major architectural overhaul. It replaces the principal
 in-memory processing paths with persistent, indexed SQLite authority,
@@ -71,19 +71,19 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v2.0.0-beta.3**.
+CURATOR is currently available as **v2.0.0-beta.4**.
 
-This third v2 public beta adds five CURATOR-created Atarimania GameBase
-authority DATs, universal raw-first authority selection, authoritative
-NeedsAttention media routing, bounded set-based Stage 10 publication, and the
-validated CUE, NO-GO, A8P filename, progress, and Append corrections recorded
-in the changelog.
+This fourth v2 public beta adds the officially identified CURATOR-modified MAME
+chdman build and its complete corresponding source, persistent incremental
+Stage 1 and Stage 2 source ledgers, direct HyperList ingestion, compact CHD
+staging, and the authority, recovery, progress, configuration, documentation,
+and reporting corrections recorded in the changelog.
 
 The closed v1 release line remains permanently available and will receive no
 further development or release changes.
 
 Download the current beta and verify its published SHA-256 checksum on the
-[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.3).
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.4).
 
 Every published version remains available in the
 [public release archive](https://myorganizerhq.com/releases). See the

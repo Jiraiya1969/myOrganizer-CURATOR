@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Review the possible CURATOR changes currently planned after the v2.0.0-beta.3 release.">
+        content="Review the current CURATOR planning status following the v2.0.0-beta.4 release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -79,59 +79,21 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-08-30T13:10:37-04:00">August 30, 2026 at 1:10 PM EDT</time>
+            <time datetime="2026-09-03T13:44:44-04:00">September 3, 2026 at 1:44 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">What We're Working On</h2>
+            <h2 id="planning-notice-title">v2.0.0-beta.4 Is Now Available</h2>
             <p>
-                These are the improvements currently planned for the next
-                CURATOR release. Development is still underway, so the final
-                list may change before release.
+                The previously announced work has shipped as
+                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.4"><code>v2.0.0-beta.4</code></a>.
+                No additional post-release changes are currently announced.
             </p>
-        </section>
-
-        <section class="change-section" aria-labelledby="adding-title">
-            <h2 id="adding-title">Adding</h2>
-            <ul>
-                <li>Adding durable Stage 2 per-file DAT/XML fingerprints and physical-source-to-authority lineage for incremental ingestion and additive absent-source retention.</li>
-                <li>Adding persistent Stage 1 per-source authority ledgers with stable identity, content fingerprints, source-name lineage, and additive absent-source retention.</li>
-                <li>Adding direct HyperList menu XML ingestion with complete catalog retention and deterministic CRC identity enrichment.</li>
-                <li>Adding the CURATOR-created Atari ST Atarimania GameBase authority DAT to the required application authority set.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="changing-title">
-            <h2 id="changing-title">Changing</h2>
-            <ul>
-                <li>Changing Stage 2 so unchanged sources parse zero files, one added or changed source parses one file, absence parses zero files while retaining authority, and all execution paths report reconciled source-ledger counters.</li>
-                <li>Changing Stage 1 so it remains rerunnable after Stage 4 and later collection state exists, while preserving all later-stage state and authority.</li>
-                <li>Changing Stage 1 MAME <code>-listxml</code> recognition to use bounded root evidence and stable <code>Arcade</code> authority without parsing machine records.</li>
-                <li>Changing Stage 3 DAT-contract acquisition to use one ordinally ordered relational reader while preserving the existing Core.Database contract and deterministic authority results.</li>
-                <li>Changing Stage 5 extracted-file CRC32/SHA-1 hashing to use the configured <code>7z.dll</code> native hash service while preserving the established one-pass file stream, optional SHA-256, normalization, progress, and output contracts.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="fixing-title">
-            <h2 id="fixing-title">Fixing</h2>
-            <ul>
-                <li>Fixing operator-guide explanations so the approved Stage 10 direct-CHD copy exception, configured-Input path verification, source preservation, and Input-availability requirement are clear to end users.</li>
-                <li>Fixing Stage 9 candidate identity and carry-forward path checks so post-Stage 4 planning reads only the configured workspace or CURATOR-owned temporary material and never reuses the Stage 4 input source as a working authority.</li>
-                <li>Fixing collection-manifest branding to publish the official application name <code>myOrganizer: CURATOR</code>.</li>
-                <li>Fixing collection progress so Stages 1-3 remain independent, Stage 4 alone confirms clean-slate replacement, Stage 5 recovery remains independent, Stage 6 refreshes the current DAR basis, and completed Stage 10 plans cannot execute again.</li>
-                <li>Fixing Redump DAT replacement safety by validating stable publisher identity, pinned DAT/CUE identities, complete CUE membership, and exact CUE content before Stage 2 ingestion or reuse.</li>
-                <li>Fixing official MAME software-list recognition to accept W3C-valid XML 1.0 declaration quoting and optional encoding while preserving required DOCTYPE, root, DTD, and full validation checks.</li>
-                <li>Fixing otherwise-complete non-Redump optical sets with a missing CUE so one unambiguous track-identical recovered Redump descriptor can enter the established universal CUE rewrite and generation pipeline, with provisional source readiness reconciled only after proven final materialization.</li>
-                <li>Fixing direct CHD handling so already-valid source CHDs are preserved by copy instead of being routed through CUE-led reconstruction.</li>
-                <li>Fixing menu-driven Stage 9 NO-GO handling so the Gateway exits directly to PowerShell, and restoring the Organize preset's final Stage 10 pre-summary acknowledgement without adding pauses between earlier stages or after the Stage 10 summary.</li>
-                <li>Fixing Atari 2600 HyperList authority names to use <code>game/@name</code> instead of description text containing Windows-invalid characters.</li>
-                <li>Fixing successfully traversed raw-unmatched embedded archives so their containers do not become duplicate NeedsAttention outputs while extracted descendants retain independent matching and review decisions.</li>
-            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/56">Planning record on GitHub</a>
+            <a href="/changelog#v2-0-0-beta-4">Read the v2.0.0-beta.4 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
