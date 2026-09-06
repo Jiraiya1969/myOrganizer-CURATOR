@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Review the current CURATOR planning status following the v2.0.0-beta.4 release.">
+        content="Review the improvements currently planned for CURATOR after the v2.0.0-beta.4 release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -54,6 +54,11 @@
             font-size: 1.12rem;
             line-height: 1.8;
         }
+        .planning-notice p + p { margin-top: 16px; }
+        .planning-warning {
+            border-left: 4px solid #ffcf5a;
+            padding-left: 18px;
+        }
         .change-section ul { padding-left: 24px; }
         .change-section li {
             color: #d0dce5;
@@ -79,21 +84,64 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-03T13:44:44-04:00">September 3, 2026 at 1:44 PM EDT</time>
+            <time datetime="2026-09-06T19:24:44-04:00">September 6, 2026 at 7:24 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">v2.0.0-beta.4 Is Now Available</h2>
+            <h2 id="planning-notice-title">Planning After v2.0.0-beta.4</h2>
             <p>
-                The previously announced work has shipped as
-                <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.4"><code>v2.0.0-beta.4</code></a>.
-                No additional post-release changes are currently announced.
+                These improvements are currently planned after <code>v2.0.0-beta.4</code>.
+                Development is still underway, so the final list and release timing may change.
             </p>
+            <p>
+                Deferred work is tracked separately. Open deferred items and unproven cases are not promised
+                content for the next release. OHC record closures recognize their stated historical scope;
+                they add no release candidate or new runtime proof.
+            </p>
+            <p class="planning-warning">
+                <strong>MAME support in myOrganizer: CURATOR is a VERY EARLY, experimental implementation.
+                It must NOT be relied upon as a proven means of organizing MAME sets.</strong>
+                Continue using <a href="https://mamedev.emulab.it/clrmamepro/">clrmame</a> as the definitive
+                MAME ROM manager. Individual MAME fixes below do not establish general MAME readiness.
+            </p>
+        </section>
+
+        <section class="change-section" aria-labelledby="adding-title">
+            <h2 id="adding-title">Adding</h2>
+            <ul>
+                <li>Adding paginated startup README navigation that fits the visible console, keeps related text together where possible, and requests final acceptance only after the last page has been read.</li>
+            </ul>
+        </section>
+
+        <section class="change-section" aria-labelledby="changing-title">
+            <h2 id="changing-title">Changing</h2>
+            <ul>
+                <li>Removing the CURATOR-created Atari 8-bit Family Atarimania GameBase 2021 DAT, its application-specific recognition text, release inclusion, and guide recommendations because its source-to-member derivation is not verified.</li>
+            </ul>
+        </section>
+
+        <section class="change-section" aria-labelledby="fixing-title">
+            <h2 id="fixing-title">Fixing</h2>
+            <ul>
+                <li>Fixing duplicate review publication ordering so shared input remains available for every required output.</li>
+                <li>Fixing unmatched CHD and raw CDI review plans to use hashes of the actual physical files.</li>
+                <li>Fixing empty permanent collection publication and Reporting Standard/FullAudit handling, with populated-collection regression proof.</li>
+                <li>Fixing final output and ZIP member naming to use authoritative DAT filenames and extensions while retaining set titles separately.</li>
+                <li>Fixing shared-content ZIP publication to copy compressed members with each required filename, retain distinct definition memberships, and remove artificial Definitions routing. Same-content destination collisions, including capitalization-only member-name differences, will produce independently named duplicate-review artifacts through the established NeedsAttention hierarchy; differing physical layouts still fail closed.</li>
+                <li>Fixing repeated company/platform names, source labels in categories, and duplicated format routing in output paths.</li>
+                <li>Fixing incomplete publication packages being counted as complete and correcting physical-content evidence for preserved unmatched review files.</li>
+                <li>Fixing distinct DAT sets being lost when they share files or names. Sets will remain separate whenever their complete definitions differ; only definitions identical in every way may be deduplicated.</li>
+                <li>Fixing shared physical output accounting so distinct complete definitions retain independent memberships. Changed-input APPEND conflicts remain unproven.</li>
+                <li>Fixing collection reports incorrectly counting one set's output as another set's coverage when the sets share content.</li>
+                <li>Fixing experimental MAME machine-set handling to preserve SPLIT ownership of parent, clone, BIOS, and device files and flag missing required dependencies.</li>
+                <li>Fixing file-size interpretation for supported experimental MAME software-list load operations so undersized files are not accepted as complete.</li>
+            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="/changelog#v2-0-0-beta-4">Read the v2.0.0-beta.4 changelog</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/63">Follow the planning issue on GitHub</a>
+            <a href="/changelog#v2-0-0-beta-4">Read the current changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
