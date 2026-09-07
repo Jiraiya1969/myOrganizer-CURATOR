@@ -84,7 +84,7 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-06T19:42:44-04:00">September 6, 2026 at 7:42 PM EDT</time>
+            <time datetime="2026-09-07T19:28:54-04:00">September 7, 2026 at 7:28 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
@@ -97,39 +97,51 @@
                 <strong>MAME support in myOrganizer: CURATOR is a VERY EARLY, experimental implementation.
                 It must NOT be relied upon as a proven means of organizing MAME sets.</strong>
                 Continue using <a href="https://mamedev.emulab.it/clrmamepro/">clrmame</a> as the definitive
-                MAME ROM manager. Individual MAME fixes below do not establish general MAME readiness.
+                MAME ROM manager.
+            </p>
+            <p>
+                After upgrading to a version containing these changes, rerun Completeness before Organizer
+                if you have an output plan created by an earlier version.
             </p>
         </section>
 
         <section class="change-section" aria-labelledby="adding-title">
             <h2 id="adding-title">Adding</h2>
             <ul>
-                <li>Adding paginated startup README navigation that fits the visible console, keeps related text together where possible, and requests final acceptance only after the last page has been read.</li>
+                <li>Adding separate ZIPs for supported disk and tape images, with each file keeping its DAT filename. When a required file is missing, the available images go into separate ZIPs under NeedsAttention and the set remains incomplete.</li>
+                <li>Adding startup README pages that fit the console window, with final acceptance requested after the last page.</li>
             </ul>
         </section>
 
         <section class="change-section" aria-labelledby="changing-title">
             <h2 id="changing-title">Changing</h2>
             <ul>
-                <li>Removing the CURATOR-created Atari 8-bit Family Atarimania GameBase 2021 DAT, its application-specific recognition text, release inclusion, and guide recommendations because its source-to-member derivation is not verified.</li>
+                <li>Removing the two Atari 2600 HyperList files from the recommended DAT sources.</li>
+                <li>Removing the bundled CURATOR-created Atari 8-bit Family Atarimania GameBase 2021 DAT because its file information could not be verified against its source.</li>
             </ul>
         </section>
 
         <section class="change-section" aria-labelledby="fixing-title">
             <h2 id="fixing-title">Fixing</h2>
             <ul>
-                <li>Fixing duplicate review publication ordering so shared input remains available for every required output.</li>
-                <li>Fixing unmatched CHD and raw CDI review plans to use hashes of the actual physical files.</li>
-                <li>Fixing empty permanent collection publication and Reporting Standard/FullAudit handling, with populated-collection regression proof.</li>
-                <li>Fixing final output and ZIP member naming to use authoritative DAT filenames and extensions while retaining set titles separately.</li>
-                <li>Fixing shared-content ZIP publication to copy compressed members with each required filename, retain distinct definition memberships, and remove artificial Definitions routing. Same-content destination collisions, including capitalization-only member-name differences, will produce independently named duplicate-review artifacts through the established NeedsAttention hierarchy; differing physical layouts still fail closed.</li>
-                <li>Fixing repeated company/platform names, source labels in categories, and duplicated format routing in output paths.</li>
-                <li>Fixing incomplete publication packages being counted as complete and correcting physical-content evidence for preserved unmatched review files.</li>
-                <li>Fixing distinct DAT sets being lost when they share files or names. Sets will remain separate whenever their complete definitions differ; only definitions identical in every way may be deduplicated.</li>
-                <li>Fixing shared physical output accounting so distinct complete definitions retain independent memberships. Changed-input APPEND conflicts remain unproven.</li>
-                <li>Fixing collection reports incorrectly counting one set's output as another set's coverage when the sets share content.</li>
-                <li>Fixing experimental MAME machine-set handling to preserve SPLIT ownership of parent, clone, BIOS, and device files and flag missing required dependencies.</li>
-                <li>Fixing file-size interpretation for supported experimental MAME software-list load operations so undersized files are not accepted as complete.</li>
+                <li>Fixing publication ZIP and incomplete publication folder names to use the DAT's set name.</li>
+                <li>Fixing detection of DolphinTool at the configured location.</li>
+                <li>Fixing completeness reports so a missing or incorrectly sized required output prevents the set from being counted as complete.</li>
+                <li>Fixing generated GameBase set names by removing added ID suffixes and trailing spaces.</li>
+                <li>Fixing Atari 5200 DAT entries so alternative versions are separate sets.</li>
+                <li>Fixing Atari Lynx DAT requirements to exclude readme files.</li>
+                <li>Fixing missing Atari ST Automation and D-Bug entries in the bundled DAT.</li>
+                <li>Fixing duplicate handling so a shared source file remains available for every required output.</li>
+                <li>Fixing file verification information for unmatched CHD and CDI files sent for review.</li>
+                <li>Fixing processing and reporting when no files qualify for the permanent collection.</li>
+                <li>Fixing output filenames and filenames inside ZIPs to follow the DAT while keeping set titles separate.</li>
+                <li>Fixing ZIP output so shared files retain the filenames required by each set, without adding unnecessary Definitions folders. Conflicting outputs are kept separately under NeedsAttention when supported; incompatible layouts are rejected rather than overwritten.</li>
+                <li>Fixing repeated company and platform names, source labels, and duplicated format folders in output paths.</li>
+                <li>Fixing incomplete publication packages being counted as complete.</li>
+                <li>Fixing distinct DAT sets being lost when they share files or names. Sets remain separate whenever their complete definitions differ; only definitions identical in every way may be deduplicated.</li>
+                <li>Fixing collection reports to count each fulfilled DAT set correctly when files are shared between sets.</li>
+                <li>Fixing experimental MAME SPLIT handling to keep parent, clone, BIOS, and device files with their required sets and flag missing dependencies.</li>
+                <li>Fixing experimental MAME software-list file-size checks so undersized files are not accepted as complete.</li>
             </ul>
         </section>
 
