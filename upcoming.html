@@ -84,7 +84,7 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-07T19:28:54-04:00">September 7, 2026 at 7:28 PM EDT</time>
+            <time datetime="2026-09-08T19:32:26-04:00">September 8, 2026 at 7:32 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
@@ -100,8 +100,8 @@
                 MAME ROM manager.
             </p>
             <p>
-                After upgrading to a version containing these changes, rerun Completeness before Organizer
-                if you have an output plan created by an earlier version.
+                Every BETA release requires a clean run. Databases, saved run state, and output plans from
+                earlier BETA releases are not backward compatible.
             </p>
         </section>
 
@@ -116,6 +116,7 @@
         <section class="change-section" aria-labelledby="changing-title">
             <h2 id="changing-title">Changing</h2>
             <ul>
+                <li>Changing authority preference so supplemental A8P follows Atarimania, with MAME software lists following A8P and preceding Other.</li>
                 <li>Removing the two Atari 2600 HyperList files from the recommended DAT sources.</li>
                 <li>Removing the bundled CURATOR-created Atari 8-bit Family Atarimania GameBase 2021 DAT because its file information could not be verified against its source.</li>
             </ul>
@@ -124,6 +125,12 @@
         <section class="change-section" aria-labelledby="fixing-title">
             <h2 id="fixing-title">Fixing</h2>
             <ul>
+                <li>Updating the administrator, user, quick-start and API guides for the current implementation and its remaining limitations.</li>
+                <li>Fixing long delays during collection completeness checks and adding clearer progress announcements.</li>
+                <li>Fixing long delays when Organizer finishes publishing the collection.</li>
+                <li>Reducing unnecessary work while Organizer processes each output.</li>
+                <li>Fixing MAME software-list set titles to use their descriptions instead of abbreviated software identifiers.</li>
+                <li>Fixing excessive per-file console messages in Completeness and Organizer while retaining their details in stage logs.</li>
                 <li>Fixing publication ZIP and incomplete publication folder names to use the DAT's set name.</li>
                 <li>Fixing detection of DolphinTool at the configured location.</li>
                 <li>Fixing completeness reports so a missing or incorrectly sized required output prevents the set from being counted as complete.</li>
@@ -135,7 +142,7 @@
                 <li>Fixing file verification information for unmatched CHD and CDI files sent for review.</li>
                 <li>Fixing processing and reporting when no files qualify for the permanent collection.</li>
                 <li>Fixing output filenames and filenames inside ZIPs to follow the DAT while keeping set titles separate.</li>
-                <li>Fixing ZIP output so shared files retain the filenames required by each set, without adding unnecessary Definitions folders. Conflicting outputs are kept separately under NeedsAttention when supported; incompatible layouts are rejected rather than overwritten.</li>
+                <li>Improving ZIP output so shared files retain the filenames required by each set, without adding unnecessary Definitions folders. Conflicting outputs are kept separately under NeedsAttention when supported; incompatible layouts are rejected rather than overwritten. Capitalization-only member-name collisions remain unresolved and can credit a set whose exact filename was not published.</li>
                 <li>Fixing repeated company and platform names, source labels, and duplicated format folders in output paths.</li>
                 <li>Fixing incomplete publication packages being counted as complete.</li>
                 <li>Fixing distinct DAT sets being lost when they share files or names. Sets remain separate whenever their complete definitions differ; only definitions identical in every way may be deduplicated.</li>
