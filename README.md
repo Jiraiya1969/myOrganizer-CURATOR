@@ -2,7 +2,7 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v2.0.0-beta.4**.
+The current public release is **CURATOR v2.0.0-beta.5**.
 
 CURATOR v2 is a major architectural overhaul. It replaces the principal
 in-memory processing paths with persistent, indexed SQLite authority,
@@ -71,19 +71,18 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v2.0.0-beta.4**.
+CURATOR is currently available as **v2.0.0-beta.5**.
 
-This fourth v2 public beta adds the officially identified CURATOR-modified MAME
-chdman build and its complete corresponding source, persistent incremental
-Stage 1 and Stage 2 source ledgers, direct HyperList ingestion, compact CHD
-staging, and the authority, recovery, progress, configuration, documentation,
-and reporting corrections recorded in the changelog.
+This fifth v2 public beta improves disk and tape ZIP handling, archive creation
+and collection publication performance, naming and collision behavior,
+experimental MAME software-list handling, removable review-output recovery,
+and the current administrator, user, quick-start, and API documentation.
 
 The closed v1 release line remains permanently available and will receive no
 further development or release changes.
 
 Download the current beta and verify its published SHA-256 checksum on the
-[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.4).
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.5).
 
 Every published version remains available in the
 [public release archive](https://myorganizerhq.com/releases). See the
@@ -120,3 +119,4 @@ Questions, feedback, bug reports, and project discussions are welcome.
 **Email:** contact@myorganizerhq.com
 
 **Repository:** https://github.com/Jiraiya1969/myOrganizer-CURATOR
+
