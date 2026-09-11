@@ -1,9 +1,99 @@
-# CURATOR v2.0.0-beta.4 Changelog
+# CURATOR v2.0.0-beta.5 Changelog
 
-Last updated: September 3, 2026
+Last updated: September 11, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v2.0.0-beta.5 - 2026-09-11
+
+### Added
+
+- Added separate ZIPs for supported disk and tape images, with each file keeping
+  its DAT filename. When a required file is missing, the available images go into
+  separate ZIPs under NeedsAttention and the set remains incomplete.
+- Added startup README pages that fit the console window, with final acceptance
+  requested after the last page.
+
+### Changed
+
+- Reduced the time needed to create ZIP archives and copy files into the collection.
+
+- Changed authority preference so supplemental A8P follows Atarimania, with
+  MAME software lists following A8P and preceding Other.
+- Removed the two Atari 2600 HyperList files from the recommended DAT sources.
+- Removed the bundled CURATOR-created Atari 8-bit Family Atarimania GameBase
+  2021 DAT because its file information could not be verified against its source.
+- Updated the administrator, user, quick-start and API guides to explain current
+  naming, repeated additions, removable review output, and current archive-writing and recovery behavior.
+
+### Fixed
+
+- Completed the separate chdman source package with three upstream FLAC test fixtures omitted from the previous source asset. The bundled binary is unchanged.
+
+- Fixed processing after the needs_attention folder or its files have been removed, so review output can be created again.
+
+- Fixed name collisions that created incorrect AlternateFormats folders, while
+  keeping files in their configured platform and region locations.
+- Fixed filename capitalization to retain spellings such as RealSports and
+  CX2685 when a matching reference filename is available.
+- Fixed ordinary collection ZIP capitalization while preserving recognized
+  identifiers and spelling from supported reference DATs.
+- Fixed repeated additions of copied files and ZIPs so matching outputs can be
+  reused and different contents are kept separately.
+- Fixed quoted DAT filenames being mistaken for fields such as file size.
+- Fixed repeated CUE-check completion messages with grouped progress updates.
+- Fixed Matching failures caused by unrelated DAT files sharing a filename,
+  while retaining rejection of ambiguous sources when actually requested.
+
+- Fixed long delays during collection completeness checks and adding clearer progress announcements.
+
+- Fixed long delays when Organizer finishes publishing the collection.
+- Fixed resume to stop when previously written files have changed.
+- Fixed interrupted additions so valid newly created ZIPs can be recovered without being mistaken for older files.
+
+- Fixed MAME software-list set titles to use their descriptions instead of
+  abbreviated software identifiers.
+- Fixed excessive per-file console messages in Completeness and Organizer while
+  retaining their details in stage logs.
+- Fixed publication ZIP and incomplete publication folder names to use the
+  DAT's set name.
+- Fixed detection of DolphinTool at the configured location.
+- Fixed completeness reports so a missing or incorrectly sized required output
+  prevents the set from being counted as complete.
+- Fixed generated GameBase set names by removing added ID suffixes and trailing
+  spaces.
+- Fixed Atari 5200 DAT entries so alternative versions are separate sets.
+- Fixed Atari Lynx DAT requirements to exclude readme files.
+- Fixed missing Atari ST Automation and D-Bug entries in the bundled DAT.
+- Fixed duplicate handling so a shared source file remains available for every
+  required output.
+- Fixed file verification information for unmatched CHD and CDI files sent for
+  review.
+- Fixed processing and reporting when no files qualify for the permanent
+  collection.
+- Fixed output filenames and filenames inside ZIPs to follow the DAT while
+  keeping set titles separate.
+- Fixed ZIP collisions so sets needing different member filenames retain
+  separate packages. Packages with matching content but different member names
+  use a Duplicate folder within the collection; different contents use separate
+  Conflicts folders.
+- Fixed repeated company and platform names, source labels, and duplicated
+  format folders in output paths.
+- Fixed incomplete publication packages being counted as complete.
+- Fixed distinct DAT sets being lost when they share files or names. Sets remain
+  separate whenever their complete definitions differ, including filename
+  capitalization.
+- Fixed collection reports to count each fulfilled DAT set correctly when files
+  are shared between sets.
+- Fixed experimental MAME SPLIT handling to keep parent, clone, BIOS, and device
+  files with their required sets and flag missing dependencies.
+- Fixed experimental MAME software-list file-size checks so undersized files
+  are not accepted as complete.
+
+### Known Limitations
+
+Every BETA release requires a clean run; earlier databases, saved run state and output plans are incompatible. MAME support remains VERY EARLY and experimental; continue using clrmame as the definitive MAME ROM manager. Media conversion and broader recovery scenarios remain subject to open acceptance work.
 
 ## v2.0.0-beta.4 - 2026-09-03
 
@@ -655,3 +745,4 @@ with the application.
 - In pause-enabled Gateway sequences, the final selected stage may not show its
   promised stage acknowledgement before the separate Gateway timing summary.
   This does not suppress the final timing summary.
+

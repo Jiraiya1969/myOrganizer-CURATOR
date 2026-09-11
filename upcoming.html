@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Changes — CURATOR</title>
     <meta name="description"
-        content="Review the improvements currently planned for CURATOR after the v2.0.0-beta.4 release.">
+        content="Review the current planning status for CURATOR after the v2.0.0-beta.5 release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -84,14 +84,14 @@
         <h1>Upcoming Changes</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-08T19:32:26-04:00">September 8, 2026 at 7:32 PM EDT</time>
+            <time datetime="2026-09-11T18:14:35-04:00">September 11, 2026 at 6:14 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">Planning After v2.0.0-beta.4</h2>
+            <h2 id="planning-notice-title">Planning After v2.0.0-beta.5</h2>
             <p>
-                These improvements are currently planned after <code>v2.0.0-beta.4</code>.
-                Development is still underway, so the final list and release timing may change.
+                <code>v2.0.0-beta.5</code> is now available. No additional
+                post-release changes are currently announced.
             </p>
             <p class="planning-warning">
                 <strong>MAME support in myOrganizer: CURATOR is a VERY EARLY, experimental implementation.
@@ -105,57 +105,9 @@
             </p>
         </section>
 
-        <section class="change-section" aria-labelledby="adding-title">
-            <h2 id="adding-title">Adding</h2>
-            <ul>
-                <li>Adding separate ZIPs for supported disk and tape images, with each file keeping its DAT filename. When a required file is missing, the available images go into separate ZIPs under NeedsAttention and the set remains incomplete.</li>
-                <li>Adding startup README pages that fit the console window, with final acceptance requested after the last page.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="changing-title">
-            <h2 id="changing-title">Changing</h2>
-            <ul>
-                <li>Changing authority preference so supplemental A8P follows Atarimania, with MAME software lists following A8P and preceding Other.</li>
-                <li>Removing the two Atari 2600 HyperList files from the recommended DAT sources.</li>
-                <li>Removing the bundled CURATOR-created Atari 8-bit Family Atarimania GameBase 2021 DAT because its file information could not be verified against its source.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="fixing-title">
-            <h2 id="fixing-title">Fixing</h2>
-            <ul>
-                <li>Updating the administrator, user, quick-start and API guides for the current implementation and its remaining limitations.</li>
-                <li>Fixing long delays during collection completeness checks and adding clearer progress announcements.</li>
-                <li>Fixing long delays when Organizer finishes publishing the collection.</li>
-                <li>Reducing unnecessary work while Organizer processes each output.</li>
-                <li>Fixing MAME software-list set titles to use their descriptions instead of abbreviated software identifiers.</li>
-                <li>Fixing excessive per-file console messages in Completeness and Organizer while retaining their details in stage logs.</li>
-                <li>Fixing publication ZIP and incomplete publication folder names to use the DAT's set name.</li>
-                <li>Fixing detection of DolphinTool at the configured location.</li>
-                <li>Fixing completeness reports so a missing or incorrectly sized required output prevents the set from being counted as complete.</li>
-                <li>Fixing generated GameBase set names by removing added ID suffixes and trailing spaces.</li>
-                <li>Fixing Atari 5200 DAT entries so alternative versions are separate sets.</li>
-                <li>Fixing Atari Lynx DAT requirements to exclude readme files.</li>
-                <li>Fixing missing Atari ST Automation and D-Bug entries in the bundled DAT.</li>
-                <li>Fixing duplicate handling so a shared source file remains available for every required output.</li>
-                <li>Fixing file verification information for unmatched CHD and CDI files sent for review.</li>
-                <li>Fixing processing and reporting when no files qualify for the permanent collection.</li>
-                <li>Fixing output filenames and filenames inside ZIPs to follow the DAT while keeping set titles separate.</li>
-                <li>Improving ZIP output so shared files retain the filenames required by each set, without adding unnecessary Definitions folders. Conflicting outputs are kept separately under NeedsAttention when supported; incompatible layouts are rejected rather than overwritten. Capitalization-only member-name collisions remain unresolved and can credit a set whose exact filename was not published.</li>
-                <li>Fixing repeated company and platform names, source labels, and duplicated format folders in output paths.</li>
-                <li>Fixing incomplete publication packages being counted as complete.</li>
-                <li>Fixing distinct DAT sets being lost when they share files or names. Sets remain separate whenever their complete definitions differ; only definitions identical in every way may be deduplicated.</li>
-                <li>Fixing collection reports to count each fulfilled DAT set correctly when files are shared between sets.</li>
-                <li>Fixing experimental MAME SPLIT handling to keep parent, clone, BIOS, and device files with their required sets and flag missing dependencies.</li>
-                <li>Fixing experimental MAME software-list file-size checks so undersized files are not accepted as complete.</li>
-            </ul>
-        </section>
-
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/63">Follow the planning issue on GitHub</a>
-            <a href="/changelog#v2-0-0-beta-4">Read the current changelog</a>
+            <a href="/changelog#v2-0-0-beta-5">Read the beta.5 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
         <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
@@ -163,3 +115,4 @@
 </body>
 
 </html>
+
