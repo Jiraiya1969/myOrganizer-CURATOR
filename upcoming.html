@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Changes — CURATOR</title>
+    <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="Review the current planning status for CURATOR after the v2.0.0-beta.5 release.">
+        content="Explore possible improvements planned for CURATOR after v2.0.0-beta.5; final release contents may change.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -81,17 +81,16 @@
 <body>
     <main>
         <div class="eyebrow">CURATOR Planning Record</div>
-        <h1>Upcoming Changes</h1>
+        <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-11T18:14:35-04:00">September 11, 2026 at 6:14 PM EDT</time>
+            <time datetime="2026-09-13T22:13:56-04:00">September 13, 2026 at 10:13 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">Planning After v2.0.0-beta.5</h2>
+            <h2 id="planning-notice-title">What We're Working On</h2>
             <p>
-                <code>v2.0.0-beta.5</code> is now available. No additional
-                post-release changes are currently announced.
+                These are the improvements currently planned for the next CURATOR release. Development is still underway, so the final list may change before release.
             </p>
             <p class="planning-warning">
                 <strong>MAME support in myOrganizer: CURATOR is a VERY EARLY, experimental implementation.
@@ -105,7 +104,59 @@
             </p>
         </section>
 
+        <section class="change-section">
+            <h2>Adding</h2>
+            <ul>
+                <li>Retain MAME software-list disk declarations without treating logical disk hashes as physical ROM identities. Disk matching/output support remains experimental and incomplete; mixed ROM/disk sets stop explicitly.</li>
+                <li>Add template-based mappings for DAT fields, keeping set names, descriptions, member filenames and checksums distinct.</li>
+                <li>Retain declared MD5 checksums throughout DAT authority publication. Physical-file MD5 matching when SHA1 is absent remains deferred.</li>
+                <li>Add independent language folders alongside geographic region folders, using the region and language mapping table.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Changing</h2>
+            <ul>
+                <li>Refresh the four guides for schema 22, complete-set deduplication, current review destinations and bounded Naomi/CDI support; remove obsolete software-list DTD setup instructions.</li>
+                <li>Organize the AtariMania ST catalogue into individual disk-image sets, retaining supporting documents and sidecars separately.</li>
+                <li>Simplify unknown-file review destinations by removing the redundant Unresolved Media folder level.</li>
+                <li>Assign DAT profiles from configured source-metadata rules instead of guessing from DAT filenames.</li>
+                <li>Name set packages from the mapped authoritative set name while retaining declared member filenames inside each package.</li>
+                <li>Move DAT authority processing into the database while retaining original definitions, source information, every set membership and rollback safeguards.</li>
+                <li>Preserve every DAT definition and set membership while sharing matching content using Size, CRC and SHA1, with MD5 compared when both declarations supply it. Filename comparison is case agnostic.</li>
+                <li>Remove the unused software-list DTD dependency.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Fixing</h2>
+            <ul>
+                <li>Correct preparation of certain DiscJuggler CDI data tracks, including decoded sector sizes and sector addresses. Remove a stored data-track pregap only when the resulting content matches a loaded authoritative DAT.</li>
+                <li>Recognize Redump Sega Naomi disc sets and create complete-set CHD output using the authoritative DAT filename.</li>
+                <li>Accept optional game identifiers in XML DATs while keeping them separate from output filenames.</li>
+                <li>Recognize redump.info publisher metadata alongside existing redump.org headers.</li>
+                <li>Deduplicate complete sets using their full member contents, then select the winning source through the configured authority hierarchy. Preserve distinct sets that merely share some files and retain all source declarations and memberships.</li>
+                <li>Preserve DAT-declared publication files instead of excluding them merely because their names or folders contain image-related terms.</li>
+                <li>Keep DAT analysis progress in its taskbar instead of repeatedly displaying generic FileCopy completion messages.</li>
+                <li>Interpret declared file sizes according to each DAT format and retain their original declarations.</li>
+                <li>Correct GoodTools Atari 2600 set names to match their ROM filenames without the final extension.</li>
+                <li>Avoid unnecessary Conflicts output for equal content declared through different DAT names or formats, without losing definitions or memberships.</li>
+                <li>Avoid false ambiguous matches caused solely by a missing MD5 declaration.</li>
+                <li>Keep unbound review files separate under Unknown File, adding incremental suffixes when filenames collide.</li>
+            </ul>
+        </section>
+
+        <section class="change-section">
+            <h2>Known limitations</h2>
+            <ul>
+                <li>CDI input support remains partial. The four tested Dreamcast CDI games do not form complete matched sets; this correction does not establish complete-game CHD output or repair differing audio.</li>
+                <li>Complete Redump Naomi sets have verified standalone CHD output with authoritative names. Creation of new RVZ files and converted-media collision/recovery cases still need acceptance testing; copying an existing RVZ does not establish conversion support.</li>
+                <li>Locked platform files may produce a generic error; release the file lock before rerunning preparation.</li>
+            </ul>
+        </section>
+
         <div class="links">
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/71">Discuss the planned changes on GitHub</a>
             <a href="/">Return to CURATOR</a>
             <a href="/changelog#v2-0-0-beta-5">Read the beta.5 changelog</a>
             <a href="/releases">Current and historical releases</a>
