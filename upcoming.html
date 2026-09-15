@@ -84,7 +84,7 @@
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-13T22:13:56-04:00">September 13, 2026 at 10:13 PM EDT</time>
+            <time datetime="2026-09-15T18:22:16-04:00">September 15, 2026 at 6:22 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
@@ -107,42 +107,50 @@
         <section class="change-section">
             <h2>Adding</h2>
             <ul>
-                <li>Retain MAME software-list disk declarations without treating logical disk hashes as physical ROM identities. Disk matching/output support remains experimental and incomplete; mixed ROM/disk sets stop explicitly.</li>
-                <li>Add template-based mappings for DAT fields, keeping set names, descriptions, member filenames and checksums distinct.</li>
-                <li>Retain declared MD5 checksums throughout DAT authority publication. Physical-file MD5 matching when SHA1 is absent remains deferred.</li>
-                <li>Add independent language folders alongside geographic region folders, using the region and language mapping table.</li>
+                <li>Retaining MAME software-list disk declarations without treating logical disk hashes as physical ROM identities. Disk matching/output support remains experimental and incomplete; mixed ROM/disk sets stop explicitly.</li>
+                <li>Adding template-based mappings for DAT fields, keeping set names, descriptions, member filenames and checksums distinct.</li>
+                <li>Retaining declared MD5 checksums throughout DAT authority publication. Physical-file MD5 matching when SHA1 is absent remains deferred.</li>
+                <li>Adding independent language folders alongside geographic region folders, using the region and language mapping table.</li>
             </ul>
         </section>
 
         <section class="change-section">
             <h2>Changing</h2>
             <ul>
-                <li>Refresh the four guides for schema 22, complete-set deduplication, current review destinations and bounded Naomi/CDI support; remove obsolete software-list DTD setup instructions.</li>
-                <li>Organize the AtariMania ST catalogue into individual disk-image sets, retaining supporting documents and sidecars separately.</li>
-                <li>Simplify unknown-file review destinations by removing the redundant Unresolved Media folder level.</li>
-                <li>Assign DAT profiles from configured source-metadata rules instead of guessing from DAT filenames.</li>
-                <li>Name set packages from the mapped authoritative set name while retaining declared member filenames inside each package.</li>
-                <li>Move DAT authority processing into the database while retaining original definitions, source information, every set membership and rollback safeguards.</li>
-                <li>Preserve every DAT definition and set membership while sharing matching content using Size, CRC and SHA1, with MD5 compared when both declarations supply it. Filename comparison is case agnostic.</li>
-                <li>Remove the unused software-list DTD dependency.</li>
+                <li>Showing measured DAT, set and member counts during discovery, with stable platform context and clear process announcements. Reference preparation announces reuse checks, confirmation and summary loading; faster reuse is not established.</li>
+                <li>Placing all incomplete sets under one Incomplete Sets output folder, preserving the existing company, media-type and platform hierarchy.</li>
+                <li>Processing copy-only outputs first, followed by single-file ZIPs (including one-member sets), multi-file ZIPs and remaining conversions. Show the current output group, completed outputs and finishing steps more clearly.</li>
+                <li>Pacing copy and ZIP creation progress updates while retaining measured progress and completion reporting. A throughput improvement has not been established.</li>
+                <li>Speeding up Stage 9 destination planning while preserving output names, conflict handling, source records and every set membership. Destination checks remain current; the database does not assume files exist.</li>
+                <li>Refreshing the four guides for schema 22, complete-set deduplication, current review destinations and bounded Naomi/CDI support; remove obsolete software-list DTD setup instructions. Describe grouped Stage 10 progress, clarify database-owned recovery, and expand the Core API reference to 159 interfaces. Keep the latest guide PDFs included when preparing application packages.</li>
+                <li>Organizing the AtariMania ST catalogue into individual disk-image sets, retaining supporting documents and sidecars separately.</li>
+                <li>Simplifying unknown-file review destinations by removing the redundant Unresolved Media folder level.</li>
+                <li>Assigning DAT profiles from configured source-metadata rules instead of guessing from DAT filenames.</li>
+                <li>Naming set packages from the mapped authoritative set name while retaining declared member filenames inside each package.</li>
+                <li>Moving DAT authority processing into the database while retaining original definitions, source information, every set membership and rollback safeguards.</li>
+                <li>Preserving every DAT definition and set membership while sharing matching content using Size, CRC and SHA1, with MD5 compared when both declarations supply it. Filename comparison is case agnostic.</li>
+                <li>Removing the unused software-list DTD dependency.</li>
             </ul>
         </section>
 
         <section class="change-section">
             <h2>Fixing</h2>
             <ul>
-                <li>Correct preparation of certain DiscJuggler CDI data tracks, including decoded sector sizes and sector addresses. Remove a stored data-track pregap only when the resulting content matches a loaded authoritative DAT.</li>
-                <li>Recognize Redump Sega Naomi disc sets and create complete-set CHD output using the authoritative DAT filename.</li>
-                <li>Accept optional game identifiers in XML DATs while keeping them separate from output filenames.</li>
-                <li>Recognize redump.info publisher metadata alongside existing redump.org headers.</li>
-                <li>Deduplicate complete sets using their full member contents, then select the winning source through the configured authority hierarchy. Preserve distinct sets that merely share some files and retain all source declarations and memberships.</li>
-                <li>Preserve DAT-declared publication files instead of excluding them merely because their names or folders contain image-related terms.</li>
-                <li>Keep DAT analysis progress in its taskbar instead of repeatedly displaying generic FileCopy completion messages.</li>
-                <li>Interpret declared file sizes according to each DAT format and retain their original declarations.</li>
-                <li>Correct GoodTools Atari 2600 set names to match their ROM filenames without the final extension.</li>
-                <li>Avoid unnecessary Conflicts output for equal content declared through different DAT names or formats, without losing definitions or memberships.</li>
-                <li>Avoid false ambiguous matches caused solely by a missing MD5 declaration.</li>
-                <li>Keep unbound review files separate under Unknown File, adding incremental suffixes when filenames collide.</li>
+                <li>Allowing repeated DAT discovery to reuse unchanged results after a successful publication while later authority processing is still pending. Refreshing results when the current platform publication requires it.</li>
+                <li>Recognizing, during resumed Append work, ZIPs created by the current batch instead of treating them as leftovers from an earlier interrupted attempt.</li>
+                <li>Correcting preparation of certain DiscJuggler CDI data tracks, including decoded sector sizes and sector addresses. Remove a stored data-track pregap only when the resulting content matches a loaded authoritative DAT.</li>
+                <li>Recognizing Redump Sega Naomi disc sets and creating complete-set CHD output using the authoritative DAT filename.</li>
+                <li>Accepting optional game identifiers in XML DATs while keeping them separate from output filenames.</li>
+                <li>Recognizing redump.info publisher metadata alongside existing redump.org headers.</li>
+                <li>Deduplicating complete sets using their full member contents, then selecting the winning source through the configured authority hierarchy. Preserve distinct sets that merely share some files and retain all source declarations and memberships.</li>
+                <li>Preserving potential set members for content matching instead of excluding them solely by hidden status, extension, frontend-style names, system-style names or named empty archive entries.</li>
+                <li>Keeping Stage 10 progress rows stable, avoiding duplicate redraws and completing ZIP byte progress from receipt evidence.</li>
+                <li>Keeping DAT analysis progress in its taskbar instead of repeatedly displaying generic FileCopy completion messages.</li>
+                <li>Interpreting declared file sizes according to each DAT format and retaining their original declarations.</li>
+                <li>Correcting GoodTools Atari 2600 set names to match their ROM filenames without the final extension.</li>
+                <li>Avoiding unnecessary Conflicts output for equal content declared through different DAT names or formats, without losing definitions or memberships.</li>
+                <li>Avoiding false ambiguous matches caused solely by a missing MD5 declaration.</li>
+                <li>Keeping unbound review files separate under Unknown File, adding incremental suffixes when filenames collide.</li>
             </ul>
         </section>
 
