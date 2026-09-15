@@ -98,6 +98,17 @@ longer exposed; CURATOR preserves their filenames, sizes, SHA-256 identities,
 and this evidence limitation. These metadata terms do not grant rights to any
 referenced game content, names, or trademarks.
 
+CURATOR also packages an unofficial modified MAME chdman build. It retains the
+standard chdman command set and adds CURATOR's `hashcd` command plus optional
+extraction-time logical-track evidence. The combined
+binary is distributed under GPL-2.0-or-later and must be accompanied through
+equivalent release access by the complete corresponding source for the exact
+distributed build. The binary, source package, license notices, attribution,
+modified-build notice, and non-affiliation notice must remain together as a
+single release compliance set. The source package is provided separately from
+the CURATOR application archive so recipients can identify and obtain it
+directly.
+
 ## 7. Names, Trademarks, and Project Identity
 
 All third-party names, trademarks, game titles, emulator names, platform names,
@@ -105,6 +116,12 @@ and product names belong to their respective owners. CURATOR is not affiliated
 with, sponsored by, approved by, or endorsed by MAME, emulator projects,
 hardware manufacturers, game publishers, rights holders, or database
 maintainers unless expressly stated in writing.
+
+MAME is a registered trademark of Gregory Ember. CURATOR's use of the MAME and
+chdman names is solely descriptive of upstream origin and format/tool
+compatibility. CURATOR's modified chdman is not an official MAMEdev build and
+is not produced, sponsored, approved, supported, or warranted by MAMEdev or its
+contributors.
 
 Modified versions must be identified clearly as modified and must not be
 represented as official CURATOR releases by Miguel A. Ortiz. No trademark or
