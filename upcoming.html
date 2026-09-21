@@ -84,7 +84,7 @@
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-16T18:13:23-04:00">September 16, 2026 at 6:13 PM EDT</time>
+            <time datetime="2026-09-21T13:13:12-04:00">September 21, 2026 at 1:13 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
@@ -103,21 +103,27 @@
         <section class="change-section">
             <h2>Adding</h2>
             <ul>
+                <li>Adding newly found disks to their existing ZIP in Incomplete Sets during Append, while preserving existing contents and skipping disks already present. Completed containers remain in Incomplete Sets.</li>
+                <li>Adding folders for Applications, Educational software, Demos and other recognized catalogue categories within each platform, and Games folders within format-specific folders.</li>
                 <li>Adding Operating System and Revisions folders within each platform&#39;s existing folder structure. Operating-system revisions go under Operating System\Revisions. Existing output folders are not automatically moved or renamed.</li>
                 <li>Adding recognition of multi-disk sets, disk sides, parts and companion files while keeping separate editions distinct.</li>
-                <li>Adding separate language folders alongside geographic region folders.</li>
-                <li>Adding guidance in the guides that antivirus software can interfere with DolphinTool and that you should allow it through the antivirus prompt to continue.</li>
+                <li>Applying language folders where appropriate while keeping USA-inclusive sets at the platform root regardless of language tags.</li>
+                <li>Simplifying the README and guide warning: antivirus software can interfere with DolphinTool. If DolphinTool reports the error, click <strong>OK</strong> to continue.</li>
             </ul>
         </section>
 
         <section class="change-section">
             <h2>Changing</h2>
             <ul>
+                <li>Showing overall progress and the current file separately while copying, packaging and converting files, with a consistent display while preparing disc images.</li>
+                <li>Using simple messages while clearing the existing collection output.</li>
+                <li>Starting collection stages through the Gateway, with Clear or Append chosen before processing begins.</li>
+                <li>Separating files without an identified set into recognizable content folders within needs_attention, including images, videos, disk images, programs and supporting files, while preserving their contents.</li>
                 <li>Showing clearer startup, scanning and output progress, including the current platform, file counts and completed work.</li>
                 <li>Placing incomplete sets under one Incomplete Sets folder while keeping their company, media and platform folders.</li>
                 <li>Copying files first, then creating ZIP packages and converting disc images, with clearer progress for each group.</li>
                 <li>Reducing the time spent planning output destinations while preserving filenames and checking for conflicts.</li>
-                <li>Updating the guides to explain duplicate handling, review folders, output progress and supported disc formats.</li>
+                <li>Updating the guides with current setup requirements, platform routing, duplicate handling, review folders, output progress and supported disc formats. Keeping only the latest guides in the documentation folder, with earlier editions available in History.</li>
                 <li>Organizing the AtariMania ST catalogue into individual disk-image sets, with supporting documents kept separately.</li>
                 <li>Simplifying review folders by removing the extra Unresolved Media level.</li>
                 <li>Naming packages after the set name in the selected DAT while preserving the filenames inside each package.</li>
@@ -128,10 +134,35 @@
         <section class="change-section">
             <h2>Fixing</h2>
             <ul>
+                <li>Avoiding an extra Games folder when a game has no format-specific destination, while preserving region and other category folders. Existing output is not automatically moved.</li>
+                <li>Allowing processing to continue when a log file is briefly busy; a file that remains unavailable can still stop the run.</li>
+                <li>Reducing repeated success messages when saving incomplete sets, while keeping details available in the log.</li>
+                <li>Clearing temporary working files more quickly and reporting when cleanup cannot finish.</li>
+                <li>Using Cracked as the folder label for recognized cracked variants in newly planned output.</li>
+                <li>Reducing delays when saving the final catalogue while preserving the ability to resume interrupted work.</li>
+                <li>Reducing interruptions caused by temporary difficulty opening the collection database for writing.</li>
+                <li>Resuming an interrupted scan from the Organize menu without rerunning File Discovery or clearing existing output.</li>
+                <li>Keeping fuller database failure details in stage logs and showing where to find them when Scan Preparation stops.</li>
+                <li>Restoring coloured messages and live progress when starting collection processing from the main menu, while keeping errors visible.</li>
+                <li>Keeping unidentified disc-image files under Unknown File instead of unrelated review folders.</li>
+                <li>Excluding only zero-byte files named exactly <code>_</code> as placeholders.</li>
+                <li>Routing recognized alternate editions into a single Alternate Dumps folder without treating alternate status alone as an unofficial release, while preserving internal member directories inside ZIPs.</li>
+                <li>Placing single-file Beta and Unlicensed releases in the appropriate unofficial folders when that information is available in the selected DAT. Existing recognized classifications take priority.</li>
+                <li>Clearing previous output before a new Clear run starts, preventing old output from causing unnecessary Conflicts folders.</li>
+                <li>Preserving completed output when resuming an interrupted Clear or Append run.</li>
+                <li>Stopping final output when completeness checks find blocking issues, and reporting the stopped run accurately.</li>
+                <li>Keeping scan-preparation warning details available and avoiding misleading messages when an archive was processed successfully.</li>
+                <li>Fixing a completed preparation resume that could prevent collection planning from continuing.</li>
+                <li>Placing games, applications and other recognized software categories in their corresponding format folders, including Atari 8-Bit and Atari ST, while avoiding unnecessary Conflicts folders for different formats of the same title.</li>
+                <li>Correcting company and platform folders, including American Laser Games and ColecoVision, while keeping existing collection folders and package contents.</li>
+                <li>Fixing an error that could prevent a clean installation from creating its database.</li>
                 <li>Correcting game names in supplied GameBase DATs that contain characters unsuitable for filenames.</li>
                 <li>Reusing unchanged DAT discovery results when repeating discovery.</li>
                 <li>Recognizing ZIPs already created when resuming an interrupted Append run.</li>
-                <li>Improving reading of some DiscJuggler CDI images.</li>
+                <li>Converting supported DiscJuggler CDI images into individual BIN tracks and a matching CUE file while retaining the original images.</li>
+                <li>Checking converted tracks and disc layout before accepting the files, and stopping conversion when required disc information cannot be preserved.</li>
+                <li>Producing individual BIN tracks named after their original CDI and track number, with CUE references that resolve to the corresponding files. Preserving those relationships when unmatched optical files are sent for review, instead of separately ZIPping their tracks.</li>
+                <li>Avoiding unnecessary separate review copies of converted tracks when the original CDI matches the selected DAT. When it does not match, the converted files remain available for review.</li>
                 <li>Recognizing complete Redump Sega Naomi disc sets and producing CHD files with the names from the DAT.</li>
                 <li>Accepting DATs with optional game identifiers without adding those identifiers to output filenames.</li>
                 <li>Recognizing Redump DATs that use either redump.info or redump.org source information.</li>
@@ -142,7 +173,7 @@
                 <li>Correcting GoodTools Atari 2600 set names to match their ROM filenames without the extension.</li>
                 <li>Avoiding unnecessary Conflicts folders when different DATs describe identical content, including filenames that differ only in letter case.</li>
                 <li>Avoiding uncertain matches caused only by an omitted optional MD5 checksum in a DAT.</li>
-                <li>Keeping unidentified files separate under Unknown File and adding numbered suffixes when filenames collide.</li>
+                <li>Keeping unidentified archive members separate and adding numbered suffixes within their review folders when filenames collide. Files without a recognized content type remain under Unknown File.</li>
             </ul>
         </section>
 
@@ -152,7 +183,8 @@
                 <li>Not every operating system or revision can be identified. Operating System folders currently depend on the Operating Systems category in TOSEC DATs. Revisions require a recognized revision label; a version number alone does not qualify.</li>
                 <li>Incomplete or uncertain media may be sent for review. Completeness checks depend on the available DAT information and cannot establish whether files omitted from a catalogue are required or whether a game is playable.</li>
                 <li>MAME software-list disc support is incomplete. Sets combining ROM files and disc images cannot currently be processed together.</li>
-                <li>CDI support is partial. Some images cannot produce a complete matched game or CHD, and differing audio is not repaired.</li>
+                <li>CDI support is limited to certain disc layouts. Some images may not convert correctly, and successful conversion does not guarantee that a game will run in an emulator or on original hardware.</li>
+                <li>Some NRG images cannot be converted because of unsupported disc information. MDS images cannot be processed if their companion data file cannot be opened. Audio differences are not repaired automatically.</li>
                 <li>Copying existing RVZ files does not mean new RVZ files can be created. Conversion and recovery support remains limited.</li>
                 <li>Locked platform files may produce a generic error. Close the program holding the file before repeating preparation.</li>
             </ul>
