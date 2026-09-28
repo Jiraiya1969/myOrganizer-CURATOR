@@ -2,7 +2,7 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v2.0.0-beta.5**.
+The current public release is **CURATOR v2.0.0-beta.6**.
 
 CURATOR v2 is a major architectural overhaul. It replaces the principal
 in-memory processing paths with persistent, indexed SQLite authority,
@@ -71,18 +71,17 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v2.0.0-beta.5**.
+CURATOR is currently available as **v2.0.0-beta.6**.
 
-This fifth v2 public beta improves disk and tape ZIP handling, archive creation
-and collection publication performance, naming and collision behavior,
-experimental MAME software-list handling, removable review-output recovery,
-and the current administrator, user, quick-start, and API documentation.
+This sixth v2 public beta improves incomplete-set Append, catalogue folders,
+processing performance, recovery, supported optical media, and operator
+documentation.
 
 The closed v1 release line remains permanently available and will receive no
 further development or release changes.
 
 Download the current beta and verify its published SHA-256 checksum on the
-[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.5).
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.6).
 
 Every published version remains available in the
 [public release archive](https://myorganizerhq.com/releases). See the
