@@ -1,9 +1,162 @@
-# CURATOR v2.0.0-beta.5 Changelog
+# CURATOR v2.0.0-beta.6 Changelog
 
-Last updated: September 11, 2026
+Last updated: September 28, 2026
 
 This changelog summarizes new features, improvements, fixes, and known
 limitations in each CURATOR release.
+
+## v2.0.0-beta.6 - 2026-09-28
+
+Start a clean run with every BETA release. Saved databases and unfinished runs from an earlier BETA release cannot be reused. Preserve original collections and use copied input.
+
+**MAME support remains very early and experimental. Continue using clrmame to manage MAME collections.**
+
+### Added
+
+- Added newly found disks to their existing ZIP in Incomplete Sets during Append, while preserving existing contents and skipping disks already present. Completed containers remain in Incomplete Sets.
+
+- Added folders for Applications, Educational software, Demos and other recognized catalogue categories within each platform, and Games folders within format-specific folders. Games without a format-specific destination keep their normal platform placement. Existing output is not automatically moved.
+- Added Operating System and Revisions folders within each platform's existing folder structure. Operating-system revisions go under Operating System\Revisions. Existing output folders are not automatically moved or renamed.
+- Added informational estimates of multi-disk groups, disk sides, parts and companion files. Required members of the selected DAT set determine completeness and output placement; the whole-game limitations are described below.
+- Applied language folders where appropriate while keeping USA-inclusive sets at the platform root regardless of language tags.
+- Simplified the README and guide warning: antivirus software can interfere with DolphinTool. If DolphinTool reports the error, click **OK** to continue.
+
+### Changed
+
+- Reduced delays when preparing DAT catalogues and checking the saved reference library, while preserving duplicate decisions, original declarations and set memberships.
+
+- Reduced repeated work when preparing incomplete-set archives and final output plans while preserving filenames, contents and set memberships.
+
+- Reduced delays during matching and disc-group checks while preserving match decisions, filenames and set memberships.
+
+- Reduced repeated file checking during matching while preserving results when working files remain unchanged.
+
+- Reduced repeated setup work during collection processing while preserving filenames, file contents and set memberships.
+
+- Reduced delays when preparing large groups of loose files while keeping saved progress available for Resume.
+
+- Organized complete MAME Software List ROM sets under their company’s MAME folder, using software-list and game identifiers while preserving the ROM filenames. MAME Arcade handling remains separate.
+
+- Showed recovery choices in a centered panel on a cleared screen, with readable wrapped text and a details view that stays open until you return.
+
+- Clarified that antivirus and other security software may interrupt processing, with guidance to check security alerts and activity history when access problems occur.
+
+- Showed overall progress and the current file separately while copying, packaging and converting files, with a consistent display while preparing disc images.
+- Showed disc-checking messages as they arrive, with a waiting notice during longer checks.
+- Used simple messages while clearing the existing collection output.
+
+- Started collection stages through the Gateway, with Clear or Append chosen before processing begins.
+- Separated unidentified ordinary files into folders named after their original extensions, such as A26, BIN and JPG, within needs_attention. Files without an extension remain under Unknown File with their contents preserved.
+- Showed clearer startup, scanning and output progress, including the current platform, file counts and completed work.
+- Placed incomplete sets under one Incomplete Sets folder while keeping their company, media and platform folders.
+- Copied files first, then created ZIP packages and converted disc images, with clearer progress for each group.
+- Reduced delays when classifying files, planning collection output and starting final file creation, while preserving filenames, contents, set memberships and conflict handling.
+- Updated the guides with setup instructions, supported behavior, practical limitations and relevant API contracts. Kept only the latest guides in the documentation folder, with earlier editions available in History.
+- Organized the AtariMania ST catalogue into individual disk-image sets, with supporting documents kept separately.
+- Simplified review folders by removing the extra Unresolved Media level.
+- Named ordinary collection packages after the set name in the selected DAT while preserving the filenames inside each package.
+- Removed the need for a separate software-list DTD file during setup.
+
+### Fixed
+
+- Preserved original disc images when copying them for review, and stopping cleanup when a file is outside the working folder or its path contains a directory link.
+
+- Excluded time spent waiting for completion acknowledgments from stage processing times in individual, selected and full runs. Showing overall elapsed time, including waits, separately.
+
+- Showed complete and incomplete DAT-set totals separately from informational whole-game estimates.
+
+- Reduced delays when creating ordinary ZIPs and clearing temporary working files, while preserving completed output and the ability to resume interrupted work.
+
+- Prevented DAT Validation from stopping on correctly matched CHD tracks that also appear in other platforms’ catalogues, while preserving their set memberships.
+
+- Kept the final Stage Summary visible after full runs and Organize until you press Enter, while preserving pauses between stages where selected.
+
+- Showed completed output-planning work against actual totals, including incomplete groups, and showing an activity message when a total is not yet known.
+
+- Showed matching progress against the actual files, reference records and disc groups being processed, and marking result saving complete only after the results are saved.
+
+- Reused the original working folders when resuming interrupted archive preparation, avoiding redundant temporary copies while preserving completed work.
+
+- Replaced incomplete working copies when resuming loose-file preparation, while preserving completed work.
+
+- Kept all parts of a complete MAME Software List cassette set together in one correctly named ZIP.
+- Identified the affected MAME Software List archive when conflicting output prevents collection planning, while preserving existing files.
+
+- Resumed at the stage where processing stopped after checking saved progress, required earlier results and collection folders, without rerunning completed stages.
+- Offered Resume only when the saved run is consistent and unfinished, with a clear explanation when it cannot continue.
+
+- Kept routine database checks out of the run-start display while leaving warnings and errors visible.
+- Treated Cancel at the recovery menu as a cancellation without showing an additional failure message.
+
+- Allowed processing to continue when a log file is briefly busy; a file that remains unavailable can still stop the run.
+- Kept repeated notices about saved or unchanged incomplete sets out of the progress display, while retaining details in the log and duplicate totals in the final summary.
+- Cleared temporary working files more quickly and reported when cleanup could not finish.
+- Used Cracked as the folder label for recognized cracked variants in newly planned output.
+
+- Reduced delays when saving the final catalogue while preserving the ability to resume interrupted work.
+
+- Retried to open the collection database up to five times when access is temporarily unavailable, with a 00:00:10 pause between attempts and a clear message if access cannot be restored.
+
+- Resumed an interrupted scan from the Organize menu without rerunning File Discovery or clearing existing output.
+
+- Kept fuller failure details in stage logs, including errors during startup and file checking.
+- Saved error details to an emergency log when normal logs are unavailable, and warned when no log could be written.
+
+- Kept unidentified optical disc images together under Unknown File instead of unrelated review folders.
+- Excluded only zero-byte files named exactly `_` as placeholders.
+- Routed recognized alternate editions into a single Alternate Dumps folder without treating alternate status alone as an unofficial release, while preserving internal member directories inside ZIPs.
+- Placed single-file Beta and Unlicensed releases in the appropriate unofficial folders when that information is available in the selected DAT. Existing recognized classifications take priority.
+
+- Cleared previous output before a new Clear run starts, preventing old output from causing unnecessary Conflicts folders.
+- Preserved completed output when resuming an interrupted Clear or Append run.
+- Stopped final output when completeness checks find blocking issues, and reported the stopped run accurately.
+- Summarized scan-preparation warnings on screen, keeping individual file details in the logs, and avoiding misleading messages when an archive was processed successfully.
+- Fixed a completed preparation resume that could prevent collection planning from continuing.
+- Placed games, applications and other recognized software categories in their corresponding format folders, including Atari 8-Bit and Atari ST, while avoiding unnecessary Conflicts folders for different formats of the same title.
+
+- Corrected company and platform folders, including American Laser Games and ColecoVision, while keeping existing collection folders and package contents.
+
+- Corrected game names in supplied GameBase DATs that contain characters unsuitable for filenames.
+- Reused unchanged DAT discovery results when repeating discovery.
+- Recognized ZIPs already created when resuming an interrupted Append run.
+- Read more DiscJuggler CDI layouts, including mixed audio/data tracks and multiple sessions, while retaining the original input images.
+- Checked converted tracks and disc layout before accepting the files, and stopped conversion when required disc information cannot be preserved.
+- Produced CHD files for supported complete optical images, keeping Jaguar CD sets in ZIP packages and preserving existing RVZ files.
+- Kept an unidentified converted disc together under Unknown File instead of sending its tracks and descriptor to separate review files.
+- Recognized a complete CHD disc from its matching tracks without requiring a separate descriptor beside the original CHD.
+- Kept single-disc games out of Incomplete Sets when their complete disc is present; reserving optical incomplete-set routing for identified sets missing whole discs.
+- Prevented a track shared by several games from giving a whole disc the name or region of another game.
+- Preserved track positions and the high-density boundary when converting GDI images to CHD and extracting them again.
+- Recognized complete Redump Sega Naomi disc sets and produced CHD files with the names from the DAT.
+- Accepted DATs with optional game identifiers without adding those identifiers to output filenames.
+- Recognized Redump DATs that use either redump.info or redump.org source information.
+- Removed duplicate complete sets according to your source preferences while keeping different sets that share some files.
+- Avoided missed matches caused by hidden files, unusual filenames or file extensions.
+- Kept progress displays stable and reduced repeated completion messages.
+- Read file sizes correctly across supported DAT formats.
+- Corrected GoodTools Atari 2600 set names to match their ROM filenames without the extension.
+- Avoided unnecessary Conflicts folders when different DATs describe identical content, including filenames that differ only in letter case.
+- Avoided uncertain matches caused only by an omitted optional MD5 checksum in a DAT.
+- Kept unidentified archive members separate and added numbered suffixes within their review folders when filenames collide. Ordinary files without an extension remain under Unknown File.
+
+### Known limitations
+
+- Saving progress can fail after a stage finishes, stopping the run and leaving its saved completion status behind the completed work.
+
+- Completeness is a property of the selected DAT set, not of an entire game. A DAT may describe each disk as a separate complete set. Having every listed member does not establish that every disk, edition or companion file needed to play the game is present. Whole-game estimates are informational and do not determine output placement.
+- Incomplete-set handling remains limited: sets with missing required DAT members remain separate under Incomplete Sets. Whole-game completeness is not determined automatically. Completed ZIPs accumulated through Append are not automatically moved into the normal collection.
+
+- Working files must remain unchanged after scan preparation; repeat preparation if they are edited or replaced.
+
+- Not every operating system or revision can be identified. Operating System folders currently depend on the Operating Systems category in TOSEC DATs. Revisions require a recognized revision label; a version number alone does not qualify.
+- Incomplete or uncertain media may be sent for review. Completeness checks depend on the available DAT information and cannot establish whether files omitted from a catalogue are required or whether a game is playable.
+- MAME software-list disc support is incomplete. Sets combining ROM files and disc images cannot currently be processed together.
+- CDI support is limited to certain disc layouts. Some images may not convert correctly, and successful conversion does not guarantee that a game will run in an emulator or on original hardware.
+- Some NRG images cannot be converted because of unsupported disc information. MDS images cannot be processed if their companion data file cannot be opened. Audio differences are not repaired automatically.
+- Copying existing RVZ files does not mean new RVZ files can be created. Conversion and recovery support remains limited.
+- Locked platform files may produce a generic error. Close the program holding the file before repeating preparation.
+
+- Keep the Incomplete Sets folder and its contents in place. Later Append or Resume processing that needs a recorded archive stops if it is missing; recreating an empty folder is insufficient.
 
 ## v2.0.0-beta.5 - 2026-09-11
 
