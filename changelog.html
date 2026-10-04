@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,85 +8,11 @@
         content="Review the improvements, fixes, and known limitations in every CURATOR release.">
     <link rel="canonical" href="https://myorganizerhq.com/changelog">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            min-height: 100vh;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: radial-gradient(circle at top, #17364d 0%, #08131c 45%, #020508 100%);
-            color: #eef6ff;
-        }
-        main { width: min(920px, 92%); margin: auto; padding: 70px 0; }
-        .eyebrow {
-            color: #49d8ff;
-            text-transform: uppercase;
-            letter-spacing: .22em;
-            font-size: .9rem;
-            margin-bottom: 18px;
-        }
-        h1 {
-            font-size: clamp(2.7rem, 7vw, 4.8rem);
-            line-height: 1;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-        }
-        .intro { color: #dbe7ef; font-size: 1.2rem; line-height: 1.7; margin-bottom: 38px; }
-        article {
-            background: rgba(255, 255, 255, .025);
-            border: 1px solid rgba(73, 216, 255, .18);
-            border-radius: 18px;
-            padding: clamp(24px, 5vw, 40px);
-            margin-bottom: 30px;
-        }
-        article.current { border-color: rgba(73, 216, 255, .48); }
-        h2 { font-size: 2rem; margin-bottom: 10px; }
-        details > summary {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 20px;
-            color: #eef6ff;
-            cursor: pointer;
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker { display: none; }
-        details > summary::after {
-            content: "+";
-            flex: 0 0 auto;
-            color: #49d8ff;
-            font-size: 2rem;
-            line-height: 1;
-        }
-        details[open] > summary::after { content: "−"; }
-        details > summary:hover .release-title,
-        details > summary:focus-visible .release-title { color: #49d8ff; }
-        details > summary:focus-visible {
-            outline: 2px solid #49d8ff;
-            outline-offset: 8px;
-            border-radius: 4px;
-        }
-        .release-title { font-size: 2rem; font-weight: 700; }
-        .release-date { color: #8da3b5; margin-left: auto; white-space: nowrap; }
-        .release-details { padding-top: 4px; }
-        h3 { color: #49d8ff; font-size: 1.25rem; margin: 28px 0 12px; }
-        p, li { color: #d0dce5; font-size: 1.03rem; line-height: 1.75; }
-        ul { padding-left: 24px; }
-        li { margin-bottom: 9px; }
-        code { color: #c9f5ff; font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere; }
-        .date { color: #8da3b5; margin-bottom: 22px; }
-        .links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 34px; }
-        a { color: #49d8ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        footer { color: #8da3b5; margin-top: 34px; }
-        @media (max-width: 560px) {
-            details > summary { align-items: flex-start; flex-wrap: wrap; gap: 8px 14px; }
-            .release-date { width: 100%; margin-left: 0; }
-        }
-    </style>
-</head>
 
-<body>
-    <main>
+
+<link rel="stylesheet" href="/site.css">
+</head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span style="color:var(--cyan)">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">02 / Release log</div><a href="#v2-0-0-beta-6">v2 beta.6</a><a href="#v2-0-0-beta-5">v2 beta.5</a><a href="#v2-0-0-beta-4">v2 beta.4</a><a href="#v2-0-0-beta-3">v2 beta.3</a><a href="#v2-0-0-beta-2">v2 beta.2</a><a href="#v2-0-0-beta-1">v2 beta.1</a><a href="#v1-0-0-beta-8">v1 beta.8</a><a href="#v1-0-0-beta-7">v1 beta.7</a><a href="#v1-0-0-beta-6">v1 beta.6</a><a href="#v1-0-0-beta-5">v1 beta.5</a><a href="#v1-0-0-beta-4">v1 beta.4</a><a href="#v1-0-0-beta-3">v1 beta.3</a><a href="#v1-0-0-beta-2">v1 beta.2</a><a href="#v1-0-0-beta-1">v1 beta.1</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Release History</div>
         <h1>Changelog</h1>
         <p class="intro">
@@ -752,9 +677,14 @@
             <a href="/releases">Download releases</a>
             <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/blob/main/CHANGELOG.md">Changelog on GitHub</a>
         </div>
-        <footer>Copyright © 2026 Miguel A. Ortiz.</footer>
-    </main>
-</body>
 
-</html>
-
+    </main></div><footer><div class="wrap footer"><div>© 2026 Miguel A. Ortiz · myOrganizer: CURATOR<br>Free &amp; open source · GPL v3.0 or later</div><div class="footer-links"><a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR">GitHub ↗</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="mailto:contact@myorganizerhq.com">Contact</a></div></div></footer><script>
+function revealLinkedEntry() {
+  const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!target) return;
+  let parent = target.parentElement;
+  while (parent) { if (parent.tagName === 'DETAILS') parent.open = true; parent = parent.parentElement; }
+}
+window.addEventListener('hashchange', revealLinkedEntry);
+revealLinkedEntry();
+</script></body></html>
