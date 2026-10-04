@@ -745,6 +745,7 @@ nav{
 }
 
 
-.origins-index {
-    text-align: center;
+.origins-index .page-art {
+    /* Align the visible logo, accounting for the artwork's inset border. */
+    transform: translateX(-7%);
 }
