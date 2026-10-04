@@ -73,6 +73,10 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 CURATOR is currently available as **v2.0.0-beta.6**.
 
+CURATOR currently has **zero deferred items**. Development of **v2.5.xx** has
+started, and current work is in progress. Follow the [upcoming changes](https://myorganizerhq.com/upcoming)
+and [development status and roadmap history](https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/3).
+
 This sixth v2 public beta improves incomplete-set Append, catalogue folders,
 processing performance, recovery, supported optical media, and operator
 documentation.
