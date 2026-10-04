@@ -749,3 +749,15 @@ nav{
     /* Align the visible logo, accounting for the artwork's inset border. */
     transform: translateX(-7%);
 }
+
+.brand-cursor {
+    color: var(--cyan);
+    animation: cursor-blink 1.2s step-end infinite;
+}
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .brand-cursor { animation: none; }
+}
