@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
 
 
-<link rel="stylesheet" href="/site.css?v=cursor-1">
+<link rel="stylesheet" href="/site.css?v=reconciliation-1">
 </head>
 <body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">02 / Release log</div><a href="#v2-0-0-beta-6">v2 beta.6</a><a href="#v2-0-0-beta-5">v2 beta.5</a><a href="#v2-0-0-beta-4">v2 beta.4</a><a href="#v2-0-0-beta-3">v2 beta.3</a><a href="#v2-0-0-beta-2">v2 beta.2</a><a href="#v2-0-0-beta-1">v2 beta.1</a><a href="#v1-0-0-beta-8">v1 beta.8</a><a href="#v1-0-0-beta-7">v1 beta.7</a><a href="#v1-0-0-beta-6">v1 beta.6</a><a href="#v1-0-0-beta-5">v1 beta.5</a><a href="#v1-0-0-beta-4">v1 beta.4</a><a href="#v1-0-0-beta-3">v1 beta.3</a><a href="#v1-0-0-beta-2">v1 beta.2</a><a href="#v1-0-0-beta-1">v1 beta.1</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Release History</div>
@@ -682,6 +682,8 @@
 function revealLinkedEntry() {
   const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
   if (!target) return;
+  const entry = target.matches('details') ? target : target.querySelector('details');
+  if (entry) entry.open = true;
   let parent = target.parentElement;
   while (parent) { if (parent.tagName === 'DETAILS') parent.open = true; parent = parent.parentElement; }
 }

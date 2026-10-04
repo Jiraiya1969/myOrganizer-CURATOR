@@ -571,7 +571,7 @@ nav{
     background:#0b1a25;
     border-top:3px solid var(--cyan);
     padding:30px}
-.release-details{
+.release-card .release-details{
     display:grid;
     grid-template-columns:120px minmax(0,1fr);
     gap:10px 22px}
@@ -675,7 +675,7 @@ nav{
     display:none}
 .inner-page>h1{
     font-size:40px}
-.release-details{
+.release-card .release-details{
     grid-template-columns:1fr;
     gap:3px}
 .value{
