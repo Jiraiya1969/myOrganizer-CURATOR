@@ -97,7 +97,7 @@ nav a{
     grid-template-columns:1.1fr 1fr;
     align-items:center;
     gap:65px;
-    padding:64px 0 58px}
+    padding:32px 0 58px}
 .hero h1{
     font-size:clamp(46px,5.2vw,76px);
     line-height:1.04;
@@ -375,7 +375,7 @@ footer{
     gap:20px}
  @media(min-width:1500px){
     .hero-grid{
-    padding-top:85px;
+    padding-top:40px;
     padding-bottom:80px}
 }
 @media(max-width:850px){
