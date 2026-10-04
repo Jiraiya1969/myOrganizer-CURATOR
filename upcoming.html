@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="CURATOR v2.0.0-beta.6 is available. No further changes are currently announced.">
+        content="Planned changes for myOrganizer: CURATOR v2.5.xx, following v2.0.0-beta.6. Development is underway; plans may change before release.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
@@ -84,17 +84,70 @@
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-09-28T11:07:53-04:00">September 28, 2026 at 11:07 AM EDT</time>
+            <time datetime="2026-10-04T14:06:43-04:00">October 4, 2026 at 2:06 PM EDT</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">No New Changes Announced</h2>
-            <p>CURATOR v2.0.0-beta.6 is now available. Read the <a href="/changelog#v2-0-0-beta-6">release changelog</a> for its improvements, fixes, and known limitations.</p>
-            <p>No further changes are currently listed in the planning record. Future plans will appear here when announced.</p>
+            <h2 id="planning-notice-title">What We're Working On</h2>
+            <p>Upcoming improvements for myOrganizer: CURATOR v2.5.xx, following v2.0.0-beta.6.</p>
+            <p>These are the improvements currently planned for the next CURATOR release. Development is still underway, so the final list may change before release.</p>
+            <p>CURATOR v2.0.0-beta.6 remains the current public release. Read its <a href="/changelog#v2-0-0-beta-6">release changelog</a> for the changes already available.</p>
+        </section>
+
+        <section class="change-section" aria-labelledby="adding-title">
+            <h2 id="adding-title">Adding</h2>
+            <ul>
+                <li>Append inventories existing output files and directories during file discovery. Collision routing and unchanged-output decisions are planned in the database; Clear skips the output scan.</li>
+            </ul>
+        </section>
+
+        <section class="change-section" aria-labelledby="changing-title">
+            <h2 id="changing-title">Changing</h2>
+            <ul>
+                <li>Platform registration, DAT selection and scan preparation reuse database evidence and perform metadata selection, grouping and publication through Core database operations, reducing repeated processing.</li>
+                <li>Collection publication obtains output counts and collection contracts from the database while retaining the existing Core output and recovery operations.</li>
+                <li>Reporting uses database projections for authority, coverage, audit metadata, reconciliation selection and report summaries, reusing its physical inventory across those operations.</li>
+                <li>The dedicated json folder and its obsolete archive/clear action and history settings have been retired. Configuration, retained DAT references, runtime status, manifests and reporting JSON continue in their supported locations.</li>
+                <li>Gateway stage and utility dispatch, DAT selection, mapping templates and reporting destinations use their configured paths and references throughout the pipeline.</li>
+                <li>Supported logging, recovery-admission and final workspace-cleanup settings are honored consistently. Obsolete settings for retired or inactive operations have been removed.</li>
+                <li>The machine-readable Reporting.json summary is published in the configured reporting folder alongside the other reports.</li>
+                <li>CHD scan preparation extracts directly into the workspace, avoiding a second copy of decoded tracks while preserving extraction-time track identities and descriptor hashing.</li>
+                <li>Stages 1–3 reuse retained authority when their consumed sources and relevant policy are unchanged across runs; a new RunID alone does not require rebuilding.</li>
+                <li>Single-file and multi-file ZIP output use bounded native 7-Zip batches with Normal compression and a default ceiling of 24 archive workers. Each ZIP group shows one completed-file count bar, counting only outputs that need creation.</li>
+                <li>Ordinary output failures are recorded while remaining outputs continue. Resume retries unfinished outputs and retains successful ZIPs; catastrophic failures can still stop processing.</li>
+                <li>Collection preparation and validation use relational stage results without building obsolete intermediate JSON summaries.</li>
+                <li>Stage 9 reuses database evidence and performs collection classification, routing, artifact planning and incomplete-set consolidation through retained relational data, reducing repeated processing while preserving output plans and source memberships.</li>
+                <li>Stage 10 keeps workspace contents until output creation and collection catalogue publication finish, then, when Execution.Workspace.CleanOnFinish is enabled, deletes the contents in one final pass while preserving the workspace folder.</li>
+                <li>Application screens, current README references and newly generated reports use the myOrganizer: CURATOR v2.5.xx identity.</li>
+            </ul>
+        </section>
+
+        <section class="change-section" aria-labelledby="fixing-title">
+            <h2 id="fixing-title">Fixing</h2>
+            <ul>
+                <li>Gateway clears and maximizes the console before displaying the startup README, restoring its established behavior.</li>
+                <li>The modified-chdman README notice uses separated paragraphs for readability, preserving its wording.</li>
+                <li>Gateway preserves a durable failure outcome when Core startup rejects configuration.</li>
+                <li>Stage 1 follows configured platform-file patterns and subfolder selection, applies complete DAT filename patterns consistently, using the shared configured source folders. MAME listxml selection is configured through DAT.Source.MameFilePattern; an empty value disables that additional selection.</li>
+                <li>The Core API handbook documents native ZIP batch member contracts, compression parameters and current single-file ZIP dependencies and compatibility parameters.</li>
+                <li>The Admin, End User and Quick Start guides explain retained authority reuse, native ZIP compression and count progress, ordinary output-failure continuation and Resume, and the limits of unchanged Append detection.</li>
+                <li>The stage-completion prompt keeps the input cursor on the same line as the prompt.</li>
+                <li>Stage 9 correctly builds retained MAME references during collection planning.</li>
+                <li>Append completes known unchanged outputs from discovery and retained database receipts without repeating file checks, content hashes or archive inspection in Stage 10, including unchanged incomplete sets. Keep the output folder unchanged during the run; this path does not detect same-size external content changes.</li>
+                <li>On a clean installation without a collection database, the Gateway shows only P — Prepare DAR and rejects other menu selections until the database exists. The Admin, End User and Quick Start guides explain first-run preparation, retrying failed preparation, and when to organize a collection.</li>
+                <li>Gateway API handbook generation completes with the supported general Core catalogue, excluding application-internal database commands. Catalogue, index and parameter tables now keep their headings together in one repeated header row.</li>
+                <li>Stage 10 can resume after catalogue publication or final workspace cleanup fails, completing the remaining work without creating a duplicate collection generation.</li>
+                <li>Final workspace cleanup reports deletion failures and marks progress complete only after deletion finishes. Read-only contents can cause ordinary deletion failures.</li>
+                <li>Existing v2.0.0-beta.6 databases at schema 26 remain compatible with v2.5.xx, preserving their original creation identity.</li>
+                <li>Reporting regenerates cached reports when the application version changes, preventing reuse of reports carrying an older application version.</li>
+                <li>The Admin, End User and Quick Start guides now describe the current application identity, schema-26 database compatibility, and Stage 10 publication and final-cleanup recovery.</li>
+                <li>The operator guides remove the retired root-JSON maintenance option and folder, and identify the configured Reporting destination. The refreshed Core API handbook describes relational recovery dependencies and current exported APIs.</li>
+            </ul>
         </section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/82">Discuss the planned changes on GitHub</a>
             <a href="/changelog#v2-0-0-beta-6">Read the beta.6 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
