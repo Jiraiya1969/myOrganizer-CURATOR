@@ -5,77 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="Planned changes for myOrganizer: CURATOR v2.5.xx, following v2.0.0-beta.6. Development is underway; plans may change before release.">
+        content="CURATOR v2.5.0-beta.1 is available. No additional release changes are currently announced.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
 
 
 <link rel="stylesheet" href="/site.css?v=cursor-1">
 </head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">Development status</a><a href="#adding-title">Adding</a><a href="#changing-title">Changing</a><a href="#removing-title">Removing</a></aside><main class="inner-page" id="main">
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">Development status</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Planning Record</div>
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-10-08T22:19:55-04:00">October 8, 2026 at 10:19 PM EDT</time>
+            <time datetime="2026-10-10T16:44:36-04:00">October 10, 2026 at 4:44 PM EDT</time>
         </p>
 
-        <section class="planning-notice" aria-labelledby="planning-notice-title">
-            <h2 id="planning-notice-title">What We're Working On</h2>
-            <p>Upcoming improvements for myOrganizer: CURATOR v2.5.xx, following v2.0.0-beta.6.</p>
-            <p>Development of the v2.5.xx branch has started, and current work is in progress.</p>
-              <p>These are the improvements currently planned for the next CURATOR release. Development is still underway, so the final list may change before release.</p>
-            <p>CURATOR v2.0.0-beta.6 remains the current public release. Read its <a href="/changelog#v2-0-0-beta-6">release changelog</a> for the changes already available.</p>
-        </section>
-
-        <section class="change-section" aria-labelledby="adding-title">
-            <h2 id="adding-title">Adding</h2>
-            <ul>
-                <li>GameCube RVZ inputs can match their decoded disc identity against DATs while retaining the original RVZ container for output. DolphinTool remains the tool for ISO-to-RVZ output conversion.</li>
-                <li>Preliminary Wii media definitions recognize WBFS primary images and numbered split-file companions. Successful Wii DAT matching has not been demonstrated; this does not establish supported Wii matching or conversion.</li>
-                <li>Append can skip known unchanged outputs, including unchanged incomplete sets, without hashing or inspecting their archives again. Keep the output folder unchanged during the run; ordinary Append detection does not detect same-size external content changes.</li>
-                <li>On a clean installation without a collection database, the Gateway offers only <strong>P — Prepare DAR</strong> until preparation creates the database.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="changing-title">
-            <h2 id="changing-title">Changing</h2>
-            <ul>
-                <li>Scan Preparation extracts independent archives concurrently using the configured concurrency setting, including archives inside other archives once they become available. This reduces extraction overhead while preserving original discovery order and Resume from existing checkpoints.</li>
-                <li>Sets matched to A8P DATs are placed in an <code>A8P</code> folder beneath their company/platform hierarchy, following the same folder arrangement as GameBase.</li>
-                <li>Gateway alerts you to prepare DAR when the database is missing before starting Full Run, Organize, reporting, or selected runs containing stages 4–10. Selected stages 1–3 remain allowed.</li>
-                <li>Nuclear cleanup removes all generated contents of the configured database folder, including database files and their companion files, while preserving the folder. After successful cleanup, the full main menu remains available for the current Gateway session. A fresh launch without a database still starts with Prepare DAR.</li>
-                <li>Sets from GameBase-derived DAT sources are placed in a dedicated <code>GameBase</code> folder beneath their company/platform hierarchy. Existing category, revision and alternate-dump subfolders remain beneath that bucket.</li>
-                <li>Application screens and newly generated reports use the myOrganizer: CURATOR v2.5.xx identity. Existing v2.0.0-beta.6 databases at schema 26 remain compatible and retain their original creation identity.</li>
-                <li>Bundled DolphinTool is updated to the official 2609 release. Its saved profile and logging settings are kept separately from temporary files and are preserved during temporary cleanup.</li>
-                <li>Nintendo 64 output uses <code>Nintendo\N64</code>. DAT-recognized V64 ROMs, including those supplied inside ZIP archives, route to <code>Alternate Dumps\V64</code>, preserving their contents and DAT names.</li>
-                <li>Stages 1–3 reuse prepared platform, DAT and DAR information when the relevant sources and settings are unchanged, avoiding unnecessary rebuilding for a new run.</li>
-                <li>Collection processing reuses previously gathered information, and Scan Preparation avoids reading prepared content again when its hashes were already collected during staging or extraction.</li>
-                <li>CHD Scan Preparation identifies logical tracks without creating BIN files. Track files are extracted only when required for matching normalization or pending output; copying an unchanged whole CHD does not require track extraction. Later collection processing reuses the prepared information, avoiding repeated content reads. The bundled chdman remains an unofficial modified tool.</li>
-                <li>Single-file and multi-file ZIP output use Normal compression and a default limit of 24 concurrent archives. Each ZIP group shows one completed-file count bar for outputs that require creation.</li>
-                <li>Ordinary output failures are recorded while remaining outputs continue. Resume retries unfinished outputs and retains successful ZIPs; catastrophic failures can still stop processing.</li>
-                <li>Stage 10 retains workspace contents until output creation and collection catalogue publication finish. <code>Execution.Workspace.CleanOnFinish</code> must remain <code>true</code>. Final cleanup removes the contents in one pass while preserving the workspace folder. Cleanup announces the total number of files and folders, including nested contents, before deletion and announces completion afterward; no cleanup progress counter is displayed. Hidden and read-only contents are included. Cleanup reports deletion failures, including locked files and insufficient permissions. Resume can finish remaining catalogue publication or cleanup without publishing the same collection twice.</li>
-                <li>Reporting avoids scanning the same output inventory repeatedly. The machine-readable <code>Reporting.json</code> summary is published alongside the other reports in the configured reporting folder. Cached reports are regenerated when the application version changes.</li>
-                <li>Platform and DAT discovery use configured filename patterns and subfolder selection. <code>DAT.Source.MameFilePattern</code> selects additional MAME listxml sources; an empty value disables that additional selection.</li>
-                <li>Gateway operations, DAT selection, mapping templates and report output follow the configured locations. Supported logging, Resume eligibility and final workspace-cleanup settings apply to their corresponding operations.</li>
-                <li>DAT packaging hints do not override CURATOR's output packaging rules. DAT source identification can use source comments when author, homepage and URL information is missing.</li>
-                <li>The Admin, End User and Quick Start guides cover first-run preparation, reuse of prepared information, Append detection limits, ZIP progress, output-failure continuation, Resume, database compatibility, final workspace cleanup and GameBase folders. They also clarify that no Dreamcast or Jaguar CD CDI DAT matches have been demonstrated, either for original CDI files or their decoded tracks. Successful CDI conversion does not confirm DAT identity or playback compatibility; unmatched files require review. The guides explain CHD preparation without unnecessary track extraction and identify the bundled unofficial chdman. The Core API handbook is updated for the current application interfaces.</li>
-            </ul>
-        </section>
-
-        <section class="change-section" aria-labelledby="removing-title">
-            <h2 id="removing-title">Removing</h2>
-            <ul>
-                <li>The obsolete top-level <code>DAR</code> folder and its configuration reference are retired. Prepare DAR remains available and stores its prepared information in the database.</li>
-                <li>The dedicated root <code>json</code> folder, its archive/clear maintenance action and associated history settings are retired. Configuration, retained DAT references, runtime status, manifests and reporting JSON remain in their supported locations.</li>
-                <li>Obsolete settings for retired or inactive operations and superseded intermediate JSON summaries are removed.</li>
-            </ul>
-        </section>
+        <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">Current release available</h2><p>CURATOR v2.5.0-beta.1 is available. The previous planning cycle is complete; no additional release changes are currently announced.</p><p>Read the <a href="/changelog#v2-5-0-beta-1">release changelog</a> and the <a href="/#developer-announcement">developer announcement</a> for the direction ahead.</p></section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/82">Discuss the planned changes on GitHub</a>
-            <a href="/changelog#v2-0-0-beta-6">Read the beta.6 changelog</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/82">View the completed planning record on GitHub</a>
+            <a href="/changelog#v2-5-0-beta-1">Read the v2.5 beta.1 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
 

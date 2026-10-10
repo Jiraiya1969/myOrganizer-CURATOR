@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/site.css?v=reconciliation-1">
 </head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">02 / Release log</div><a href="#v2-0-0-beta-6">v2 beta.6</a><a href="#v2-0-0-beta-5">v2 beta.5</a><a href="#v2-0-0-beta-4">v2 beta.4</a><a href="#v2-0-0-beta-3">v2 beta.3</a><a href="#v2-0-0-beta-2">v2 beta.2</a><a href="#v2-0-0-beta-1">v2 beta.1</a><a href="#v1-0-0-beta-8">v1 beta.8</a><a href="#v1-0-0-beta-7">v1 beta.7</a><a href="#v1-0-0-beta-6">v1 beta.6</a><a href="#v1-0-0-beta-5">v1 beta.5</a><a href="#v1-0-0-beta-4">v1 beta.4</a><a href="#v1-0-0-beta-3">v1 beta.3</a><a href="#v1-0-0-beta-2">v1 beta.2</a><a href="#v1-0-0-beta-1">v1 beta.1</a></aside><main class="inner-page" id="main">
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">02 / Release log</div><a href="#v2-5-0-beta-1">v2.5 beta.1</a><a href="#v2-0-0-beta-6">v2 beta.6</a><a href="#v2-0-0-beta-5">v2 beta.5</a><a href="#v2-0-0-beta-4">v2 beta.4</a><a href="#v2-0-0-beta-3">v2 beta.3</a><a href="#v2-0-0-beta-2">v2 beta.2</a><a href="#v2-0-0-beta-1">v2 beta.1</a><a href="#v1-0-0-beta-8">v1 beta.8</a><a href="#v1-0-0-beta-7">v1 beta.7</a><a href="#v1-0-0-beta-6">v1 beta.6</a><a href="#v1-0-0-beta-5">v1 beta.5</a><a href="#v1-0-0-beta-4">v1 beta.4</a><a href="#v1-0-0-beta-3">v1 beta.3</a><a href="#v1-0-0-beta-2">v1 beta.2</a><a href="#v1-0-0-beta-1">v1 beta.1</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Release History</div>
         <h1>Changelog</h1>
         <p class="intro">
@@ -22,7 +22,55 @@
             remains preserved below as immutable release history.
         </p>
 
-        <article class="current" id="v2-0-0-beta-6">
+        <article class="current" id="v2-5-0-beta-1">
+<h2>v2.5.0-beta.1</h2>
+<p class="date">October 10, 2026</p>
+<p>This release remains BETA. Use copies of original collections and review output before replacing originals. Existing v2.5.xx and v2.0.0-beta.6 databases at schema 26 retain their creation identity; the Gateway independently checks unfinished-run recovery eligibility. MAME support remains early and experimental; continue using clrmame for MAME collections.</p>
+<h3>Added</h3>
+<ul>
+<li>GameCube RVZ inputs can match their decoded disc identity against DATs while retaining the original RVZ container for output. DolphinTool remains the tool for ISO-to-RVZ output conversion.</li>
+<li>Preliminary Wii media definitions recognize WBFS primary images and numbered split-file companions. Successful Wii DAT matching has not been demonstrated; this does not establish supported Wii matching or conversion.</li>
+<li>Append can skip known unchanged outputs, including unchanged incomplete sets, without hashing or inspecting their archives again. Keep the output folder unchanged during the run; ordinary Append detection does not detect same-size external content changes.</li>
+<li>On a clean installation without a collection database, the Gateway offers only <strong>P — Prepare DAR</strong> until preparation creates the database.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>DAT Discovery hashes each original DAT/XML once per run and ingests only new files or files whose content hash changed. Application build and mapping-file changes alone do not re-ingest unchanged sources; existing authority identities are preserved.</li>
+<li>DAT Discovery&#x27;s analysis taskbar identifies the current DAT/XML source alongside completed-file, set and member counts.</li>
+<li>CHD Scan Preparation progress separates each worker&#x27;s current source, logical-data decoding and completed track hashes. Routine updates occur every two seconds, with prompt completion and failure updates.</li>
+<li>All paused Gateway runs (options 2, 4, 6 and 8) wait for Enter before displaying each stage summary and again before continuing, including the final stage. The Gateway run summary has its own acknowledgement. The Admin and End User guides describe these waits.</li>
+<li>Scan Preparation clears workspace contents in one pass before a fresh run, reports the number of files and folders, and preserves the workspace folder. Resume retains its workspace.</li>
+<li>Scan Preparation archive progress separates completed archives, current archive or batch context, extraction progress with units, and prepared-file counts into four rows.</li>
+<li>DAT Validation announces the start and completion of lineage checks, normalized workspace-file checks and DAT authority validation.</li>
+<li>Scan Preparation extracts independent archives concurrently using the configured concurrency setting, including archives inside other archives once they become available. This reduces extraction overhead while preserving original discovery order and Resume from existing checkpoints.</li>
+<li>Sets matched to A8P DATs are placed in an <code>A8P</code> folder beneath their company/platform hierarchy, following the same folder arrangement as GameBase.</li>
+<li>Gateway alerts you to prepare DAR when the database is missing before starting Full Run, Organize, reporting, or selected runs containing stages 4–10. Selected stages 1–3 remain allowed.</li>
+<li>Nuclear cleanup removes all generated contents of the configured database folder, including database files and their companion files, while preserving the folder. After successful cleanup, the full main menu remains available for the current Gateway session. A fresh launch without a database still starts with Prepare DAR.</li>
+<li>Sets from GameBase-derived DAT sources are placed in a dedicated <code>GameBase</code> folder beneath their company/platform hierarchy. Existing category, revision and alternate-dump subfolders remain beneath that bucket.</li>
+<li>Application screens and newly generated reports use the myOrganizer: CURATOR v2.5.0-beta.1 identity. Existing v2.5.xx and v2.0.0-beta.6 databases at schema 26 remain compatible and retain their original creation identity.</li>
+<li>Bundled DolphinTool is updated to the official 2609 release. Its saved profile and logging settings are kept separately from temporary files and are preserved during temporary cleanup.</li>
+<li>Nintendo 64 output uses <code>Nintendo\N64</code>. DAT-recognized V64 ROMs, including those supplied inside ZIP archives, route to <code>Alternate Dumps\V64</code>, preserving their contents and DAT names.</li>
+<li>Stages 1 and 3 reuse prepared platform and DAR information under their source and policy checks. Stage 2 reuses unchanged DAT/XML content without parsing it again; a new run alone does not require rebuilding authority.</li>
+<li>Collection processing reuses previously gathered information, and Scan Preparation avoids reading prepared content again when its hashes were already collected during staging or extraction.</li>
+<li>CHD Scan Preparation identifies logical tracks without creating BIN files. Track files are extracted only when required for matching normalization or pending output; copying an unchanged whole CHD does not require track extraction. Later collection processing reuses the prepared information, avoiding repeated content reads. The bundled chdman remains an unofficial modified tool.</li>
+<li>Single-file and multi-file ZIP output use Normal compression and a default limit of 24 concurrent archives. Each ZIP group shows one completed-file count bar for outputs that require creation.</li>
+<li>Ordinary output failures are recorded while remaining outputs continue. Resume retries unfinished outputs and retains successful ZIPs; catastrophic failures can still stop processing.</li>
+<li>Stage 10 retains workspace contents until output creation and collection catalogue publication finish. <code>Execution.Workspace.CleanOnFinish</code> must remain <code>true</code>. Final cleanup removes the contents in one pass while preserving the workspace folder. Cleanup announces the total number of files and folders, including nested contents, before deletion and announces completion afterward; no cleanup progress counter is displayed. Hidden and read-only contents are included. Cleanup reports deletion failures, including locked files and insufficient permissions. Resume can finish remaining catalogue publication or cleanup without publishing the same collection twice.</li>
+<li>Reporting avoids scanning the same output inventory repeatedly. The machine-readable <code>Reporting.json</code> summary is published alongside the other reports in the configured reporting folder. Cached reports are regenerated when the application version changes.</li>
+<li>Platform and DAT discovery use configured filename patterns and subfolder selection. <code>DAT.Source.MameFilePattern</code> selects additional MAME listxml sources; an empty value disables that additional selection.</li>
+<li>Gateway operations, DAT selection, mapping templates and report output follow the configured locations. Supported logging, Resume eligibility and final workspace-cleanup settings apply to their corresponding operations.</li>
+<li>DAT packaging hints do not override CURATOR&#x27;s output packaging rules. DAT source identification can use source comments when author, homepage and URL information is missing.</li>
+<li>The Admin, End User and Quick Start guides cover first-run preparation, reuse of prepared information, Append detection limits, ZIP progress, output-failure continuation, Resume, database compatibility, final workspace cleanup and GameBase folders. They also clarify that no Dreamcast or Jaguar CD CDI DAT matches have been demonstrated, either for original CDI files or their decoded tracks. Successful CDI conversion does not confirm DAT identity or playback compatibility; unmatched files require review. The guides explain CHD preparation without unnecessary track extraction and identify the bundled unofficial chdman. The Core API handbook is updated for the current application interfaces. Its file-copy entry documents protected DAT source receipts, the progress callback and the distinction between returned source identities and independent destination verification.</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>The obsolete top-level <code>DAR</code> folder and its configuration reference are retired. Prepare DAR remains available and stores its prepared information in the database.</li>
+<li>The dedicated root <code>json</code> folder, its archive/clear maintenance action and associated history settings are retired. Configuration, retained DAT references, runtime status, manifests and reporting JSON remain in their supported locations.</li>
+<li>Obsolete settings for retired or inactive operations and superseded intermediate JSON summaries are removed.</li>
+</ul>
+</article>
+
+<details class="release-history"><summary>v2.0.0-beta.6 · September 28, 2026</summary>        <article class="history-entry" id="v2-0-0-beta-6">
             <h2>v2.0.0-beta.6</h2>
             <p class="date">September 28, 2026</p>
             <p>Start a clean run with every BETA release. Saved databases and unfinished runs from an earlier BETA release cannot be reused. Preserve original collections and use copied input.</p>
@@ -138,7 +186,7 @@
                 <li>Locked platform files may produce a generic error. Close the program holding the file before repeating preparation.</li>
                 <li>Keep the Incomplete Sets folder and its contents in place. Later Append or Resume processing that needs a recorded archive stops if it is missing; recreating an empty folder is insufficient.</li>
             </ul>
-        </article>
+        </article></details>
 
         <article id="v2-0-0-beta-5">
             <details>

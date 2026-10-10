@@ -1,9 +1,61 @@
-# CURATOR v2.0.0-beta.6 Changelog
+# CURATOR v2.5.0-beta.1 Changelog
 
-Last updated: September 28, 2026
+Last updated: October 10, 2026
 
-This changelog summarizes new features, improvements, fixes, and known
-limitations in each CURATOR release.
+This changelog records user-facing changes and limitations by release. Earlier sections retain their original release history.
+
+## v2.5.0-beta.1 - 2026-10-10
+
+This release remains BETA. Use copies of original collections and review output before replacing originals. Existing v2.5.xx and v2.0.0-beta.6 databases at schema 26 retain their creation identity; the Gateway independently checks unfinished-run recovery eligibility. MAME support remains early and experimental; continue using clrmame for MAME collections.
+
+### Added
+
+- GameCube RVZ inputs can match their decoded disc identity against DATs while retaining the original RVZ container for output. DolphinTool remains the tool for ISO-to-RVZ output conversion.
+- Preliminary Wii media definitions recognize WBFS primary images and numbered split-file companions. Successful Wii DAT matching has not been demonstrated; this does not establish supported Wii matching or conversion.
+- Append can skip known unchanged outputs, including unchanged incomplete sets, without hashing or inspecting their archives again. Keep the output folder unchanged during the run; ordinary Append detection does not detect same-size external content changes.
+- On a clean installation without a collection database, the Gateway offers only **P — Prepare DAR** until preparation creates the database.
+
+### Changed
+
+- DAT Discovery hashes each original DAT/XML once per run and ingests only new files or files whose content hash changed. Application build and mapping-file changes alone do not re-ingest unchanged sources; existing authority identities are preserved.
+
+- DAT Discovery's analysis taskbar identifies the current DAT/XML source alongside completed-file, set and member counts.
+- CHD Scan Preparation progress separates each worker's current source, logical-data decoding and completed track hashes. Routine updates occur every two seconds, with prompt completion and failure updates.
+- All paused Gateway runs (options 2, 4, 6 and 8) wait for Enter before displaying each stage summary and again before continuing, including the final stage. The Gateway run summary has its own acknowledgement. The Admin and End User guides describe these waits.
+- Scan Preparation clears workspace contents in one pass before a fresh run, reports the number of files and folders, and preserves the workspace folder. Resume retains its workspace.
+- Scan Preparation archive progress separates completed archives, current archive or batch context, extraction progress with units, and prepared-file counts into four rows.
+- DAT Validation announces the start and completion of lineage checks, normalized workspace-file checks and DAT authority validation.
+
+- Scan Preparation extracts independent archives concurrently using the configured concurrency setting, including archives inside other archives once they become available. This reduces extraction overhead while preserving original discovery order and Resume from existing checkpoints.
+
+- Sets matched to A8P DATs are placed in an `A8P` folder beneath their company/platform hierarchy, following the same folder arrangement as GameBase.
+
+- Gateway alerts you to prepare DAR when the database is missing before starting Full Run, Organize, reporting, or selected runs containing stages 4–10. Selected stages 1–3 remain allowed.
+
+- Nuclear cleanup removes all generated contents of the configured database folder, including database files and their companion files, while preserving the folder. After successful cleanup, the full main menu remains available for the current Gateway session. A fresh launch without a database still starts with Prepare DAR.
+
+- Sets from GameBase-derived DAT sources are placed in a dedicated `GameBase` folder beneath their company/platform hierarchy. Existing category, revision and alternate-dump subfolders remain beneath that bucket.
+
+- Application screens and newly generated reports use the myOrganizer: CURATOR v2.5.0-beta.1 identity. Existing v2.5.xx and v2.0.0-beta.6 databases at schema 26 remain compatible and retain their original creation identity.
+- Bundled DolphinTool is updated to the official 2609 release. Its saved profile and logging settings are kept separately from temporary files and are preserved during temporary cleanup.
+- Nintendo 64 output uses `Nintendo\N64`. DAT-recognized V64 ROMs, including those supplied inside ZIP archives, route to `Alternate Dumps\V64`, preserving their contents and DAT names.
+- Stages 1 and 3 reuse prepared platform and DAR information under their source and policy checks. Stage 2 reuses unchanged DAT/XML content without parsing it again; a new run alone does not require rebuilding authority.
+- Collection processing reuses previously gathered information, and Scan Preparation avoids reading prepared content again when its hashes were already collected during staging or extraction.
+- CHD Scan Preparation identifies logical tracks without creating BIN files. Track files are extracted only when required for matching normalization or pending output; copying an unchanged whole CHD does not require track extraction. Later collection processing reuses the prepared information, avoiding repeated content reads. The bundled chdman remains an unofficial modified tool.
+- Single-file and multi-file ZIP output use Normal compression and a default limit of 24 concurrent archives. Each ZIP group shows one completed-file count bar for outputs that require creation.
+- Ordinary output failures are recorded while remaining outputs continue. Resume retries unfinished outputs and retains successful ZIPs; catastrophic failures can still stop processing.
+- Stage 10 retains workspace contents until output creation and collection catalogue publication finish. `Execution.Workspace.CleanOnFinish` must remain `true`. Final cleanup removes the contents in one pass while preserving the workspace folder. Cleanup announces the total number of files and folders, including nested contents, before deletion and announces completion afterward; no cleanup progress counter is displayed. Hidden and read-only contents are included. Cleanup reports deletion failures, including locked files and insufficient permissions. Resume can finish remaining catalogue publication or cleanup without publishing the same collection twice.
+- Reporting avoids scanning the same output inventory repeatedly. The machine-readable `Reporting.json` summary is published alongside the other reports in the configured reporting folder. Cached reports are regenerated when the application version changes.
+- Platform and DAT discovery use configured filename patterns and subfolder selection. `DAT.Source.MameFilePattern` selects additional MAME listxml sources; an empty value disables that additional selection.
+- Gateway operations, DAT selection, mapping templates and report output follow the configured locations. Supported logging, Resume eligibility and final workspace-cleanup settings apply to their corresponding operations.
+- DAT packaging hints do not override CURATOR's output packaging rules. DAT source identification can use source comments when author, homepage and URL information is missing.
+- The Admin, End User and Quick Start guides cover first-run preparation, reuse of prepared information, Append detection limits, ZIP progress, output-failure continuation, Resume, database compatibility, final workspace cleanup and GameBase folders. They also clarify that no Dreamcast or Jaguar CD CDI DAT matches have been demonstrated, either for original CDI files or their decoded tracks. Successful CDI conversion does not confirm DAT identity or playback compatibility; unmatched files require review. The guides explain CHD preparation without unnecessary track extraction and identify the bundled unofficial chdman. The Core API handbook is updated for the current application interfaces. Its file-copy entry documents protected DAT source receipts, the progress callback and the distinction between returned source identities and independent destination verification.
+
+### Removed
+
+- The obsolete top-level `DAR` folder and its configuration reference are retired. Prepare DAR remains available and stores its prepared information in the database.
+- The dedicated root `json` folder, its archive/clear maintenance action and associated history settings are retired. Configuration, retained DAT references, runtime status, manifests and reporting JSON remain in their supported locations.
+- Obsolete settings for retired or inactive operations and superseded intermediate JSON summaries are removed.
 
 ## v2.0.0-beta.6 - 2026-09-28
 
