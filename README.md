@@ -2,7 +2,7 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v2.0.0-beta.6**.
+The current public release is **CURATOR v2.5.0-beta.1**.
 
 CURATOR v2 is a major architectural overhaul. It replaces the principal
 in-memory processing paths with persistent, indexed SQLite authority,
@@ -71,21 +71,22 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v2.0.0-beta.6**.
+CURATOR is currently available as **v2.5.0-beta.1**.
 
 CURATOR currently has **zero deferred items**. Development of **v2.5.xx** has
 started, and current work is in progress. Follow the [upcoming changes](https://myorganizerhq.com/upcoming)
 and [development status and roadmap history](https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/3).
 
-This sixth v2 public beta improves incomplete-set Append, catalogue folders,
-processing performance, recovery, supported optical media, and operator
-documentation.
+This first v2.5 public beta adds RVZ identity matching and improves authority reuse,
+CHD preparation, archive processing, output recovery and operator documentation.
+See the [developer announcement](https://myorganizerhq.com/#developer-announcement)
+for the direction ahead; no near-term release is announced.
 
 The closed v1 release line remains permanently available and will receive no
 further development or release changes.
 
 Download the current beta and verify its published SHA-256 checksum on the
-[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.0.0-beta.6).
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.5.0-beta.1).
 
 Every published version remains available in the
 [public release archive](https://myorganizerhq.com/releases). See the
@@ -123,3 +124,11 @@ Questions, feedback, bug reports, and project discussions are welcome.
 
 **Repository:** https://github.com/Jiraiya1969/myOrganizer-CURATOR
 
+
+## Corresponding source and third-party notices
+
+The release provides matching modified chdman, modified Aaru and third-party
+source companion assets, each with a SHA-256 checksum, alongside the application
+and release inventory. Supply these together with equivalent download access.
+See [source distribution](SOURCE_DISTRIBUTION.md) and
+[third-party notices](THIRD_PARTY_NOTICES.md).
