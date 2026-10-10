@@ -763,5 +763,5 @@ nav{
 }
 
 /* Historical release entries expand on request. */
-details.release-card > summary { cursor: pointer; font-size: 24px; font-weight: 700; color: var(--text); }
+details.release-card > summary { cursor: pointer; font-size: 24px; font-weight: 700; color: var(--ink); }
 details.release-card[open] > summary { margin-bottom: 24px; }

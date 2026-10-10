@@ -470,7 +470,7 @@
 function revealLinkedEntry() {
   const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
   if (!target) return;
-  let parent = target.parentElement;
+  let parent = target;
   while (parent) { if (parent.tagName === 'DETAILS') parent.open = true; parent = parent.parentElement; }
 }
 window.addEventListener('hashchange', revealLinkedEntry);
