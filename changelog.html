@@ -35,6 +35,7 @@
 </ul>
 <h3>Changed</h3>
 <ul>
+<li>Scan Preparation input-validation messages identify the Core.Database FileDiscovery contract instead of referring to a FileDiscovery.json file.</li>
 <li>DAT Discovery hashes each original DAT/XML once per run and ingests only new files or files whose content hash changed. Application build and mapping-file changes alone do not re-ingest unchanged sources; existing authority identities are preserved.</li>
 <li>DAT Discovery&#x27;s analysis taskbar identifies the current DAT/XML source alongside completed-file, set and member counts.</li>
 <li>CHD Scan Preparation progress separates each worker&#x27;s current source, logical-data decoding and completed track hashes. Routine updates occur every two seconds, with prompt completion and failure updates.</li>

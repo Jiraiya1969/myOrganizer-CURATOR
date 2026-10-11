@@ -1,6 +1,6 @@
 # CURATOR v2.5.0-beta.1 Changelog
 
-Last updated: October 10, 2026
+Last updated: October 11, 2026
 
 This changelog records user-facing changes and limitations by release. Earlier sections retain their original release history.
 
@@ -16,6 +16,8 @@ This release remains BETA. Use copies of original collections and review output 
 - On a clean installation without a collection database, the Gateway offers only **P — Prepare DAR** until preparation creates the database.
 
 ### Changed
+
+- Scan Preparation input-validation messages identify the Core.Database FileDiscovery contract instead of referring to a FileDiscovery.json file.
 
 - DAT Discovery hashes each original DAT/XML once per run and ingests only new files or files whose content hash changed. Application build and mapping-file changes alone do not re-ingest unchanged sources; existing authority identities are preserved.
 
