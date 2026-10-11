@@ -131,4 +131,5 @@ The release provides matching modified chdman, modified Aaru and third-party
 source companion assets, each with a SHA-256 checksum, alongside the application
 and release inventory. Supply these together with equivalent download access.
 See [source distribution](SOURCE_DISTRIBUTION.md) and
-[third-party notices](THIRD_PARTY_NOTICES.md).
+[third-party notices](THIRD_PARTY_NOTICES.md). The root [LICENSE](LICENSE)
+contains the complete CURATOR license and consolidated original dependency notices.

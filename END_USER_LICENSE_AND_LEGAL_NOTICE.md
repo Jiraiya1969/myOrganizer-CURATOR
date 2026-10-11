@@ -1,6 +1,6 @@
 # CURATOR End User License and Legal Notice
 
-Last updated: October 10, 2026
+Last updated: October 11, 2026
 
 ## 1. GNU General Public License
 
@@ -87,7 +87,7 @@ emulators, databases, websites, or services. Those items remain subject to
 their own licenses, notices, warranties, availability, and terms. Their
 inclusion or mention does not create a warranty, endorsement, sponsorship, or
 assumption of liability by CURATOR's author or contributors. See
-`documentation/THIRD_PARTY_NOTICES.md` for packaged dependency notices.
+`LICENSE` for packaged dependency notices.
 
 CURATOR packages twenty Redump cue/GDI metadata archives whose exact identities
 are recorded in `config/dependency-manifest.json`. Redump identifies its stored
@@ -148,8 +148,7 @@ This notice is general project information and is not legal advice.
 ## Release source and component notices
 
 Version v2.5.0-beta.1 provides the matching Aaru, chdman and third-party
-source companions described in documentation/SOURCE_DISTRIBUTION.md. Original
-third-party license and incorporated-component notices are provided under
-documentation/licenses. Json.NET Schema is supplied under its published
+source companions described in LICENSE. Original
+third-party license and incorporated-component notices are provided in LICENSE. Json.NET Schema is supplied under its published
 AGPL-3.0 alternative; no purchased commercial license is claimed. These notices
 do not replace or restrict the rights granted by the controlling licenses.
