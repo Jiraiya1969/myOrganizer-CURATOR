@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="CURATOR v2.5.0-beta.1 is available. No additional release changes are currently announced.">
+        content="Explore the improvements currently planned for the next CURATOR release. Development is underway and the final list may change.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
 
 
 <link rel="stylesheet" href="/site.css?v=cursor-1">
 </head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">Development status</a></aside><main class="inner-page" id="main">
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">What we're working on</a><a href="#changing">Changing (7)</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Planning Record</div>
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-10-10T16:44:36-04:00">October 10, 2026 at 4:44 PM EDT</time>
+            <time datetime="2026-10-15T19:10:58-04:00">October 15, 2026 at 7:10 PM EDT</time>
         </p>
 
-        <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">Current release available</h2><p>CURATOR v2.5.0-beta.1 is available. The previous planning cycle is complete; no additional release changes are currently announced.</p><p>Read the <a href="/changelog#v2-5-0-beta-1">release changelog</a> and the <a href="/#developer-announcement">developer announcement</a> for the direction ahead.</p></section>
+        <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">What We're Working On</h2><p>These are the improvements currently planned for the next CURATOR release. Development is still underway, so the final list may change before release.</p><p>CURATOR v2.5.0-beta.1 remains the current public release.</p></section>
+
+<section aria-labelledby="changing"><h2 id="changing">Changing</h2><ul>
+<li>Nested archive preparation reuses the extracted container after processing its contents, verifying its bytes and timestamp before retaining it in the workspace instead of extracting it again.</li>
+<li>CHD preparation starts the next queued image whenever a worker becomes available, while preserving configured concurrency, result order and recovery behavior.</li>
+<li>Scan Preparation records original and headerless file identities and creates headerless copies during copying and extraction; Matching verifies and reuses the prepared copies while preserving original bytes and raw-match priority. Missing or stale preparation evidence requires resuming Scan Preparation before Matching. Header normalization uses inclusive whole-file limits of 1,048,704 bytes for Atari 7800, 2,097,216 for Lynx, 134,218,256 for NES and 16,777,728 for SNES; larger files keep their original identity.</li>
+<li>Supported CDI images use deferred track processing: Stage 5 fingerprints the source during decoding and hashes decoded tracks, avoiding a separate full-source preparation read. Track files are written only when output needs them. CDI images with external CD-TEXT retain their original container instead of publishing converted tracks.</li>
+<li>Stages 1–10 and Reporting now resolve application information through database views over ingestion repositories. Stage 1–8 intermediate JSON files and their output templates are retired.</li>
+<li>A complete clean restart is required. Move previous database and generated runtime state out of the active folders and rebuild from original inputs; existing databases are not migrated. Database schema remains 26.</li>
+<li>Admin, End User and Quick Start guides now explain the required clean restart, database-backed stage information and retired Stage 1–8 intermediate outputs.</li>
+</ul></section>
 
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/82">View the completed planning record on GitHub</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/108">View the planning announcement on GitHub</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/82">Previous completed planning record</a>
             <a href="/changelog#v2-5-0-beta-1">Read the v2.5 beta.1 changelog</a>
             <a href="/releases">Current and historical releases</a>
         </div>
