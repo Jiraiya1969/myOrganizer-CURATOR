@@ -95,6 +95,22 @@ limitations in each release.
 
 ---
 
+## Documentation and Quick-Start Video
+
+Visit the [documentation page](https://myorganizerhq.com/documentation/) to
+watch the first-time quick-start video and view or download the Quick Start,
+End User, and Administrator PDF guides from the current published release.
+
+The [video walkthrough](https://myorganizerhq.com/documentation/#video-guide)
+covers first-run setup, collection organization, output folders, incomplete
+sets, and reporting. You can also [watch it on YouTube in up to 4K](https://youtu.be/fiA_dmIdXps).
+
+The video reflects the October 31, 2026 development workflow; the PDF guides
+accompany v2.5.0-beta.1. CURATOR is still in beta and continues to evolve.
+Follow the documentation supplied with your version.
+
+---
+
 ## Free & Open Source
 
 CURATOR is free, open-source software licensed under the
