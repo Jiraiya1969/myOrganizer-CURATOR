@@ -2,7 +2,7 @@
 
 CURATOR is a Windows PowerShell application for analyzing, validating, reconstructing, and organizing emulation collections using DAT-based authority data.
 
-The current public release is **CURATOR v2.5.0-beta.1**.
+The current public release is **CURATOR v2.5.0-beta.2**.
 
 CURATOR v2 is a major architectural overhaul. It replaces the principal
 in-memory processing paths with persistent, indexed SQLite authority,
@@ -71,22 +71,23 @@ Document every action so collections can be reviewed, reconciled, and maintained
 
 ## Current Status
 
-CURATOR is currently available as **v2.5.0-beta.1**.
+CURATOR is currently available as **v2.5.0-beta.2**.
 
 CURATOR currently has **zero deferred items**. Development of **v2.5.xx** has
 started, and current work is in progress. Follow the [upcoming changes](https://myorganizerhq.com/upcoming)
 and [development status and roadmap history](https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/3).
 
-This first v2.5 public beta adds RVZ identity matching and improves authority reuse,
-CHD preparation, archive processing, output recovery and operator documentation.
-See the [developer announcement](https://myorganizerhq.com/#developer-announcement)
-for the direction ahead; no near-term release is announced.
+This beta expands platform support, incomplete-set handling, payload reuse,
+reporting and disc recovery, with updated operator documentation.
+**Every BETA release requires a complete database reset. Backward compatibility
+between BETA releases is not guaranteed.** MAME remains very early and experimental;
+continue using clrmame for MAME collections. See the [complete changelog](CHANGELOG.md).
 
 The closed v1 release line remains permanently available and will receive no
 further development or release changes.
 
 Download the current beta and verify its published SHA-256 checksum on the
-[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.5.0-beta.1).
+[authoritative GitHub Release](https://github.com/Jiraiya1969/myOrganizer-CURATOR/releases/tag/v2.5.0-beta.2).
 
 Every published version remains available in the
 [public release archive](https://myorganizerhq.com/releases). See the
@@ -99,14 +100,14 @@ limitations in each release.
 
 Visit the [documentation page](https://myorganizerhq.com/documentation/) to
 watch the first-time quick-start video and view or download the Quick Start,
-End User, and Administrator PDF guides from the current published release.
+End User, Administrator, and Read Me First PDF guides from the current published release.
 
 The [video walkthrough](https://myorganizerhq.com/documentation/#video-guide)
 covers first-run setup, collection organization, output folders, incomplete
 sets, and reporting. You can also [watch it on YouTube in up to 4K](https://youtu.be/fiA_dmIdXps).
 
 The video reflects the October 31, 2026 development workflow; the PDF guides
-accompany v2.5.0-beta.1. CURATOR is still in beta and continues to evolve.
+accompany v2.5.0-beta.2. CURATOR is still in beta and continues to evolve.
 Follow the documentation supplied with your version.
 
 ---

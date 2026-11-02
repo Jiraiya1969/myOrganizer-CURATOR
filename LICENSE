@@ -678,7 +678,7 @@ Public License instead of this License.  But first, please read
 
 ==============================================================================
 CURATOR THIRD-PARTY LICENSES, COPYRIGHTS AND SOURCE ACCESS
-Updated October 11, 2026 — CURATOR v2.5.0-beta.1
+Updated November 1, 2026 — CURATOR v2.5.0-beta.2
 ==============================================================================
 
 CURATOR was created, architected and is managed by Miguel A. Ortiz.
@@ -746,15 +746,32 @@ Redistributing GPL, AGPL, LGPL, or commercially licensed components can impose
 requirements beyond attribution. The corresponding publisher terms and source
 availability obligations must be satisfied by the distributor.
 
+## Current CURATOR v2.5.0-beta.2 source companions
+
+This local package supplies version-matched Aaru, chdman and third-party source
+companions alongside the application and checksums. Its unofficial chdman build
+is 0.289-CURATOR.12-poc; the exact source commit, build inputs and binary SHA-256
+are bound by its SOURCE_MAPPING.json and release binding. Earlier asset names
+below identify historical source packages for unchanged components; the new
+companions preserve those source bytes and add explicit beta.2 release bindings.
+No publication or new dependency build is implied. All original license texts,
+credits, unofficial status and MAMEdev non-affiliation remain controlling.
+
 ## Modified MAME chdman
 
 `tools\chdman.exe` is CURATOR's unofficial modified build of MAME chdman. Its
-identity is `0.289-CURATOR.8-poc`, as recorded by the current dependency manifest, from upstream
-MAME commit `83b908c74253f7161455347379137a233cca1636`. It retains the standard
+exact working identity, byte hashes and source evidence are recorded in
+`config/dependency-manifest.json`. The historical v2.5.0-beta.1 prepared release contained the
+historical `0.289-CURATOR.8-poc` build from upstream MAME commit
+`83b908c74253f7161455347379137a233cca1636`; that release's source companion does
+not establish correspondence for the newer working binary. It retains the standard
 chdman command set and adds `hashcd`, streamed logical-track hashing with bounded
 header prefixes, and optional extraction-time logical-track evidence. Scan
 Preparation hashes decoded tracks without writing BIN files; applicable
 normalization and pending output operations still extract tracks through Core.
+Eligible legacy Dreamcast recovery follows ordinary matching in Stage 6; accepted
+layouts retain exact loaded-DAT proof. Before any future distribution, reconcile
+the complete corresponding source for the exact binary being distributed.
 Logical-track hashes describe the bytes emitted for each split track and do not
 synthesize virtual pregap bytes absent from those files. The original CURATOR.5
 build and its beta.5 compatibility identity remain historical provenance.
@@ -796,9 +813,9 @@ license terms remain controlling.
 
 ## CURATOR project and modified Aaru source
 
-myOrganizer: CURATOR â€” Collection Utility for Retro Archive Tracking,
-Organization, Repository â€” was created, architected and is managed by
-Miguel A. Ortiz. Copyright Â© 2026 Miguel A. Ortiz. OpenAI ChatGPT provided
+myOrganizer: CURATOR — Collection Utility for Retro Archive Tracking,
+Organization, Repository — was created, architected and is managed by
+Miguel A. Ortiz. Copyright © 2026 Miguel A. Ortiz. OpenAI ChatGPT provided
 development, coding and documentation assistance. This does not transfer
 project ownership or replace any upstream credit.
 
@@ -834,7 +851,9 @@ The publisher advertises the free Json.NET Schema edition with a limit of
 1,000 validations per hour. This limit belongs to the dependency; the limit is published by the dependency provider.
 
 
-Provide these matching release assets together, with equivalent access:
+The existing prepared release records the matching assets below. They describe
+that release, not the current workspace or a new publication. Provide all matching
+assets together with equivalent access when distributing that release:
 
 - CURATOR_v2.5.0-beta.1.zip: CURATOR PowerShell/C# source, configuration and bundled dependencies.
 - CURATOR_v2.5.0-beta.1_chdman-source.zip: exact unofficial modified chdman source/build inputs and binary mapping.
