@@ -1,8 +1,98 @@
-# CURATOR v2.5.0-beta.1 Changelog
+# CURATOR v2.5.0-beta.2 Changelog
 
-Last updated: October 11, 2026
+Last updated: November 1, 2026
 
 This changelog records user-facing changes and limitations by release. Earlier sections retain their original release history.
+
+## v2.5.0-beta.2 - 2026-11-01
+
+**Every BETA release requires a complete database reset. Backward compatibility between BETA releases is not guaranteed.**
+
+### Added
+
+- Bundled configuration supplies identities for Nintendo general collections, Family BASIC, Play-Yan, Pokemon Mini, Pokewalker and Sufami Turbo without separate platform XML intake. Family BASIC supports separate FBT, VTP and WAV destinations. General Nintendo collection association requires an exact collection identity and does not provide a fallback for unknown Nintendo hardware. This bundled configuration support is currently provided for application training purposes.
+
+- Unmatched standard Nintendo DS ROMs can be recognized and copied with corrected `FF` padding when their structure is valid and the corrected size, CRC32 and SHA1 match a loaded No-Intro DS entry. Originals and existing matches are preserved; identical corrected payloads use normal duplicate consolidation. DSi images, header authentication data and internal game-data changes are outside this correction.
+
+- Expanded Atari and Sega MAME software-list support includes physical ROM requirements, shared identical ROM filenames, and sets containing both ROMs and disk images. ROMs publish as native ZIPs; declared disks publish as separate CHDs, and every required ROM and CHD must be present for completeness. Original files remain unchanged.
+
+- Platform associations support 32 Atari and Sega MAME software lists. The bundled configuration supplies platform definitions for Atari Portfolio, Sega AI Computer, Beena, Car Beena, Yamaha/Sega Copera, Mega-Tech, SF-7000, SC-3000, TeraDrive and ST-V; no separate platform XML is needed for those ten definitions.
+
+- DAT Discovery accepts optional No-Intro schema v4 terms-of-service headers while retaining their exact source metadata. Unknown structures and duplicate scalar fields still fail strict mapping checks.
+
+- Eligible legacy v4 Dreamcast CHDs can recover their disc layout after normal DAT matching finishes. Recovery uses the loaded DATs, stages recovered tracks in the configured temporary folder and transfers them into Workspace. Every recovered track and GDI descriptor must match the DAT by size, CRC32 and SHA-1 before acceptance. Originals and source history are preserved. Unsupported or unverified layouts retain normal review handling; a failed recovery does not stop other images. DAT identification does not guarantee playback compatibility with every emulator.
+
+### Changed
+
+- Database startup allows up to ten connection attempts with 00:00:30 between attempts when access is unavailable. Read-only connections remain rejected when writable access is required; processing continues only after access is restored, or stops after the final attempt.
+
+- Standard Reporting calculates missing DAT entries per type from the committed collection inventory, retaining the existing company pages, Retail/Non-retail counts and region/category breakdowns. Physical verification and reconciliation remain separate explicit actions; external collection changes require an audit or processing through CURATOR.
+
+- Unchanged standard reports are reused without recalculating missing entries or rewriting report files. Changes to the collection record, DAT authority, relevant policies, reporting implementation or destinations invalidate reuse. Missing saved report files, or changes to their sizes or modification times, also trigger rebuilding. Authority and pending recovery checks remain active.
+
+- Reporting identifies the beginning and completion of work phases, shows elapsed time, and displays a spinner during otherwise silent operations. Counted work retains its progress bars.
+
+- Empty-intake reference preparation uses a shorter path: Stages 1 and 2 report 'No new files to process' when saved catalogues remain valid. DAT catalogue checks and unchanged-DAR summaries perform less repeated work. Policy, integrity and pending source-archive recovery checks remain active.
+
+- Compatible cracked or pirated disk images can contribute to a complete numbered game layout without their crack/pirate labels splitting the family. Additional sided or unsided images do not invalidate an already complete layout in the same parsed family. Other tags retain their normal routing, and native DAT-member completeness still applies.
+
+- Numbered media sequences can start at zero. A declared six-item sequence numbered 0-5 is assessed without requiring a nonexistent item 6; ordinary 1-6 sequences retain their existing interpretation. Contradictory numbering remains unresolved.
+
+- Tagged alternate disk images retain their configured Alternate Dumps routing without requiring a complete title-level disk family. Each DAT-defined set still requires all of its declared members.
+
+- Matching selects optical and CUE-related files using membership-first database joins to avoid repeated scans across large collections. Selection criteria and matching results are unchanged.
+
+- Large collections require less repeated processing during Scan Preparation, Matching, DAT Validation, Assembly and Completeness. Completed results are reused while their inputs, policies and source definitions remain valid; changed evidence is refreshed before reuse. Matching retains reference tables when their upstream definitions and inputs are unchanged. Append consumes existing-output decisions established by discovery, and unchanged incomplete packages reuse completed checks.
+
+- Activity logs include bounded performance summaries for database work, result reuse, serialization and selected file operations. Logging instrumentation supports Off, Summary and Detailed modes; Summary is the bundled default.
+
+- Documentation includes five PDF guides: Quick Start for a first successful run, End User for everyday operation, Administrator for administration, Read Me First for consolidated warnings, and the Core API handbook. They cover current No-Intro inputs, DAT completeness and dated layouts, conflict-folder placement, archive progress visibility and authority-source provenance. The operator guides reference Read Me First for shared warnings.
+
+- Organizer's final console summary shows Duplicate copies avoided and Existing outputs reused in a separate Duplicates section below the output-category totals.
+
+- Incomplete Sets identifies incomplete games when the loaded DATs define media as separate entries. Game assessments use the title and recognized Disc, Disk, File, Part, Side and Tape positions within each DAT catalogue; different declared disk totals remain separate layouts. Disk or Disc numbering takes precedence over Part labels. Each DAT-defined set retains its own required members and packaging. Unresolved or conflicting declarations stay in Needs Attention.
+
+- On every platform, crack and pirate tags alone do not make a retail game unofficial. Other applicable classifications, including trainers, bad dumps and language restrictions, still apply. Unresolved platform classifications remain unresolved.
+
+- Destination conflicts are preserved directly under `needs_attention\Conflicts`. Numbered subfolders are added only when another conflict has the same filename. Organizer shows a separate final conflict count; ordinary review-file numbering is excluded.
+
+- Preserved CHDs in Needs Attention retain a platform association when matched tracks within that same CHD establish one unambiguous platform. Review folders show the recorded member mismatch reasons. Matching requirements and the separate Incomplete Sets category remain unchanged.
+
+- Incomplete Sets is a separate output category from Needs Attention in planning, saved records, Organizer and Reporting. Completion totals show Official, Unofficial, Needs Attention and Incomplete Sets without format breakdowns or internal counters.
+
+- Identical final payloads may share storage within the same output category and destination folder while retaining original sources and DAT set memberships. Incomplete Sets also retains each allocated DAT filename. Detailed logs distinguish duplicate occurrences, copies consolidated and existing outputs reused. Append binds discovered metadata to retained receipts and matching output proofs; it does not freshly hash ordinary retained files, so same-size external changes require a content audit. Existing duplicate collections block publication.
+
+- Platform Preparation and DAT Discovery archive accepted inputs in dated batch ZIPs under `platforms/History` and `DATs/History`. Identical reintroduced contents reuse retained archives without recompression, even when their names or locations change. Empty intake is supported when the required saved catalogue is ready. Interrupted archiving retains recovery evidence; DAT Discovery removes empty intake subfolders after successful archiving while preserving nonempty folders and History.
+
+- New platform and DAT intake batches use Fastest ZIP compression, which favors archive creation speed over compressed size and may produce larger archives. Live progress identifies the batch and current file.
+
+- Gateway displays missing platform and DAT setup requirements before the menu. While setup is incomplete, Restart / Recheck setup is the available action; supported workflows appear after the required inputs or saved catalogues are ready.
+
+- Changes to enabled output-routing and collector-routing policies are included when Platform Preparation determines whether its saved catalogue needs updating.
+
+- Progress displays show current activity and elapsed time during long stages, including database work and deferred disc processing. Matching identifies the beginning and completion of final decisions, recovery checks, summary loading and source-evidence work, with spinners during database operations. Archive extraction distinguishes overall and current-batch counts, including resumed work. Organizer identifies the destination ZIP during creation and presents aligned output totals with separate failure and duplicate counts. Detailed activity remains in the logs.
+
+- Scan Preparation retains successfully processed nested archives alongside their extracted contents so Matching can identify archive files required by multi-file sets. Archive depth and safety limits still apply.
+
+- Scan Preparation prepares original and eligible headerless identities for Matching while preserving source bytes and original-match priority. Missing or stale preparation evidence requires resuming Scan Preparation before Matching. Header normalization applies only within the configured whole-file size limits; larger files keep their original identity.
+
+- Supported CDI images defer writing decoded tracks until output needs them. Images with external CD-TEXT retain their original container instead of publishing converted tracks. Successful decoding does not establish DAT identity or playback compatibility.
+
+- Nuclear cleanup includes the contents of `platforms/History` and `DATs/History`. It preserves those folders and intake files outside History. Retained intake archives are therefore removed by this operation; review the cleanup scope before confirming it. Temporary database sharing conflicts are retried up to five times with two seconds between checks. If database files remain in use, cleanup stops before deleting any items.
+
+- DAT, media and region policy files now reside in `config/policies` and must remain with the application. Prepare DAR accepts their rules into the collection database for subsequent collection runs.
+
+- Stage information and Gateway outcomes are retained in the collection database. Stage 1–8 intermediate JSON files and their output templates are retired; integrations that used those files must be updated. Published collection manifests and Reporting exports remain supported.
+
+- The guides explain current setup, intake reuse, recovery and output requirements, including category/folder-scoped payload storage, independent DAT set completeness and retained-output reuse requirements. They distinguish Stage 5 CHD identity preparation from Stage 6 legacy Dreamcast recovery and describe DAT requirements, configured staging, original preservation and emulator compatibility limits. They explain responsibility for current DAT/XML catalogues, incorrect-declaration risks and conflict review within the corresponding Needs Attention folder structure. The End User guide also explains standard Nintendo DS padding-correction limits and crack/pirate tag neutrality. The operator guides explain inventory-based missing reports, unchanged-report reuse, physical-audit boundaries and empty-intake/DAR reuse.
+
+### Removed
+
+- Atari format-routing and Libretro-reference XML stubs are removed from `platforms` and future packages. Their routing and reference roles are handled through configuration.
+
+- The obsolete root `templates` folder is removed. Console and documentation text templates remain in `config`.
+
+---
 
 ## v2.5.0-beta.1 - 2026-10-10
 

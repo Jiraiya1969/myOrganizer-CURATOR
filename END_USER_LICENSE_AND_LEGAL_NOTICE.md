@@ -147,7 +147,7 @@ This notice is general project information and is not legal advice.
 
 ## Release source and component notices
 
-Version v2.5.0-beta.1 provides the matching Aaru, chdman and third-party
+Version v2.5.0-beta.2 provides the matching Aaru, chdman and third-party
 source companions described in LICENSE. Original
 third-party license and incorporated-component notices are provided in LICENSE. Json.NET Schema is supplied under its published
 AGPL-3.0 alternative; no purchased commercial license is claimed. These notices
