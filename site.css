@@ -250,6 +250,22 @@ nav a{
     display:inline-block;
     margin-top:23px;
     color:var(--cyan)}
+.hero-copy .vanity-card{
+    margin:0 0 24px;
+    border:1px solid #31566b;
+    border-left:3px solid var(--cyan);
+    padding:14px 16px;
+    font-size:14px;
+    line-height:1.5;
+    box-shadow:none}
+.hero-copy .vanity-card-label{
+    margin-bottom:7px}
+.hero-copy .vanity-card-time{
+    margin-top:9px}
+.vanity-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0 14px}
 .vanity-card{
     margin:0;
     border:1px solid #31566b;
