@@ -5,24 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Changes for Next Release — CURATOR</title>
     <meta name="description"
-        content="Follow CURATOR development and browse the previous planning announcement. No additional changes are currently announced.">
+        content="See the latest planned CURATOR changes and browse earlier planning notes.">
     <link rel="canonical" href="https://myorganizerhq.com/upcoming">
     <link rel="icon" type="image/png" href="/favicon.png">
 
 
 <link rel="stylesheet" href="/site.css?v=cursor-1">
 </head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/documentation/">Documentation</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">What we're working on</a><a href="#adding">Previous adding</a><a href="#changing">Previous changing</a><a href="#removing">Previous removing</a></aside><main class="inner-page" id="main">
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/documentation/">Documentation</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">What we're working on</a><a href="#current-adding">Adding</a><a href="#current-changing">Changing</a><a href="#adding">Previous adding</a><a href="#changing">Previous changing</a><a href="#removing">Previous removing</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Planning Record</div>
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-11-01T21:42:01-05:00">November 1, 2026 at 9:42 PM EST</time>
+            <time datetime="2026-11-04T13:29:10-05:00">November 4, 2026 at 1:29 PM EST</time>
         </p>
 
-        <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">What We're Working On</h2><p>The previous planning announcement is archived below. No additional changes are currently announced for the next release.</p><p>CURATOR v2.5.0-beta.2 is the current public release. Every BETA release requires a complete database reset.</p></section>
+        <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">What We're Working On</h2><p>These notes describe work in progress for the next release. Earlier planning notes are archived below.</p><p>CURATOR v2.5.0-beta.2 is the current public release. Every BETA release requires a complete database reset.</p></section>
 
-<p>No additional changes are currently announced for the next release.</p>
+<section aria-labelledby="current-adding"><h2 id="current-adding">Adding</h2><ul>
+<li>Coleco ADAM TOSEC software is routed to format-specific folders, keeping same-named titles in different media formats separate.</li>
+</ul></section>
+<section aria-labelledby="current-changing"><h2 id="current-changing">Changing</h2><ul>
+<li>DAT Discovery shows live progress while verifying Redump CUE files and checking whether the saved DAT catalogue can be reused when no new DATs are present.</li>
+<li>When Platform Preparation finds a platform missing from the catalogue, CURATOR shows how to send the platform XML and related DATs for review. Acknowledging the notice stops the run and returns interactive Gateway to the main menu.</li>
+<li>Gateway Organize offers Append only when the collection output contains files, including files in subfolders. Empty folders alone do not enable Append.</li>
+<li>Standard Reporting reuses validated reference data when rebuilding reports after collection changes. Outdated or unavailable prepared data is refreshed before use.</li>
+<li>The report viewer puts Expected, Collected, and Missing on one row, aligns counts, and separates sections with dividers. Viewer formatting changes no longer trigger a rebuild of saved reports.</li>
+<li>FullAudit reduces routine progress logging while retaining visible progress, completion messages and error reporting.</li>
+<li>FullAudit limits intermediate file-hashing updates to four per second, while showing file-start and completion immediately.</li>
+<li>A failed hashing-progress update no longer causes an additional crash during error cleanup.</li>
+</ul></section>
 <details class="release-history"><summary>Previous planning announcement · before v2.5.0-beta.2</summary><p>This historical planning text is preserved as originally announced. The <a href="/changelog#v2-5-0-beta-2">published beta.2 changelog</a> governs released behavior and supersedes earlier compatibility guidance.</p><section aria-labelledby="adding"><h2 id="adding">Adding</h2><ul>
 <li>Expanded Atari and Sega MAME software-list support includes physical ROM requirements, shared identical ROM filenames, and sets containing both ROMs and disk images. ROMs publish as native ZIPs; declared disks publish as separate CHDs, and every required ROM and CHD must be present for completeness. Original files remain unchanged. Emulation loading instructions remain in the retained DATs and do not rearrange or byte-swap game files. Existing saved catalogues and prepared plans are not automatically rewritten.</li>
 <li>Platform associations cover the 32 added Atari and Sega software lists, including Atari Portfolio, Sega AI Computer, Beena, Car Beena, Yamaha/Sega Copera, Mega-Tech, SF-7000, SC-3000, TeraDrive and ST-V.</li>
@@ -62,7 +74,7 @@
 </details>
         <div class="links">
             <a href="/">Return to CURATOR</a>
-            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/108">View the planning announcement on GitHub</a>
+            <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/108">Previous beta.2 planning record on GitHub</a>
             <a href="https://github.com/Jiraiya1969/myOrganizer-CURATOR/issues/82">Previous completed planning record</a>
             <a href="/changelog#v2-5-0-beta-2">Read the v2.5 beta.2 changelog</a>
             <a href="/releases">Current and historical releases</a>
