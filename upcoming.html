@@ -12,23 +12,33 @@
 
 <link rel="stylesheet" href="/site.css?v=cursor-1">
 </head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/documentation/">Documentation</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">What we're working on</a><a href="#current-adding">Adding</a><a href="#current-changing">Changing</a><a href="#adding">Previous adding</a><a href="#changing">Previous changing</a><a href="#removing">Previous removing</a></aside><main class="inner-page" id="main">
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap header"><a class="brand" href="/"><small>myOrganizer</small>CURATOR<span class="brand-cursor" aria-hidden="true">▮</span></a><nav aria-label="Main navigation"><a href="/">Home</a><a class="workbench-nav" href="/#development">Workbench</a><a href="/releases">Releases</a><a href="/changelog">Changelog</a><a href="/upcoming">Upcoming</a><a href="/documentation/">Documentation</a><a href="/about">About</a></nav></div></header><div class="wrap page-shell"><aside class="side-index"><div class="eyebrow">03 / Workbench</div><a href="#planning-notice-title">What we're working on</a><a href="#current-milestone">Milestone</a><a href="#current-adding">Adding</a><a href="#current-changing">Changing</a><a href="#adding">Previous adding</a><a href="#changing">Previous changing</a><a href="#removing">Previous removing</a></aside><main class="inner-page" id="main">
         <div class="eyebrow">CURATOR Planning Record</div>
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-11-04T13:29:10-05:00">November 4, 2026 at 1:29 PM EST</time>
+            <time datetime="2026-11-18T19:38:39-05:00">November 18, 2026 at 7:38 PM EST</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">What We're Working On</h2><p>These notes describe work in progress for the next release. Earlier planning notes are archived below.</p><p>CURATOR v2.5.0-beta.2 is the current public release. Every BETA release requires a complete database reset.</p></section>
 
+<section aria-labelledby="current-milestone"><h2 id="current-milestone">Milestone</h2><p><strong>Sets held in Incomplete Sets can now join the official collection once complete.</strong> After adding the missing members through CURATOR, choose <strong>A — Audit incomplete sets</strong> in Gateway. The audit uses saved collection records and DAT authority to move eligible sets to their normal output folders and refresh the collection manifest. This includes eligible multi-disc sets stored across separate ZIPs or CHDs.</p><p>The action appears when the Incomplete Sets folder exists and DAR is ready. Run it separately from Append and Standard Reporting.</p></section>
 <section aria-labelledby="current-adding"><h2 id="current-adding">Adding</h2><ul>
 <li>Coleco ADAM TOSEC software is routed to format-specific folders, keeping same-named titles in different media formats separate.</li>
 </ul></section>
 <section aria-labelledby="current-changing"><h2 id="current-changing">Changing</h2><ul>
+<li>CURATOR hashes eligible loose files in parallel at their original paths and reads them there when building the collection. Workspace cleanup preserves the source files.</li>
+<li>CURATOR hashes eligible members of ordinary ZIPs directly from the source archive, including ZIPs with multiple files. Organizer streams a member into a verified single-file output ZIP and stages members when needed for other outputs. Original ZIPs are preserved, and archives containing nested archives or optical media use their existing processing paths.</li>
+<li>CURATOR hashes eligible 7z and RAR members directly from the original archive during Scan Preparation. Organizer stages members as needed for the configured output format. Nested archives and optical media retain their existing handling.</li>
+<li>CURATOR hashes loose RVZ files and their logical disc contents directly from Input, avoiding an intermediate Workspace copy. Existing RVZ files are published under the collection's output rules with their container bytes intact.</li>
+<li>CURATOR hashes loose ISO files directly from Input without staging them in Workspace. Organizer continues to apply the existing output rules, including GameCube ISO-to-RVZ conversion.</li>
+<li>CURATOR hashes and reads loose CDI images directly from Input, avoiding an intermediate copy of the container in Workspace. Existing output routing and track verification continue to apply.</li>
+<li>CURATOR hashes loose GDI descriptors directly from Input and uses the original complete sets for CHD output. CURATOR never packages GDI descriptors in output ZIPs. Descriptors routed for review stay loose.</li>
+<li>File and archive-member hashing computes MD5 alongside SHA-1 where CURATOR reads the content directly. DAT matching and authority rules retain their existing behavior.</li>
 <li>DAT Discovery shows live progress while verifying Redump CUE files and checking whether the saved DAT catalogue can be reused when no new DATs are present.</li>
 <li>When Platform Preparation finds a platform missing from the catalogue, CURATOR shows how to send the platform XML and related DATs for review. Acknowledging the notice stops the run and returns interactive Gateway to the main menu.</li>
-<li>Gateway Organize offers Append only when the collection output contains files, including files in subfolders. Empty folders alone do not enable Append.</li>
+<li>Gateway Organize offers Append whenever the collection output contains any entry, including an empty folder.</li>
+<li>File Discovery captures existing output metadata in one pass when appending to a collection.</li>
 <li>Standard Reporting reuses validated reference data when rebuilding reports after collection changes. Outdated or unavailable prepared data is refreshed before use.</li>
 <li>The report viewer puts Expected, Collected, and Missing on one row, aligns counts, and separates sections with dividers. Viewer formatting changes no longer trigger a rebuild of saved reports.</li>
 <li>FullAudit reduces routine progress logging while retaining visible progress, completion messages and error reporting.</li>
