@@ -17,7 +17,7 @@
         <h1>Planned Changes for Next Release</h1>
         <p class="updated-on">
             Updated On:
-            <time datetime="2026-11-18T19:38:39-05:00">November 18, 2026 at 7:38 PM EST</time>
+            <time datetime="2026-11-22T17:10:03-05:00">November 22, 2026 at 5:10 PM EST</time>
         </p>
 
         <section class="planning-notice" aria-labelledby="planning-notice-title"><h2 id="planning-notice-title">What We're Working On</h2><p>These notes describe work in progress for the next release. Earlier planning notes are archived below.</p><p>CURATOR v2.5.0-beta.2 is the current public release. Every BETA release requires a complete database reset.</p></section>
@@ -28,12 +28,18 @@
 </ul></section>
 <section aria-labelledby="current-changing"><h2 id="current-changing">Changing</h2><ul>
 <li>CURATOR hashes eligible loose files in parallel at their original paths and reads them there when building the collection. Workspace cleanup preserves the source files.</li>
-<li>CURATOR hashes eligible members of ordinary ZIPs directly from the source archive, including ZIPs with multiple files. Organizer streams a member into a verified single-file output ZIP and stages members when needed for other outputs. Original ZIPs are preserved, and archives containing nested archives or optical media use their existing processing paths.</li>
-<li>CURATOR hashes eligible 7z and RAR members directly from the original archive during Scan Preparation. Organizer stages members as needed for the configured output format. Nested archives and optical media retain their existing handling.</li>
+<li>CURATOR hashes eligible members of ordinary ZIPs directly from the source archive, including ZIPs with multiple files. Organizer streams eligible members into verified single-file or multi-file output ZIPs. Original ZIPs are preserved.</li>
+<li>CURATOR hashes eligible 7z and RAR members directly from the original archive during Scan Preparation. Organizer streams eligible members directly into new single-file or multi-file output ZIPs and verifies the ZIPs before publishing. New multi-file ZIPs can combine eligible loose files read directly from Input with members streamed from ZIP, 7z or RAR without unpacking those members to Workspace.</li>
+<li>Scan Preparation hashes eligible members inside nested ZIP, 7z and RAR archives, and Organizer can stream them into output ZIPs, including new incomplete-set ZIPs. CURATOR keeps the inner archives it needs in temporary storage and avoids unpacking those members into Workspace.</li>
+<li>During Append, Organizer can update an existing incomplete-set ZIP using both eligible loose files read directly from Input and members streamed from ZIP, 7z or RAR. It carries over retained members and verifies the replacement before publishing.</li>
 <li>CURATOR hashes loose RVZ files and their logical disc contents directly from Input, avoiding an intermediate Workspace copy. Existing RVZ files are published under the collection's output rules with their container bytes intact.</li>
 <li>CURATOR hashes loose ISO files directly from Input without staging them in Workspace. Organizer continues to apply the existing output rules, including GameCube ISO-to-RVZ conversion.</li>
 <li>CURATOR hashes and reads loose CDI images directly from Input, avoiding an intermediate copy of the container in Workspace. Existing output routing and track verification continue to apply.</li>
 <li>CURATOR hashes loose GDI descriptors directly from Input and uses the original complete sets for CHD output. CURATOR never packages GDI descriptors in output ZIPs. Descriptors routed for review stay loose.</li>
+<li>Scan Preparation saves verified results as each eligible ZIP finishes, including ZIPs with multiple members. An interrupted run can resume from saved results.</li>
+<li>Scan Preparation checks member-level Workspace destinations only for archive jobs that need staging. Archive progress shows accepted members separately from in-flight results and displays the current activity and its elapsed time.</li>
+<li>Scan Preparation spends less time planning the contents of large groups of nested archives.</li>
+<li>Completeness builds the list of protected source paths once while planning output. Organizer indexes prepared archive sources before looking up members for multi-file ZIPs. This reduces repeated work when planning large collections.</li>
 <li>File and archive-member hashing computes MD5 alongside SHA-1 where CURATOR reads the content directly. DAT matching and authority rules retain their existing behavior.</li>
 <li>DAT Discovery shows live progress while verifying Redump CUE files and checking whether the saved DAT catalogue can be reused when no new DATs are present.</li>
 <li>When Platform Preparation finds a platform missing from the catalogue, CURATOR shows how to send the platform XML and related DATs for review. Acknowledging the notice stops the run and returns interactive Gateway to the main menu.</li>
@@ -44,6 +50,7 @@
 <li>FullAudit reduces routine progress logging while retaining visible progress, completion messages and error reporting.</li>
 <li>FullAudit limits intermediate file-hashing updates to four per second, while showing file-start and completion immediately.</li>
 <li>A failed hashing-progress update no longer causes an additional crash during error cleanup.</li>
+<li>The User, Admin, and Quick Start guides explain how CURATOR can start with an unorganized collection of mixed files and nested archives and reduce hands-on sorting time even when a run takes a while.</li>
 </ul></section>
 <details class="release-history"><summary>Previous planning announcement · before v2.5.0-beta.2</summary><p>This historical planning text is preserved as originally announced. The <a href="/changelog#v2-5-0-beta-2">published beta.2 changelog</a> governs released behavior and supersedes earlier compatibility guidance.</p><section aria-labelledby="adding"><h2 id="adding">Adding</h2><ul>
 <li>Expanded Atari and Sega MAME software-list support includes physical ROM requirements, shared identical ROM filenames, and sets containing both ROMs and disk images. ROMs publish as native ZIPs; declared disks publish as separate CHDs, and every required ROM and CHD must be present for completeness. Original files remain unchanged. Emulation loading instructions remain in the retained DATs and do not rearrange or byte-swap game files. Existing saved catalogues and prepared plans are not automatically rewritten.</li>
